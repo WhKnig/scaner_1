@@ -11,17 +11,19 @@ from my_scan.modules.base import BaseModule
 def mock_session():
     session = AsyncMock()
     
-    mock_resp = AsyncMock()
+    mock_resp = MagicMock()
     mock_resp.status = 200
-    mock_resp.text.return_value = "root:x:0:0:root:/root:/bin/bash Error Syntax syntax error script alert(1) root SQL syntax"
+    mock_resp.text = AsyncMock(return_value="root:x:0:0:root:/root:/bin/bash Error Syntax syntax error script alert(1) root SQL syntax")
     mock_resp.headers = {"Content-Type": "text/html", "Server": "nginx", "Location": "http://evil.com"}
+    mock_resp.release = MagicMock()
     
-    mock_ctx = AsyncMock()
-    mock_ctx.__aenter__.return_value = mock_resp
+    mock_ctx = MagicMock()
+    mock_ctx.__aenter__ = AsyncMock(return_value=mock_resp)
+    mock_ctx.__aexit__ = AsyncMock(return_value=None)
     
-    session.request.return_value = mock_ctx
-    session.get.return_value = mock_ctx
-    session.post.return_value = mock_ctx
+    session.request = MagicMock(return_value=mock_ctx)
+    session.get = MagicMock(return_value=mock_ctx)
+    session.post = MagicMock(return_value=mock_ctx)
     return session
 
 @pytest.mark.asyncio
@@ -66,12 +68,10 @@ async def test_base_module_methods(mock_session):
     mutated = mod._inject_param(ep, "a", "pay")
     assert mutated["params"]["a"] == "pay"
     
-    # Test _send GET
-    mock_ctx = AsyncMock()
-    mock_resp_obj = AsyncMock()
-    mock_ctx.__aenter__.return_value = mock_resp_obj
-    mock_session.get.return_value = mock_ctx
-    mock_session.request.return_value = mock_ctx
+    # Test _send
+    mock_resp_obj = MagicMock()
+    mock_session.get = AsyncMock(return_value=mock_resp_obj)
+    mock_session.request = AsyncMock(return_value=mock_resp_obj)
     
     resp = await mod._send({"method": "GET", "url": "http://test.com"})
     assert resp is not None
