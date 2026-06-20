@@ -1,0 +1,106 @@
+apiVersion: skaffold/v3
+kind: Config
+metadata:
+  name: unguard
+build:
+  artifacts:
+  - image: unguard-envoy-proxy
+    context: src/envoy-proxy
+  - image: unguard-frontend
+    context: src/frontend-nextjs
+  - image: unguard-microblog-service
+    context: src/microblog-service
+  - image: unguard-proxy-service
+    context: src/proxy-service
+  - image: unguard-user-auth-service
+    context: src/user-auth-service
+  - image: unguard-ad-service
+    context: src/ad-service
+  - image: unguard-membership-service
+    context: src/membership-service
+  - image: unguard-status-service
+    context: src/status-service
+  - image: unguard-profile-service
+    context: src/profile-service
+  - image: unguard-like-service
+    context: src/like-service
+  - image: unguard-payment-service
+    context: src/payment-service
+  local:
+    useDockerCLI: true
+    useBuildkit: true
+deploy:
+  helm:
+    releases:
+    - name: unguard-mariadb
+      remoteChart: mariadb
+      repo: https://charts.bitnami.com/bitnami
+      version: 11.5.7
+      namespace: unguard
+      createNamespace: true
+      wait: true
+      overrides:
+        primary:
+          persistence:
+            enabled: false
+        image:
+          repository: bitnamilegacy/mariadb
+    - name: unguard
+      chartPath: ./chart
+      namespace: unguard
+      createNamespace: true
+      valuesFiles:
+      - ./chart/values.yaml
+      setValueTemplates:
+        adService.deployment.container.image.repository: '{{.IMAGE_REPO_unguard_ad_service}}'
+        adService.deployment.container.image.tag: '{{.IMAGE_TAG_unguard_ad_service}}@{{.IMAGE_DIGEST_unguard_ad_service}}'
+        envoyProxy.deployment.container.image.repository: '{{.IMAGE_REPO_unguard_envoy_proxy}}'
+        envoyProxy.deployment.container.image.tag: '{{.IMAGE_TAG_unguard_envoy_proxy}}@{{.IMAGE_DIGEST_unguard_envoy_proxy}}'
+        frontend.deployment.container.image.repository: '{{.IMAGE_REPO_unguard_frontend}}'
+        frontend.deployment.container.image.tag: '{{.IMAGE_TAG_unguard_frontend}}@{{.IMAGE_DIGEST_unguard_frontend}}'
+        microblogService.deployment.container.image.repository: '{{.IMAGE_REPO_unguard_microblog_service
+          }}'
+        microblogService.deployment.container.image.tag: '{{.IMAGE_TAG_unguard_microblog_service
+          }}@{{.IMAGE_DIGEST_unguard_microblog_service }}'
+        proxyService.deployment.container.image.repository: '{{.IMAGE_REPO_unguard_proxy_service}}'
+        proxyService.deployment.container.image.tag: '{{.IMAGE_TAG_unguard_proxy_service}}@{{.IMAGE_DIGEST_unguard_proxy_service}}'
+        userAuthService.deployment.container.image.repository: '{{.IMAGE_REPO_unguard_user_auth_service}}'
+        userAuthService.deployment.container.image.tag: '{{.IMAGE_TAG_unguard_user_auth_service}}@{{.IMAGE_DIGEST_unguard_user_auth_service}}'
+        membershipService.deployment.container.image.repository: '{{.IMAGE_REPO_unguard_membership_service}}'
+        membershipService.deployment.container.image.tag: '{{.IMAGE_TAG_unguard_membership_service}}@{{.IMAGE_DIGEST_unguard_membership_service}}'
+        statusService.deployment.container.image.repository: '{{.IMAGE_REPO_unguard_status_service}}'
+        statusService.deployment.container.image.tag: '{{.IMAGE_TAG_unguard_status_service}}@{{.IMAGE_DIGEST_unguard_status_service}}'
+        profileService.deployment.container.image.repository: '{{.IMAGE_REPO_unguard_profile_service}}'
+        profileService.deployment.container.image.tag: '{{.IMAGE_TAG_unguard_profile_service}}@{{.IMAGE_DIGEST_unguard_profile_service}}'
+        likeService.deployment.container.image.repository: '{{.IMAGE_REPO_unguard_like_service}}'
+        likeService.deployment.container.image.tag: '{{.IMAGE_TAG_unguard_like_service}}@{{.IMAGE_DIGEST_unguard_like_service}}'
+        paymentService.deployment.container.image.repository: '{{.IMAGE_REPO_unguard_payment_service}}'
+        paymentService.deployment.container.image.tag: '{{.IMAGE_TAG_unguard_payment_service}}@{{.IMAGE_DIGEST_unguard_payment_service}}'
+      setValues:
+        adService.deployment.container.image.pullPolicy: IfNotPresent
+        envoyProxy.cronJob.jobTemplate.container.image.pullPolicy: IfNotPresent
+        frontend.deployment.container.image.pullPolicy: IfNotPresent
+        microblogService.deployment.container.image.pullPolicy: IfNotPresent
+        proxyService.deployment.container.image.pullPolicy: IfNotPresent
+        userAuthService.deployment.container.image.pullPolicy: IfNotPresent
+        membershipService.deployment.container.image.pullPolicy: IfNotPresent
+        statusService.deployment.container.image.pullPolicy: IfNotPresent
+        profileService.deployment.container.image.pullPolicy: IfNotPresent
+        likeService.deployment.container.image.pullPolicy: IfNotPresent
+        paymentService.deployment.container.image.pullPolicy: IfNotPresent
+profiles:
+- name: jib
+  patches:
+  - op: add
+    path: /build/artifacts/2/jib
+    value: {}
+- name: tracing
+  patches:
+  - op: add
+    path: /deploy/helm/releases/1/valuesFiles/-
+    value: ./chart/tracing.yaml
+- name: aws
+  patches:
+  - op: add
+    path: /deploy/helm/releases/1/valuesFiles/-
+    value: ./chart/aws.yaml

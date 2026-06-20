@@ -1,0 +1,308 @@
+/*
+ * Copyright 2023 Dynatrace LLC
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package org.dynatrace.microblog;
+
+import io.jsonwebtoken.Claims;
+import io.opentracing.Tracer;
+import org.dynatrace.microblog.authservice.UserAuthServiceClient;
+import org.dynatrace.microblog.dto.Post;
+import org.dynatrace.microblog.dto.PostId;
+import org.dynatrace.microblog.dto.SerializedPost;
+import org.dynatrace.microblog.dto.User;
+import org.dynatrace.microblog.dto.SpamPredictionRatings;
+import org.dynatrace.microblog.exceptions.*;
+import org.dynatrace.microblog.feedbackingestionservice.FeedbackIngestionServiceClient;
+import org.dynatrace.microblog.form.PostForm;
+import org.dynatrace.microblog.ragservice.RAGServiceClient;
+import org.dynatrace.microblog.redis.RedisClient;
+import org.dynatrace.microblog.utils.JwtTokensUtils;
+import org.dynatrace.microblog.utils.PostSerializer;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CookieValue;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.server.ResponseStatusException;
+
+import javax.annotation.PreDestroy;
+import java.util.concurrent.TimeUnit;
+import java.io.IOException;
+import java.util.Collection;
+import java.util.List;
+import java.util.UUID;
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
+import static org.dynatrace.microblog.utils.JwtTokensUtils.decodeTokenUserId;
+import static org.springframework.http.HttpStatus.NOT_FOUND;
+
+@RestController
+public class MicroblogController {
+
+    private final RedisClient redisClient;
+    Logger logger = LoggerFactory.getLogger(MicroblogController.class);
+    private final UserAuthServiceClient userAuthServiceClient;
+    private final Boolean ragServiceEnabled;
+    private final RAGServiceClient ragServiceClient;
+    private final FeedbackIngestionServiceClient feedbackIngestionServiceClient;
+    private final PostSerializer postSerializer;
+    private final ExecutorService ragExecutor = Executors.newFixedThreadPool(
+        Math.max(20, Runtime.getRuntime().availableProcessors() / 2)
+    );
+
+    @Autowired
+    public MicroblogController(Tracer tracer, PostSerializer postSerializer) {
+        String redisServiceAddress;
+        String userAuthServiceAddress;
+        String ragServiceAddress;
+        String ragServicePort;
+        boolean isRagServiceEnabled = false;
+        String feedbackIngestionServiceAddress;
+        String feedbackIngestionServicePort;
+        if (System.getenv("REDIS_SERVICE_ADDRESS") != null) {
+            redisServiceAddress = System.getenv("REDIS_SERVICE_ADDRESS");
+            logger.info("REDIS_SERVICE_ADDRESS set to {}", redisServiceAddress);
+        } else {
+            redisServiceAddress = "localhost";
+            logger.warn("No REDIS_SERVICE_ADDRESS environment variable defined, falling back to localhost.");
+        }
+
+        if (System.getenv("USER_AUTH_SERVICE_ADDRESS") != null) {
+            userAuthServiceAddress = System.getenv("USER_AUTH_SERVICE_ADDRESS");
+            logger.info("USER_AUTH_SERVICE_ADDRESS set to {}", userAuthServiceAddress);
+        } else {
+            userAuthServiceAddress = "localhost:9091";
+            logger.warn("No USER_AUTH_SERVICE_ADDRESS environment variable defined, falling back to localhost:9091.");
+        }
+
+        if (System.getenv("RAG_SERVICE_ENABLED") != null) {
+            isRagServiceEnabled = Boolean.parseBoolean(System.getenv("RAG_SERVICE_ENABLED"));
+            logger.info("RAG_SERVICE_ENABLED set to {}", isRagServiceEnabled);
+        } else {
+            logger.warn("No RAG_SERVICE_ENABLED environment variable defined, falling back to false.");
+        }
+
+        if (System.getenv("RAG_SERVICE_ADDRESS") != null) {
+            ragServiceAddress = System.getenv("RAG_SERVICE_ADDRESS");
+            logger.info("RAG_SERVICE_ADDRESS set to {}", ragServiceAddress);
+        } else {
+            ragServiceAddress = "localhost";
+            logger.warn("No RAG_SERVICE_ADDRESS environment variable defined, falling back to localhost.");
+        }
+        if (System.getenv("RAG_SERVICE_PORT") != null) {
+            ragServicePort = System.getenv("RAG_SERVICE_PORT");
+            logger.info("RAG_SERVICE_PORT set to {}", ragServicePort);
+        } else {
+            ragServicePort = "8000";
+            logger.warn("No RAG_SERVICE_PORT environment variable defined, falling back to 8000.");
+        }
+        if (System.getenv("FEEDBACK_INGESTION_SERVICE_ADDRESS") != null) {
+            feedbackIngestionServiceAddress = System.getenv("FEEDBACK_INGESTION_SERVICE_ADDRESS");
+            logger.info("FEEDBACK_INGESTION_SERVICE_ADDRESS set to {}", feedbackIngestionServiceAddress);
+        } else {
+            feedbackIngestionServiceAddress = "localhost";
+            logger.warn("No FEEDBACK_INGESTION_SERVICE_ADDRESS environment variable defined, falling back to localhost.");
+        }
+        if (System.getenv("FEEDBACK_INGESTION_SERVICE_PORT") != null) {
+            feedbackIngestionServicePort = System.getenv("FEEDBACK_INGESTION_SERVICE_PORT");
+            logger.info("FEEDBACK_INGESTION_SERVICE_PORT set to {}", feedbackIngestionServicePort);
+        } else {
+            feedbackIngestionServicePort = "8080";
+            logger.warn("No FEEDBACK_INGESTION_SERVICE_PORT environment variable defined, falling back to 8080.");
+        }
+
+        this.userAuthServiceClient = new UserAuthServiceClient(userAuthServiceAddress);
+        this.redisClient = new RedisClient(redisServiceAddress, this.userAuthServiceClient, tracer);
+        this.ragServiceClient = new RAGServiceClient(ragServiceAddress, ragServicePort);
+        this.postSerializer = postSerializer;
+        this.ragServiceEnabled = isRagServiceEnabled;
+        this.feedbackIngestionServiceClient = new FeedbackIngestionServiceClient(feedbackIngestionServiceAddress, feedbackIngestionServicePort);
+    }
+
+    @PreDestroy
+    public void shutdownRagExecutor() {
+        ragExecutor.shutdown();
+        try {
+            if (!ragExecutor.awaitTermination(30, TimeUnit.SECONDS)) {
+                ragExecutor.shutdownNow();
+            }
+        } catch (InterruptedException e) {
+            ragExecutor.shutdownNow();
+            Thread.currentThread().interrupt();
+        }
+    }
+
+    @RequestMapping("/timeline")
+    public List<Post> timeline() {
+        return redisClient.getTimeline();
+    }
+
+    @RequestMapping("/mytimeline")
+    public List<Post> myTimeline(@CookieValue(value = "jwt", required = false) String jwt) throws InvalidJwtException, NotLoggedInException {
+        checkJwt(jwt);
+
+        Claims claims = JwtTokensUtils.decodeTokenClaims(jwt);
+        return redisClient.getUserTimeline(claims.get("userid").toString());
+    }
+
+    @PostMapping("/users/{user}/follow")
+    public void follow(@CookieValue(value = "jwt", required = false) String currentUserJwt,
+                       @PathVariable("user") String userToFollow) throws FollowYourselfException, InvalidJwtException, InvalidUserException, UserNotFoundException, IOException, NotLoggedInException {
+
+        checkJwt(currentUserJwt);
+
+        Claims claims = JwtTokensUtils.decodeTokenClaims(currentUserJwt);
+
+        String currentUserId = claims.get("userid").toString();
+        String userIdToFollow = userAuthServiceClient.getUserIdFromUsername(userToFollow);
+        if (userIdToFollow == null) {
+            throw new InvalidUserException();
+        }
+        // disallow following yourself
+        if (currentUserId.equals(userIdToFollow)) {
+            throw new FollowYourselfException();
+        }
+        redisClient.follow(currentUserId, userIdToFollow);
+    }
+
+    @PostMapping("/users/{user}/unfollow")
+    public void unfollow(@CookieValue(value = "jwt", required = false) String currentUserJwt,
+                         @PathVariable("user") String userToUnfollow) throws InvalidJwtException, InvalidUserException, UserNotFoundException, IOException, NotLoggedInException {
+
+        checkJwt(currentUserJwt);
+
+        Claims claims = JwtTokensUtils.decodeTokenClaims(currentUserJwt);
+
+        String currentUserId = claims.get("userid").toString();
+        String userIdToUnfollow = userAuthServiceClient.getUserIdFromUsername(userToUnfollow);
+        if (userIdToUnfollow == null) {
+            throw new InvalidUserException();
+        }
+        redisClient.unfollow(currentUserId, userIdToUnfollow);
+    }
+
+    @GetMapping("/users/{user}/posts")
+    public List<Post> getUserPosts(@PathVariable("user") String user,
+                                   @RequestParam(defaultValue = "10") String limit, @CookieValue(value = "jwt", required = false) String jwt) throws UserNotFoundException, InvalidJwtException, IOException {
+
+        if (!userAuthServiceClient.checkTokenValidity(jwt)) throw new InvalidJwtException();
+
+        return redisClient.getUserPosts(jwt, user, Integer.parseInt(limit));
+    }
+
+    @GetMapping("/users/{user}/followers")
+    public Collection<User> getFollowers(@PathVariable("user") String user, @CookieValue(value = "jwt", required = false) String jwt) throws UserNotFoundException, InvalidJwtException, IOException, NotLoggedInException {
+        checkJwt(jwt);
+
+        String userId = userAuthServiceClient.getUserIdFromUsername(user);
+        return redisClient.getFollowers(userId);
+    }
+
+    @GetMapping("/users/{user}/isFollowing")
+    public boolean isFollowing(@PathVariable("user") String user, @CookieValue(value = "jwt", required = false) String jwt) throws UserNotFoundException, InvalidJwtException, IOException, NotLoggedInException {
+        checkJwt(jwt);
+
+        Claims claims = JwtTokensUtils.decodeTokenClaims(jwt);
+        String currentUserId = claims.get("userid").toString();
+        String userIdToFollow = userAuthServiceClient.getUserIdFromUsername(user);
+        if (userIdToFollow == null) {
+            throw new UserNotFoundException();
+        }
+        return redisClient.isFollowing(currentUserId, userIdToFollow);
+    }
+
+    @PostMapping("/post")
+    public PostId post(@RequestBody PostForm postForm, @CookieValue(value = "jwt", required = false) String jwt) throws InvalidJwtException, NotLoggedInException {
+        checkJwt(jwt);
+
+        // decode JWT
+        Claims claims = JwtTokensUtils.decodeTokenClaims(jwt);
+        String postId = redisClient.newPost(claims.get("userid").toString(), postForm.getContent(), postForm.getImageUrl());
+
+        if (Boolean.TRUE.equals(this.ragServiceEnabled)) {
+            CompletableFuture.runAsync(() -> {
+                try {
+                    String spamClassificationResult = ragServiceClient.getSpamClassification(postForm.getContent());
+                    if(spamClassificationResult == null || spamClassificationResult.trim().isEmpty()) {
+                        throw new InvalidSpamPredictionException("RAG spam classification result is null or empty for post with ID " + postId);
+                    } else if (spamClassificationResult.trim().equalsIgnoreCase("not_spam")) {
+                        redisClient.setSpamPredictedLabel(postId, false);
+                    } else if (spamClassificationResult.trim().equalsIgnoreCase("spam")) {
+                        redisClient.setSpamPredictedLabel(postId, true);
+                    } else {
+                        throw new InvalidSpamPredictionException("RAG spam classification result is invalid for post with ID " + postId + ": " + spamClassificationResult);
+                    }
+                } catch (Exception e) {
+                    logger.warn("RAG spam classification failed for post with ID {}", postId, e);
+                }
+            }, ragExecutor);
+        }
+
+        return new PostId(postId);
+    }
+
+    @GetMapping("/post/{postid}")
+    public Post getPost(@PathVariable("postid") String postId, @CookieValue(value = "jwt", required = false) String jwt) throws UserNotFoundException, InvalidJwtException, IOException, NotLoggedInException {
+        checkJwt(jwt);
+        final Post post = redisClient.getPost(postId);
+        if (post == null) {
+            throw new ResponseStatusException(NOT_FOUND, "Post not found.");
+        }
+        postSerializer.serializePost(new SerializedPost(postId, post.getUsername(), post.getBody(), post.getImageUrl(), post.getTimestamp(), UUID.randomUUID(), post.getIsSpamPredictedLabel()));
+        return post;
+    }
+
+
+    @GetMapping("/spam-prediction-user-rating/{postid}")
+    public SpamPredictionRatings getSpamPredictionUserRating(@PathVariable("postid") String postId, @CookieValue(value = "jwt", required = false) String jwt) throws InvalidJwtException, NotLoggedInException {
+        checkJwt(jwt);
+
+        SpamPredictionRatings spamPredictionUserRatings = redisClient.getSpamPredictionUserRatings(postId, decodeTokenUserId(jwt));
+        if (spamPredictionUserRatings == null) {
+            throw new ResponseStatusException(NOT_FOUND, "Spam prediction user ratings for post with ID " + postId + " not found.");
+        }
+        return spamPredictionUserRatings;
+    }
+
+    @PostMapping("/spam-prediction-user-rating/{postid}/upvote")
+    public void upvoteSpamPrediction(@PathVariable("postid") String postId, @CookieValue(value = "jwt", required = false) String jwt) throws InvalidJwtException, NotLoggedInException {
+        checkJwt(jwt);
+        redisClient.handleSpamPredictionUpvote(postId, decodeTokenUserId(jwt));
+        redisClient.processUserSpamFeedback(postId, feedbackIngestionServiceClient);
+    }
+
+    @PostMapping("/spam-prediction-user-rating/{postid}/downvote")
+    public void downvoteSpamPrediction(@PathVariable("postid") String postId, @CookieValue(value = "jwt", required = false) String jwt) throws InvalidJwtException, NotLoggedInException {
+        checkJwt(jwt);
+        redisClient.handleSpamPredictionDownvote(postId, decodeTokenUserId(jwt));
+        redisClient.processUserSpamFeedback(postId, feedbackIngestionServiceClient);
+    }
+
+    public void checkJwt(String jwt) throws InvalidJwtException, NotLoggedInException {
+        if (jwt == null) {
+            throw new NotLoggedInException();
+        }
+        if (!userAuthServiceClient.checkTokenValidity(jwt)) throw new InvalidJwtException();
+    }
+}

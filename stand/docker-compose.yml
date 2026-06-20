@@ -1,0 +1,20 @@
+
+services:
+  orchestrator:
+    build:
+      context: .
+      dockerfile: Dockerfile.orchestrator
+    container_name: unguard-orchestrator-v2
+    # Запускаем от имени root, чтобы kubectl мог без проблем читать сертификаты OrbStack,
+    # если права на них строгие.
+    user: "root"
+    network_mode: "host" # Важно! OrbStack K8s биндит порты на localhost Mac-а. host-mode позволит контейнеру видеть localhost мака напрямую.
+    command: [ "python3", "/app/stand/run_experiments.py", "--iterations", "1" ]
+    volumes:
+      # Прокидываем конфигурацию Kubernetes (OrbStack) с мака внутрь контейнера
+      - ~/.kube:/root/.kube:ro
+      # Прокидываем корень (папка sacner), чтобы был доступен и stand, и my_scan
+      - ..:/app
+    environment:
+      - KUBECONFIG=/root/.kube/config
+      - PYTHONUNBUFFERED=1

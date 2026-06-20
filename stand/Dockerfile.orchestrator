@@ -1,0 +1,33 @@
+# Используем базовый образ Playwright (включает Python и браузеры)
+FROM mcr.microsoft.com/playwright/python:v1.44.0-jammy
+
+# Отключаем интерактивные запросы apt
+ENV DEBIAN_FRONTEND=noninteractive
+
+# Устанавливаем системные зависимости, kubectl, helm и mitmproxy
+RUN apt-get update && apt-get install -y curl apt-transport-https gnupg2 psmisc && \
+    # Install kubectl
+    curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.30/deb/Release.key | gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg && \
+    echo 'deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.30/deb/ /' | tee /etc/apt/sources.list.d/kubernetes.list && \
+    apt-get update && apt-get install -y kubectl mitmproxy && \
+    # Install helm via official script
+    curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 && \
+    chmod 700 get_helm.sh && ./get_helm.sh && rm get_helm.sh && \
+    rm -rf /var/lib/apt/lists/*
+
+# Создаем рабочую директорию
+WORKDIR /app
+
+# Копируем зависимости Python (если бы у нас был requirements.txt)
+# Install Python deps for scanner and proxy
+RUN pip3 install --no-cache-dir requests beautifulsoup4 aiohttp mitmproxy playwright
+
+# Install playwright browser and dependencies
+RUN playwright install chromium
+RUN playwright install-deps
+
+# Код сканера и оркестратора мы будем прокидывать через volume в docker-compose, 
+# чтобы не пересобирать образ при каждом изменении кода.
+# Но для совместимости можем объявить точку входа.
+
+CMD ["python3", "/app/run_experiments.py"]

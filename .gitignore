@@ -1,0 +1,9 @@
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.coverage
+my_scan/results/
+stand/unguard-light/chart/charts/
+traffic.mitm
+.DS_Store
