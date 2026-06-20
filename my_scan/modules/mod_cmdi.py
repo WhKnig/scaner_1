@@ -94,6 +94,7 @@ class CMDIModule(BaseModule):
                 finally:
                     resp.release()
 
+
                 matched = next((p for p in OUTPUT_PATTERNS if p.search(body)), None)
                 if matched:
                     findings.append(self._make_finding(

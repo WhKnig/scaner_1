@@ -1,4 +1,4 @@
-name: Scanner CI
+name: Scanner CI/CD Pipeline
 
 on:
   push:
@@ -7,30 +7,73 @@ on:
     branches: [ "main" ]
 
 jobs:
-  test:
+  # 1. Проверка стиля кода
+  lint:
+    name: Code Linter
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
-
-    - name: Set up Python
-      uses: actions/setup-python@v5
+    - uses: actions/checkout@v4
+    - uses: actions/setup-python@v5
       with:
         python-version: '3.10'
+    - name: Install Linter
+      run: pip install flake8
+    - name: Run Flake8
+      # Проверяем на критичные синтаксические ошибки
+      run: flake8 my_scan/ --count --select=E9,F63,F7,F82 --show-source --statistics
 
+  # 2. Запуск автотестов
+  unit-tests:
+    name: Unit Tests
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.10'
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
         pip install -r my_scan/requirements.txt
         pip install pytest pytest-asyncio pytest-cov playwright
-
     - name: Run Pytest
-      run: |
-        python -m pytest my_scan/tests/ -v --cov=my_scan > test_results.txt
-
+      run: python -m pytest my_scan/tests/ -v --cov=my_scan > test_results.txt
     - name: Upload Test Results
       if: always()
       uses: actions/upload-artifact@v4
       with:
         name: pytest-results
         path: test_results.txt
+
+  # 3. Базовое сканирование самого кода сканера на уязвимости
+  security-check:
+    name: Security Scan (Bandit)
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.10'
+    - name: Install Bandit
+      run: pip install bandit
+    - name: Run Bandit
+      run: bandit -r my_scan/ -ll -ii -x my_scan/tests/
+
+  # 4. Сборка Docker образа (ждет 3 предыдущих этапа)
+  build-docker:
+    name: Build Orchestrator
+    needs: [lint, unit-tests, security-check]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v3
+      
+    - name: Build Orchestrator Image (Dry Run)
+      uses: docker/build-push-action@v5
+      with:
+        context: ./stand
+        file: ./stand/Dockerfile.orchestrator
+        push: false
+        tags: stand-orchestrator:ci-test
