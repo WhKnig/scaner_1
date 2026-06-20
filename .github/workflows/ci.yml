@@ -47,7 +47,7 @@ jobs:
 
   # 3. Базовое сканирование самого кода сканера на уязвимости
   security-check:
-    name: Security Scan (Bandit)
+    name: Security Scan
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
