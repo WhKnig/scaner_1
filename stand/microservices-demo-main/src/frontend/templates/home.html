@@ -1,0 +1,80 @@
+{{ define "home" }}
+
+{{ template "header" . }}
+<div {{ with $.platform_css }} class="{{.}}" {{ end }}>
+  <span class="platform-flag">
+    {{$.platform_name}}
+  </span>
+</div>
+<main role="main" class="home">
+
+  <div class="home-mobile-hero-banner d-lg-none"></div>
+
+  <div class="container-fluid">
+    <div class="row">
+
+      <div class="col-12 col-lg-12 px-10-percent">
+
+        <div class="row hot-products-row px-xl-6">
+
+          <div class="col-12">
+            <h3>Hot Products</h3>
+            <p>
+                <b>Legacy Filters:</b> 
+                <a href="{{ $.baseUrl }}/?sqe1=' OR 1=1">Show all (SQLi)</a> |
+                <a href="{{ $.baseUrl }}/?xss1=<script>alert(1)</script>">Broken filter (XSS)</a> |
+                <a href="{{ $.baseUrl }}/?sst1=%7B%7B7*7%7D%7D">Theme tester (SSTI)</a> |
+                <a href="{{ $.baseUrl }}/?crlf1=crlf-test">Header injection (CRLF)</a>
+            </p>
+            <form action="{{ $.baseUrl }}/" method="GET" class="form-inline mb-3">
+                <div class="form-group mr-2">
+                    <input type="text" name="sqe2" class="form-control" placeholder="Search with SQLi 2...">
+                </div>
+                <button type="submit" class="btn btn-secondary">Search</button>
+            </form>
+            <form action="{{ $.baseUrl }}/" method="GET" class="form-inline mb-3">
+                <div class="form-group mr-2">
+                    <input type="text" name="xss2" class="form-control" placeholder="Search with XSS 2...">
+                </div>
+                <button type="submit" class="btn btn-secondary">Search</button>
+            </form>
+            <div style="display:none;">
+                <a href="{{ $.baseUrl }}/?sqe3=' OR 1=1">Hidden SQLi 3</a>
+                <a href="{{ $.baseUrl }}/?xss3=<script>alert(3)</script>">Hidden XSS 3</a>
+                <a href="{{ $.baseUrl }}/?sst3=%7B%7B7*7%7D%7D">Hidden SSTI 3</a>
+            </div>
+          </div>
+
+          {{ range $.products }}
+          <div class="col-md-4 hot-product-card">
+            <a href="{{ $.baseUrl }}/product/{{.Item.Id}}">
+              <img loading="lazy" src="{{ $.baseUrl }}{{.Item.Picture}}">
+              <div class="hot-product-card-img-overlay"></div>
+            </a>
+            <div>
+              <div class="hot-product-card-name">{{ .Item.Name }}</div>
+              <div class="hot-product-card-price">{{ renderMoney .Price }}</div>
+            </div>
+          </div>
+          {{ end }}
+
+        </div>
+
+        <div class="row d-none d-lg-block home-desktop-footer-row">
+          <div class="col-12 p-0">
+            {{ template "footer" . }}
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+</main>
+
+<div class="d-lg-none">
+  {{ template "footer" . }}
+</div>
+
+{{ end }}

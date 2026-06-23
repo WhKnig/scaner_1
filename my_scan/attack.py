@@ -122,7 +122,7 @@ class ModuleRunner:
             connector=connector,
             timeout=timeout_cfg,
         ) as http_session:
-            # Tell modules to use proxy for their manual requests if needed
+    
             if self.proxy:
                 http_session._default_proxy = self.proxy
             tasks = []

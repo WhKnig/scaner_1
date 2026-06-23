@@ -1,0 +1,242 @@
+{{ define "vulns_suite" }}
+{{ template "header" . }}
+
+<main role="main" class="container py-5">
+  <div class="row">
+    <div class="col-12">
+      <h1 class="mb-4">Vulnerabilities Test Suite</h1>
+      <p class="lead">This page contains links and forms for exactly 120 test cases corresponding to all vulnerability types supported by the scanner.</p>
+    </div>
+  </div>
+
+  <!-- SQLi (Error-based) -->
+  <div class="card my-3">
+    <div class="card-header bg-danger text-white">1. SQL Injection (Error-based)</div>
+    <div class="card-body">
+      <ul>
+        <li><a href="{{ $.baseUrl }}/vuln/sqli_err/1?q=test">SQLi Error 1 (q)</a></li>
+        <li><a href="{{ $.baseUrl }}/vuln/sqli_err/2?id=test">SQLi Error 2 (id)</a></li>
+        <li><a href="{{ $.baseUrl }}/vuln/sqli_err/3?search=test">SQLi Error 3 (search)</a></li>
+        <li><a href="{{ $.baseUrl }}/vuln/sqli_err/4?user=test">SQLi Error 4 (user)</a></li>
+        <li><a href="{{ $.baseUrl }}/vuln/sqli_err/5?category=test">SQLi Error 5 (category)</a></li>
+        <li><a href="{{ $.baseUrl }}/vuln/sqli_err/6?sort=test">SQLi Error 6 (sort)</a></li>
+        <li><a href="{{ $.baseUrl }}/vuln/sqli_err/7?limit=test">SQLi Error 7 (limit)</a></li>
+        <li><a href="{{ $.baseUrl }}/vuln/sqli_err/8?offset=test">SQLi Error 8 (offset)</a></li>
+        <li><a href="{{ $.baseUrl }}/vuln/sqli_err/9?type=test">SQLi Error 9 (type)</a></li>
+        <li><a href="{{ $.baseUrl }}/vuln/sqli_err/10?page=test">SQLi Error 10 (page)</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- SQLi (Time-based Blind) -->
+  <div class="card my-3">
+    <div class="card-header bg-danger text-white">2. SQL Injection (Time-based Blind)</div>
+    <div class="card-body">
+      <ul>
+        <li><a href="{{ $.baseUrl }}/vuln/sqli_blind/1?sleep=1">SQLi Blind 1 (sleep)</a></li>
+        <li><a href="{{ $.baseUrl }}/vuln/sqli_blind/2?delay=1">SQLi Blind 2 (delay)</a></li>
+        <li><a href="{{ $.baseUrl }}/vuln/sqli_blind/3?t=1">SQLi Blind 3 (t)</a></li>
+        <li><a href="{{ $.baseUrl }}/vuln/sqli_blind/4?wait=1">SQLi Blind 4 (wait)</a></li>
+        <li><a href="{{ $.baseUrl }}/vuln/sqli_blind/5?seconds=1">SQLi Blind 5 (seconds)</a></li>
+        <li><a href="{{ $.baseUrl }}/vuln/sqli_blind/6?duration=1">SQLi Blind 6 (duration)</a></li>
+        <li><a href="{{ $.baseUrl }}/vuln/sqli_blind/7?interval=1">SQLi Blind 7 (interval)</a></li>
+        <li><a href="{{ $.baseUrl }}/vuln/sqli_blind/8?pause=1">SQLi Blind 8 (pause)</a></li>
+        <li><a href="{{ $.baseUrl }}/vuln/sqli_blind/9?time=1">SQLi Blind 9 (time)</a></li>
+        <li><a href="{{ $.baseUrl }}/vuln/sqli_blind/10?period=1">SQLi Blind 10 (period)</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- SQLi (Auth Bypass) -->
+  <div class="card my-3">
+    <div class="card-header bg-danger text-white">3. SQL Injection (Auth Bypass)</div>
+    <div class="card-body">
+      <div class="row">
+        {{ range $val := $.indexes }}
+        <div class="col-md-3 my-2">
+          <h6>Login Form {{ $val }}</h6>
+          <form action="{{ $.baseUrl }}/vuln/sqli_auth/login_{{ $val }}" method="POST">
+            <input type="text" name="username" placeholder="Username" class="form-control mb-1"/>
+            <input type="password" name="password" placeholder="Password" class="form-control mb-1"/>
+            <input type="submit" value="Login" class="btn btn-sm btn-primary"/>
+          </form>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+
+  <!-- Reflected XSS -->
+  <div class="card my-3">
+    <div class="card-header bg-warning text-dark">4. Reflected Cross-Site Scripting (XSS)</div>
+    <div class="card-body">
+      <ul>
+        <li><a href="{{ $.baseUrl }}/vuln/xss/1?input=1">XSS 1 (input)</a></li>
+        <li><a href="{{ $.baseUrl }}/vuln/xss/2?text=1">XSS 2 (text)</a></li>
+        <li><a href="{{ $.baseUrl }}/vuln/xss/3?name=1">XSS 3 (name)</a></li>
+        <li><a href="{{ $.baseUrl }}/vuln/xss/4?msg=1">XSS 4 (msg)</a></li>
+        <li><a href="{{ $.baseUrl }}/vuln/xss/5?comment=1">XSS 5 (comment)</a></li>
+        <li><a href="{{ $.baseUrl }}/vuln/xss/6?title=1">XSS 6 (title)</a></li>
+        <li><a href="{{ $.baseUrl }}/vuln/xss/7?description=1">XSS 7 (description)</a></li>
+        <li><a href="{{ $.baseUrl }}/vuln/xss/8?bio=1">XSS 8 (bio)</a></li>
+        <li><a href="{{ $.baseUrl }}/vuln/xss/9?tag=1">XSS 9 (tag)</a></li>
+        <li><a href="{{ $.baseUrl }}/vuln/xss/10?value=1">XSS 10 (value)</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- SSTI -->
+  <div class="card my-3">
+    <div class="card-header bg-warning text-dark">5. Server-Side Template Injection (SSTI)</div>
+    <div class="card-body">
+      <ul>
+        <li><a href="{{ $.baseUrl }}/vuln/ssti/1?expr=1">SSTI 1 (expr)</a></li>
+        <li><a href="{{ $.baseUrl }}/vuln/ssti/2?tpl=1">SSTI 2 (tpl)</a></li>
+        <li><a href="{{ $.baseUrl }}/vuln/ssti/3?template=1">SSTI 3 (template)</a></li>
+        <li><a href="{{ $.baseUrl }}/vuln/ssti/4?render=1">SSTI 4 (render)</a></li>
+        <li><a href="{{ $.baseUrl }}/vuln/ssti/5?calc=1">SSTI 5 (calc)</a></li>
+        <li><a href="{{ $.baseUrl }}/vuln/ssti/6?math=1">SSTI 6 (math)</a></li>
+        <li><a href="{{ $.baseUrl }}/vuln/ssti/7?eval=1">SSTI 7 (eval)</a></li>
+        <li><a href="{{ $.baseUrl }}/vuln/ssti/8?code=1">SSTI 8 (code)</a></li>
+        <li><a href="{{ $.baseUrl }}/vuln/ssti/9?formula=1">SSTI 9 (formula)</a></li>
+        <li><a href="{{ $.baseUrl }}/vuln/ssti/10?format=1">SSTI 10 (format)</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- CmdI Output-based -->
+  <div class="card my-3">
+    <div class="card-header bg-dark text-white">6. OS Command Injection (Output-based)</div>
+    <div class="card-body">
+      <ul>
+        <li><a href="{{ $.baseUrl }}/vuln/cmdi/1?cmd=1">CmdI Output 1 (cmd)</a></li>
+        <li><a href="{{ $.baseUrl }}/vuln/cmdi/2?exec=1">CmdI Output 2 (exec)</a></li>
+        <li><a href="{{ $.baseUrl }}/vuln/cmdi/3?run=1">CmdI Output 3 (run)</a></li>
+        <li><a href="{{ $.baseUrl }}/vuln/cmdi/4?args=1">CmdI Output 4 (args)</a></li>
+        <li><a href="{{ $.baseUrl }}/vuln/cmdi/5?binary=1">CmdI Output 5 (binary)</a></li>
+        <li><a href="{{ $.baseUrl }}/vuln/cmdi/6?shell=1">CmdI Output 6 (shell)</a></li>
+        <li><a href="{{ $.baseUrl }}/vuln/cmdi/7?proc=1">CmdI Output 7 (proc)</a></li>
+        <li><a href="{{ $.baseUrl }}/vuln/cmdi/8?command=1">CmdI Output 8 (command)</a></li>
+        <li><a href="{{ $.baseUrl }}/vuln/cmdi/9?task=1">CmdI Output 9 (task)</a></li>
+        <li><a href="{{ $.baseUrl }}/vuln/cmdi/10?file=1">CmdI Output 10 (file)</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- CmdI Time-blind -->
+  <div class="card my-3">
+    <div class="card-header bg-dark text-white">7. OS Command Injection (Time-based Blind)</div>
+    <div class="card-body">
+      <ul>
+        <li><a href="{{ $.baseUrl }}/vuln/cmdi_blind/1?cmd=1">CmdI Blind 1 (cmd)</a></li>
+        <li><a href="{{ $.baseUrl }}/vuln/cmdi_blind/2?exec=1">CmdI Blind 2 (exec)</a></li>
+        <li><a href="{{ $.baseUrl }}/vuln/cmdi_blind/3?run=1">CmdI Blind 3 (run)</a></li>
+        <li><a href="{{ $.baseUrl }}/vuln/cmdi_blind/4?args=1">CmdI Blind 4 (args)</a></li>
+        <li><a href="{{ $.baseUrl }}/vuln/cmdi_blind/5?sleep=1">CmdI Blind 5 (sleep)</a></li>
+        <li><a href="{{ $.baseUrl }}/vuln/cmdi_blind/6?wait=1">CmdI Blind 6 (wait)</a></li>
+        <li><a href="{{ $.baseUrl }}/vuln/cmdi_blind/7?delay=1">CmdI Blind 7 (delay)</a></li>
+        <li><a href="{{ $.baseUrl }}/vuln/cmdi_blind/8?time=1">CmdI Blind 8 (time)</a></li>
+        <li><a href="{{ $.baseUrl }}/vuln/cmdi_blind/9?shell=1">CmdI Blind 9 (shell)</a></li>
+        <li><a href="{{ $.baseUrl }}/vuln/cmdi_blind/10?command=1">CmdI Blind 10 (command)</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Path Traversal -->
+  <div class="card my-3">
+    <div class="card-header bg-info text-white">8. Path Traversal / LFI</div>
+    <div class="card-body">
+      <ul>
+        <li><a href="{{ $.baseUrl }}/vuln/path_traversal/1?file=1">LFI 1 (file)</a></li>
+        <li><a href="{{ $.baseUrl }}/vuln/path_traversal/2?path=1">LFI 2 (path)</a></li>
+        <li><a href="{{ $.baseUrl }}/vuln/path_traversal/3?doc=1">LFI 3 (doc)</a></li>
+        <li><a href="{{ $.baseUrl }}/vuln/path_traversal/4?img=1">LFI 4 (img)</a></li>
+        <li><a href="{{ $.baseUrl }}/vuln/path_traversal/5?src=1">LFI 5 (src)</a></li>
+        <li><a href="{{ $.baseUrl }}/vuln/path_traversal/6?url=1">LFI 6 (url)</a></li>
+        <li><a href="{{ $.baseUrl }}/vuln/path_traversal/7?resource=1">LFI 7 (resource)</a></li>
+        <li><a href="{{ $.baseUrl }}/vuln/path_traversal/8?template=1">LFI 8 (template)</a></li>
+        <li><a href="{{ $.baseUrl }}/vuln/path_traversal/9?include=1">LFI 9 (include)</a></li>
+        <li><a href="{{ $.baseUrl }}/vuln/path_traversal/10?read=1">LFI 10 (read)</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- SSRF -->
+  <div class="card my-3">
+    <div class="card-header bg-info text-white">9. Server-Side Request Forgery (SSRF)</div>
+    <div class="card-body">
+      <ul>
+        <li><a href="{{ $.baseUrl }}/vuln/ssrf/1?target=1">SSRF 1 (target)</a></li>
+        <li><a href="{{ $.baseUrl }}/vuln/ssrf/2?url=1">SSRF 2 (url)</a></li>
+        <li><a href="{{ $.baseUrl }}/vuln/ssrf/3?host=1">SSRF 3 (host)</a></li>
+        <li><a href="{{ $.baseUrl }}/vuln/ssrf/4?endpoint=1">SSRF 4 (endpoint)</a></li>
+        <li><a href="{{ $.baseUrl }}/vuln/ssrf/5?api=1">SSRF 5 (api)</a></li>
+        <li><a href="{{ $.baseUrl }}/vuln/ssrf/6?dest=1">SSRF 6 (dest)</a></li>
+        <li><a href="{{ $.baseUrl }}/vuln/ssrf/7?proxy=1">SSRF 7 (proxy)</a></li>
+        <li><a href="{{ $.baseUrl }}/vuln/ssrf/8?webhook=1">SSRF 8 (webhook)</a></li>
+        <li><a href="{{ $.baseUrl }}/vuln/ssrf/9?fetch=1">SSRF 9 (fetch)</a></li>
+        <li><a href="{{ $.baseUrl }}/vuln/ssrf/10?link=1">SSRF 10 (link)</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- CRLF -->
+  <div class="card my-3">
+    <div class="card-header bg-secondary text-white">10. CRLF Injection</div>
+    <div class="card-body">
+      <ul>
+        <li><a href="{{ $.baseUrl }}/vuln/crlf/1?val=1">CRLF 1 (val)</a></li>
+        <li><a href="{{ $.baseUrl }}/vuln/crlf/2?header=1">CRLF 2 (header)</a></li>
+        <li><a href="{{ $.baseUrl }}/vuln/crlf/3?cookie=1">CRLF 3 (cookie)</a></li>
+        <li><a href="{{ $.baseUrl }}/vuln/crlf/4?set=1">CRLF 4 (set)</a></li>
+        <li><a href="{{ $.baseUrl }}/vuln/crlf/5?param=1">CRLF 5 (param)</a></li>
+        <li><a href="{{ $.baseUrl }}/vuln/crlf/6?data=1">CRLF 6 (data)</a></li>
+        <li><a href="{{ $.baseUrl }}/vuln/crlf/7?text=1">CRLF 7 (text)</a></li>
+        <li><a href="{{ $.baseUrl }}/vuln/crlf/8?msg=1">CRLF 8 (msg)</a></li>
+        <li><a href="{{ $.baseUrl }}/vuln/crlf/9?input=1">CRLF 9 (input)</a></li>
+        <li><a href="{{ $.baseUrl }}/vuln/crlf/10?value=1">CRLF 10 (value)</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Open Redirect -->
+  <div class="card my-3">
+    <div class="card-header bg-secondary text-white">11. Open Redirect</div>
+    <div class="card-body">
+      <ul>
+        <li><a href="{{ $.baseUrl }}/vuln/open_redirect/1?url=1">Redirect 1 (url)</a></li>
+        <li><a href="{{ $.baseUrl }}/vuln/open_redirect/2?redirect=1">Redirect 2 (redirect)</a></li>
+        <li><a href="{{ $.baseUrl }}/vuln/open_redirect/3?goto=1">Redirect 3 (goto)</a></li>
+        <li><a href="{{ $.baseUrl }}/vuln/open_redirect/4?next=1">Redirect 4 (next)</a></li>
+        <li><a href="{{ $.baseUrl }}/vuln/open_redirect/5?dest=1">Redirect 5 (dest)</a></li>
+        <li><a href="{{ $.baseUrl }}/vuln/open_redirect/6?target=1">Redirect 6 (target)</a></li>
+        <li><a href="{{ $.baseUrl }}/vuln/open_redirect/7?forward=1">Redirect 7 (forward)</a></li>
+        <li><a href="{{ $.baseUrl }}/vuln/open_redirect/8?to=1">Redirect 8 (to)</a></li>
+        <li><a href="{{ $.baseUrl }}/vuln/open_redirect/9?return=1">Redirect 9 (return)</a></li>
+        <li><a href="{{ $.baseUrl }}/vuln/open_redirect/10?link=1">Redirect 10 (link)</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- NoSQL Injection -->
+  <div class="card my-3">
+    <div class="card-header bg-dark text-light">12. NoSQL Injection</div>
+    <div class="card-body">
+      <div class="row">
+        {{ range $val := $.indexes }}
+        <div class="col-md-3 my-2">
+          <h6>NoSQL Form {{ $val }}</h6>
+          <form action="{{ $.baseUrl }}/vuln/nosql/{{ $val }}" method="POST">
+            <input type="text" name="id" placeholder="id" class="form-control mb-1"/>
+            <input type="submit" value="Submit NoSQL" class="btn btn-sm btn-secondary"/>
+          </form>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+
+</main>
+
+{{ template "footer" . }}
+{{ end }}

@@ -1,0 +1,73 @@
+{{ define "login" }}
+{{ template "header" . }}
+
+<main role="main" class="container">
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-6">
+            <h2>Employee Login Portals</h2>
+            <p>Please select your login type below. We have multiple legacy and modern authentication forms running for compatibility.</p>
+            <hr>
+            
+            <!-- SQLi vulnerabilities (5 forms) -->
+            <h4>Standard Logins</h4>
+            <form action="{{ $.baseUrl }}/login/standard" method="POST" class="mb-4">
+                <div class="form-group"><input type="text" name="username" class="form-control" placeholder="SQLi param: username" required></div>
+                <div class="form-group"><input type="password" name="password" class="form-control" placeholder="Password" required></div>
+                <button type="submit" class="cymbal-button-primary">Login (Form 1)</button>
+            </form>
+            <form action="{{ $.baseUrl }}/login/legacy" method="POST" class="mb-4">
+                <div class="form-group"><input type="text" name="user" class="form-control" placeholder="SQLi param: user" required></div>
+                <div class="form-group"><input type="password" name="pass" class="form-control" placeholder="Password" required></div>
+                <button type="submit" class="cymbal-button-primary">Login (Form 2)</button>
+            </form>
+            <form action="{{ $.baseUrl }}/login/admin" method="POST" class="mb-4">
+                <div class="form-group"><input type="text" name="admin_user" class="form-control" placeholder="SQLi param: admin_user" required></div>
+                <div class="form-group"><input type="password" name="admin_pass" class="form-control" placeholder="Password" required></div>
+                <button type="submit" class="cymbal-button-primary">Login (Form 3)</button>
+            </form>
+            <form action="{{ $.baseUrl }}/login/vendor" method="POST" class="mb-4">
+                <div class="form-group"><input type="text" name="vendor_id" class="form-control" placeholder="SQLi param: vendor_id" required></div>
+                <div class="form-group"><input type="password" name="vendor_key" class="form-control" placeholder="Password" required></div>
+                <button type="submit" class="cymbal-button-primary">Login (Form 4)</button>
+            </form>
+            <form action="{{ $.baseUrl }}/login/support" method="POST" class="mb-4">
+                <div class="form-group"><input type="text" name="agent" class="form-control" placeholder="SQLi param: agent" required></div>
+                <div class="form-group"><input type="password" name="pin" class="form-control" placeholder="Password" required></div>
+                <button type="submit" class="cymbal-button-primary">Login (Form 5)</button>
+            </form>
+
+            <hr>
+            <!-- NoSQL vulnerabilities (5 forms) -->
+            <h4>API Logins</h4>
+            <form action="{{ $.baseUrl }}/login/api/v1" method="POST" class="mb-4">
+                <div class="form-group"><input type="text" name="id" class="form-control" placeholder="NoSQL param: id" required></div>
+                <div class="form-group"><input type="password" name="token" class="form-control" placeholder="Token" required></div>
+                <button type="submit" class="cymbal-button-primary">Login API 1</button>
+            </form>
+            <form action="{{ $.baseUrl }}/login/api/v2" method="POST" class="mb-4">
+                <div class="form-group"><input type="text" name="uuid" class="form-control" placeholder="NoSQL param: uuid" required></div>
+                <div class="form-group"><input type="password" name="secret" class="form-control" placeholder="Token" required></div>
+                <button type="submit" class="cymbal-button-primary">Login API 2</button>
+            </form>
+            <form action="{{ $.baseUrl }}/login/api/sso" method="POST" class="mb-4">
+                <div class="form-group"><input type="text" name="sso_id" class="form-control" placeholder="NoSQL param: sso_id" required></div>
+                <div class="form-group"><input type="password" name="sso_token" class="form-control" placeholder="Token" required></div>
+                <button type="submit" class="cymbal-button-primary">Login API 3</button>
+            </form>
+            <form action="{{ $.baseUrl }}/login/api/oauth" method="POST" class="mb-4">
+                <div class="form-group"><input type="text" name="client_id" class="form-control" placeholder="NoSQL param: client_id" required></div>
+                <div class="form-group"><input type="password" name="client_secret" class="form-control" placeholder="Token" required></div>
+                <button type="submit" class="cymbal-button-primary">Login API 4</button>
+            </form>
+            <form action="{{ $.baseUrl }}/login/api/jwt" method="POST" class="mb-4">
+                <div class="form-group"><input type="text" name="subject" class="form-control" placeholder="NoSQL param: subject" required></div>
+                <div class="form-group"><input type="password" name="signature" class="form-control" placeholder="Token" required></div>
+                <button type="submit" class="cymbal-button-primary">Login API 5</button>
+            </form>
+
+        </div>
+    </div>
+</main>
+
+{{ template "footer" . }}
+{{ end }}

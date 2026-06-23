@@ -1,34 +1,3 @@
-"""
-ScanManager — главный оркестратор сканера.
-
-Жизненный цикл (BPMN-схема):
-  ┌─────────────────────────────────────────────────────┐
-  │  INIT                                               │
-  │    └─► CRAWLING: ChromeCrawler(seed_url) → AppMap  │
-  │              │                                      │
-  │              ▼                                      │
-  │         AppMap saved → app_map.json                 │
-  │              │                                      │
-  │              ▼                                      │
-  │  ATTACKING: AttackGenerator → vectors               │
-  │    RequestSender.execute_queue() → raw_results      │
-  │    (каждый вектор пишется в attack_log.jsonl)       │
-  │              │                                      │
-  │              ▼                                      │
-  │  ANALYZING: ResponseAnalyzer + Classifier           │
-  │    → List[Vulnerability]                            │
-  │              │                                      │
-  │  Self-restart: если в ответах атак найдены          │
-  │  новые URL → добавить в очередь → CRAWLING снова    │
-  │              │                                      │
-  │              ▼                                      │
-  │  REPORTING: HTMLReporter → report.html              │
-  │              │                                      │
-  │              ▼                                      │
-  │  FINISHED: report.json сохранён                     │
-  └─────────────────────────────────────────────────────┘
-"""
-
 import asyncio
 import logging
 import json
@@ -82,7 +51,7 @@ class ScanManager:
         cookies: Optional[List[Dict[str, Any]]] = None,
         check_alive_url: Optional[str] = None,
         max_depth: int = 3,
-        max_pages: int = 60,
+        max_pages: int = 200,
         max_cycles: int = 2,
         output_dir: str = ".",
         extra_endpoints: Optional[List[Dict[str, Any]]] = None,
@@ -484,9 +453,41 @@ if __name__ == "__main__":
         check_alive_url=args.check_alive_url,
         extra_endpoints=extra_endpoints,
         max_depth=args.max_depth,
-        max_pages=60,
+        max_pages=200,
         max_cycles=2,
         output_dir=args.out_dir,
         proxy=args.proxy,
     )
     asyncio.run(manager.start_scan(args.target))
+
+
+"""
+ScanManager — главный оркестратор сканера.
+
+Жизненный цикл (BPMN-схема):
+  ┌─────────────────────────────────────────────────────┐
+  │  INIT                                               │
+  │    └─► CRAWLING: ChromeCrawler(seed_url) → AppMap   │
+  │              │                                      │
+  │              ▼                                      │
+  │         AppMap saved → app_map.json                 │
+  │              │                                      │
+  │              ▼                                      │
+  │  ATTACKING: AttackGenerator → vectors               │
+  │    RequestSender.execute_queue() → raw_results      │
+  │    (каждый вектор пишется в attack_log.jsonl)       │
+  │              │                                      │
+  │              ▼                                      │
+  │  ANALYZING: ResponseAnalyzer + Classifier           │
+  │    → List[Vulnerability]                            │
+  │              │                                      │
+  │  Self-restart: если в ответах атак найдены          │
+  │  новые URL → добавить в очередь → CRAWLING снова    │
+  │              │                                      │
+  │              ▼                                      │
+  │  REPORTING: HTMLReporter → report.html              │
+  │              │                                      │
+  │              ▼                                      │
+  │  FINISHED: report.json сохранён                     │
+  └─────────────────────────────────────────────────────┘
+"""

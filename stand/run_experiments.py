@@ -11,7 +11,7 @@ import sys
 
 STAND_PATH = "/app/stand/unguard-light"
 CHART_PATH = os.path.join(STAND_PATH, "chart")
-RESULTS_DIR = "/app/my_scan/results"
+RESULTS_DIR = "/app/my_scan/results_un"
 PROXY_PORT = 8081
 ENVOY_PORT = 8080
 

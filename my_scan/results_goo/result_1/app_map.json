@@ -1,0 +1,486 @@
+{
+  "total_endpoints": 25,
+  "nodes": {
+    "GET:http://localhost:8080/": {
+      "url": "http://localhost:8080/",
+      "method": "GET",
+      "params": {
+        "sqe2": "",
+        "xss2": "",
+        "sqe1": "' OR 1=1",
+        "xss1": "<script>alert(1)</script>",
+        "sst1": "{{7*7}}",
+        "crlf1": "crlf-test",
+        "sqe3": "' OR 1=1",
+        "xss3": "<script>alert(3)</script>",
+        "sst3": "{{7*7}}"
+      },
+      "body": null,
+      "discovered_via": "seed",
+      "content_type": "text/html; charset=utf-8",
+      "depth": 0,
+      "response_status": 200
+    },
+    "POST:http://localhost:8080/setCurrency": {
+      "url": "http://localhost:8080/setCurrency",
+      "method": "POST",
+      "params": {},
+      "body": "currency_code=USD",
+      "discovered_via": "form",
+      "content_type": null,
+      "depth": 0,
+      "response_status": null
+    },
+    "GET:http://localhost:8080/cart": {
+      "url": "http://localhost:8080/cart",
+      "method": "GET",
+      "params": {},
+      "body": null,
+      "discovered_via": "html_link",
+      "content_type": "text/html; charset=utf-8",
+      "depth": 1,
+      "response_status": 200
+    },
+    "GET:http://localhost:8080/product/OLJCESPC7Z": {
+      "url": "http://localhost:8080/product/OLJCESPC7Z",
+      "method": "GET",
+      "params": {
+        "lfi2": "",
+        "lfi1": "/etc/passwd",
+        "sqb1": "waitfor"
+      },
+      "body": null,
+      "discovered_via": "html_link",
+      "content_type": "text/html; charset=utf-8",
+      "depth": 1,
+      "response_status": 200
+    },
+    "POST:http://localhost:8080/cart": {
+      "url": "http://localhost:8080/cart",
+      "method": "POST",
+      "params": {},
+      "body": "product_id=6E92ZMYYFZ&cart1=dummy&cxss1=dummy&quantity=1",
+      "discovered_via": "form",
+      "content_type": null,
+      "depth": 1,
+      "response_status": null
+    },
+    "GET:http://localhost:8080/product/66VCHSJNUP": {
+      "url": "http://localhost:8080/product/66VCHSJNUP",
+      "method": "GET",
+      "params": {
+        "lfi2": "",
+        "lfi1": "/etc/passwd",
+        "sqb1": "waitfor"
+      },
+      "body": null,
+      "discovered_via": "html_link",
+      "content_type": "text/html; charset=utf-8",
+      "depth": 1,
+      "response_status": 200
+    },
+    "GET:http://localhost:8080/product/1YMWWN1N4O": {
+      "url": "http://localhost:8080/product/1YMWWN1N4O",
+      "method": "GET",
+      "params": {
+        "lfi2": "",
+        "lfi1": "/etc/passwd",
+        "sqb1": "waitfor"
+      },
+      "body": null,
+      "discovered_via": "html_link",
+      "content_type": "text/html; charset=utf-8",
+      "depth": 1,
+      "response_status": 200
+    },
+    "GET:http://localhost:8080/product/L9ECAV7KIM": {
+      "url": "http://localhost:8080/product/L9ECAV7KIM",
+      "method": "GET",
+      "params": {
+        "lfi2": "",
+        "lfi1": "/etc/passwd",
+        "sqb1": "waitfor"
+      },
+      "body": null,
+      "discovered_via": "html_link",
+      "content_type": "text/html; charset=utf-8",
+      "depth": 1,
+      "response_status": 200
+    },
+    "GET:http://localhost:8080/product/2ZYFJ3GM2N": {
+      "url": "http://localhost:8080/product/2ZYFJ3GM2N",
+      "method": "GET",
+      "params": {
+        "lfi2": "",
+        "lfi1": "/etc/passwd",
+        "sqb1": "waitfor"
+      },
+      "body": null,
+      "discovered_via": "html_link",
+      "content_type": "text/html; charset=utf-8",
+      "depth": 1,
+      "response_status": 200
+    },
+    "GET:http://localhost:8080/product/0PUK6V6EV0": {
+      "url": "http://localhost:8080/product/0PUK6V6EV0",
+      "method": "GET",
+      "params": {
+        "lfi2": "",
+        "lfi1": "/etc/passwd",
+        "sqb1": "waitfor"
+      },
+      "body": null,
+      "discovered_via": "html_link",
+      "content_type": "text/html; charset=utf-8",
+      "depth": 1,
+      "response_status": 200
+    },
+    "GET:http://localhost:8080/product/LS4PSXUNUM": {
+      "url": "http://localhost:8080/product/LS4PSXUNUM",
+      "method": "GET",
+      "params": {
+        "lfi2": "",
+        "lfi1": "/etc/passwd",
+        "sqb1": "waitfor"
+      },
+      "body": null,
+      "discovered_via": "html_link",
+      "content_type": "text/html; charset=utf-8",
+      "depth": 1,
+      "response_status": 200
+    },
+    "GET:http://localhost:8080/product/9SIQT8TOJO": {
+      "url": "http://localhost:8080/product/9SIQT8TOJO",
+      "method": "GET",
+      "params": {
+        "lfi2": "",
+        "lfi1": "/etc/passwd",
+        "sqb1": "waitfor"
+      },
+      "body": null,
+      "discovered_via": "html_link",
+      "content_type": "text/html; charset=utf-8",
+      "depth": 1,
+      "response_status": 200
+    },
+    "GET:http://localhost:8080/product/6E92ZMYYFZ": {
+      "url": "http://localhost:8080/product/6E92ZMYYFZ",
+      "method": "GET",
+      "params": {
+        "lfi2": "",
+        "lfi1": "/etc/passwd",
+        "sqb1": "waitfor"
+      },
+      "body": null,
+      "discovered_via": "html_link",
+      "content_type": "text/html; charset=utf-8",
+      "depth": 1,
+      "response_status": 200
+    },
+    "GET:http://localhost:8080/login": {
+      "url": "http://localhost:8080/login",
+      "method": "GET",
+      "params": {},
+      "body": null,
+      "discovered_via": "html_link",
+      "content_type": "text/html; charset=utf-8",
+      "depth": 1,
+      "response_status": 200
+    },
+    "POST:http://localhost:8080/login/standard": {
+      "url": "http://localhost:8080/login/standard",
+      "method": "POST",
+      "params": {},
+      "body": "username=&password=",
+      "discovered_via": "form",
+      "content_type": null,
+      "depth": 1,
+      "response_status": null
+    },
+    "POST:http://localhost:8080/login/legacy": {
+      "url": "http://localhost:8080/login/legacy",
+      "method": "POST",
+      "params": {},
+      "body": "user=&pass=",
+      "discovered_via": "form",
+      "content_type": null,
+      "depth": 1,
+      "response_status": null
+    },
+    "POST:http://localhost:8080/login/admin": {
+      "url": "http://localhost:8080/login/admin",
+      "method": "POST",
+      "params": {},
+      "body": "admin_user=&admin_pass=",
+      "discovered_via": "form",
+      "content_type": null,
+      "depth": 1,
+      "response_status": null
+    },
+    "POST:http://localhost:8080/login/vendor": {
+      "url": "http://localhost:8080/login/vendor",
+      "method": "POST",
+      "params": {},
+      "body": "vendor_id=&vendor_key=",
+      "discovered_via": "form",
+      "content_type": null,
+      "depth": 1,
+      "response_status": null
+    },
+    "POST:http://localhost:8080/login/support": {
+      "url": "http://localhost:8080/login/support",
+      "method": "POST",
+      "params": {},
+      "body": "agent=&pin=",
+      "discovered_via": "form",
+      "content_type": null,
+      "depth": 1,
+      "response_status": null
+    },
+    "POST:http://localhost:8080/login/api/v1": {
+      "url": "http://localhost:8080/login/api/v1",
+      "method": "POST",
+      "params": {},
+      "body": "id=&token=",
+      "discovered_via": "form",
+      "content_type": null,
+      "depth": 1,
+      "response_status": null
+    },
+    "POST:http://localhost:8080/login/api/v2": {
+      "url": "http://localhost:8080/login/api/v2",
+      "method": "POST",
+      "params": {},
+      "body": "uuid=&secret=",
+      "discovered_via": "form",
+      "content_type": null,
+      "depth": 1,
+      "response_status": null
+    },
+    "POST:http://localhost:8080/login/api/sso": {
+      "url": "http://localhost:8080/login/api/sso",
+      "method": "POST",
+      "params": {},
+      "body": "sso_id=&sso_token=",
+      "discovered_via": "form",
+      "content_type": null,
+      "depth": 1,
+      "response_status": null
+    },
+    "POST:http://localhost:8080/login/api/oauth": {
+      "url": "http://localhost:8080/login/api/oauth",
+      "method": "POST",
+      "params": {},
+      "body": "client_id=&client_secret=",
+      "discovered_via": "form",
+      "content_type": null,
+      "depth": 1,
+      "response_status": null
+    },
+    "POST:http://localhost:8080/login/api/jwt": {
+      "url": "http://localhost:8080/login/api/jwt",
+      "method": "POST",
+      "params": {},
+      "body": "subject=&signature=",
+      "discovered_via": "form",
+      "content_type": null,
+      "depth": 1,
+      "response_status": null
+    },
+    "GET:http://localhost:8080/vulns-suite": {
+      "url": "http://localhost:8080/vulns-suite",
+      "method": "GET",
+      "params": {},
+      "body": null,
+      "discovered_via": "html_link",
+      "content_type": "text/plain; charset=utf-8",
+      "depth": 1,
+      "response_status": 404
+    }
+  },
+  "edges": {
+    "http://localhost:8080/": [
+      "http://localhost:8080/setCurrency",
+      "http://localhost:8080/"
+    ],
+    "http://localhost:8080": [
+      "http://localhost:8080/product/6E92ZMYYFZ",
+      "http://localhost:8080/?xss3=%3Cscript%3Ealert(3)%3C/script%3E",
+      "http://localhost:8080/product/0PUK6V6EV0",
+      "http://localhost:8080/product/LS4PSXUNUM",
+      "http://localhost:8080/cart",
+      "http://localhost:8080/?xss1=%3Cscript%3Ealert(1)%3C/script%3E",
+      "http://localhost:8080/?crlf1=crlf-test",
+      "http://localhost:8080/product/L9ECAV7KIM",
+      "http://localhost:8080/product/66VCHSJNUP",
+      "http://localhost:8080/product/2ZYFJ3GM2N",
+      "http://localhost:8080/product/OLJCESPC7Z",
+      "http://localhost:8080/product/9SIQT8TOJO",
+      "http://localhost:8080/?sst3=%7B%7B7*7%7D%7D",
+      "http://localhost:8080/login",
+      "http://localhost:8080/?sqe1=%27%20OR%201=1",
+      "http://localhost:8080/vulns-suite",
+      "http://localhost:8080/product/1YMWWN1N4O",
+      "http://localhost:8080/?sst1=%7B%7B7*7%7D%7D",
+      "http://localhost:8080/?sqe3=%27%20OR%201=1"
+    ],
+    "http://localhost:8080/cart": [
+      "http://localhost:8080/setCurrency",
+      "http://localhost:8080/cart"
+    ],
+    "http://localhost:8080/?sqe1=%27%20OR%201=1": [
+      "http://localhost:8080/?sqe1=%27%20OR%201=1"
+    ],
+    "http://localhost:8080/?xss1=%3Cscript%3Ealert(1)%3C/script%3E": [
+      "http://localhost:8080/?xss1=%3Cscript%3Ealert(1)%3C/script%3E"
+    ],
+    "http://localhost:8080/?sst1=%7B%7B7*7%7D%7D": [
+      "http://localhost:8080/?sst1=%7B%7B7*7%7D%7D"
+    ],
+    "http://localhost:8080/?crlf1=crlf-test": [
+      "http://localhost:8080/?crlf1=crlf-test"
+    ],
+    "http://localhost:8080/?sqe3=%27%20OR%201=1": [
+      "http://localhost:8080/?sqe3=%27%20OR%201=1"
+    ],
+    "http://localhost:8080/?xss3=%3Cscript%3Ealert(3)%3C/script%3E": [
+      "http://localhost:8080/?xss3=%3Cscript%3Ealert(3)%3C/script%3E"
+    ],
+    "http://localhost:8080/?sst3=%7B%7B7*7%7D%7D": [
+      "http://localhost:8080/?sst3=%7B%7B7*7%7D%7D"
+    ],
+    "http://localhost:8080/product/OLJCESPC7Z": [
+      "http://localhost:8080/setCurrency",
+      "http://localhost:8080/product/OLJCESPC7Z",
+      "http://localhost:8080/cart",
+      "http://localhost:8080/product/OLJCESPC7Z?sqb1=waitfor",
+      "http://localhost:8080/product/OLJCESPC7Z?lfi1=/etc/passwd"
+    ],
+    "http://localhost:8080/product/66VCHSJNUP": [
+      "http://localhost:8080/setCurrency",
+      "http://localhost:8080/product/66VCHSJNUP?lfi1=/etc/passwd",
+      "http://localhost:8080/cart",
+      "http://localhost:8080/product/66VCHSJNUP?sqb1=waitfor",
+      "http://localhost:8080/product/66VCHSJNUP"
+    ],
+    "http://localhost:8080/product/1YMWWN1N4O": [
+      "http://localhost:8080/setCurrency",
+      "http://localhost:8080/cart",
+      "http://localhost:8080/product/1YMWWN1N4O?lfi1=/etc/passwd",
+      "http://localhost:8080/product/1YMWWN1N4O?sqb1=waitfor",
+      "http://localhost:8080/product/1YMWWN1N4O"
+    ],
+    "http://localhost:8080/product/L9ECAV7KIM": [
+      "http://localhost:8080/setCurrency",
+      "http://localhost:8080/cart",
+      "http://localhost:8080/product/L9ECAV7KIM?sqb1=waitfor",
+      "http://localhost:8080/product/L9ECAV7KIM?lfi1=/etc/passwd",
+      "http://localhost:8080/product/L9ECAV7KIM"
+    ],
+    "http://localhost:8080/product/2ZYFJ3GM2N": [
+      "http://localhost:8080/setCurrency",
+      "http://localhost:8080/product/2ZYFJ3GM2N?lfi1=/etc/passwd",
+      "http://localhost:8080/product/2ZYFJ3GM2N?sqb1=waitfor",
+      "http://localhost:8080/cart",
+      "http://localhost:8080/product/2ZYFJ3GM2N"
+    ],
+    "http://localhost:8080/product/0PUK6V6EV0": [
+      "http://localhost:8080/setCurrency",
+      "http://localhost:8080/cart",
+      "http://localhost:8080/product/0PUK6V6EV0",
+      "http://localhost:8080/product/0PUK6V6EV0?sqb1=waitfor",
+      "http://localhost:8080/product/0PUK6V6EV0?lfi1=/etc/passwd"
+    ],
+    "http://localhost:8080/product/LS4PSXUNUM": [
+      "http://localhost:8080/setCurrency",
+      "http://localhost:8080/product/LS4PSXUNUM?sqb1=waitfor",
+      "http://localhost:8080/product/LS4PSXUNUM",
+      "http://localhost:8080/cart",
+      "http://localhost:8080/product/LS4PSXUNUM?lfi1=/etc/passwd"
+    ],
+    "http://localhost:8080/product/9SIQT8TOJO": [
+      "http://localhost:8080/setCurrency",
+      "http://localhost:8080/product/9SIQT8TOJO",
+      "http://localhost:8080/cart",
+      "http://localhost:8080/product/9SIQT8TOJO?sqb1=waitfor",
+      "http://localhost:8080/product/9SIQT8TOJO?lfi1=/etc/passwd"
+    ],
+    "http://localhost:8080/product/6E92ZMYYFZ": [
+      "http://localhost:8080/setCurrency",
+      "http://localhost:8080/product/6E92ZMYYFZ?lfi1=/etc/passwd",
+      "http://localhost:8080/product/6E92ZMYYFZ",
+      "http://localhost:8080/cart",
+      "http://localhost:8080/product/6E92ZMYYFZ?sqb1=waitfor"
+    ],
+    "http://localhost:8080/login": [
+      "http://localhost:8080/login/api/v1",
+      "http://localhost:8080/login",
+      "http://localhost:8080/login/api/v2",
+      "http://localhost:8080/login/admin",
+      "http://localhost:8080/login/api/jwt",
+      "http://localhost:8080/login/api/sso",
+      "http://localhost:8080/login/support",
+      "http://localhost:8080/login/standard",
+      "http://localhost:8080/login/api/oauth",
+      "http://localhost:8080/login/vendor",
+      "http://localhost:8080/login/legacy"
+    ],
+    "http://localhost:8080/vulns-suite": [
+      "http://localhost:8080/vulns-suite"
+    ],
+    "http://localhost:8080/product/OLJCESPC7Z?lfi1=/etc/passwd": [
+      "http://localhost:8080/product/OLJCESPC7Z?lfi1=/etc/passwd"
+    ],
+    "http://localhost:8080/product/OLJCESPC7Z?sqb1=waitfor": [
+      "http://localhost:8080/product/OLJCESPC7Z?sqb1=waitfor"
+    ],
+    "http://localhost:8080/product/66VCHSJNUP?lfi1=/etc/passwd": [
+      "http://localhost:8080/product/66VCHSJNUP?lfi1=/etc/passwd"
+    ],
+    "http://localhost:8080/product/66VCHSJNUP?sqb1=waitfor": [
+      "http://localhost:8080/product/66VCHSJNUP?sqb1=waitfor"
+    ],
+    "http://localhost:8080/product/1YMWWN1N4O?lfi1=/etc/passwd": [
+      "http://localhost:8080/product/1YMWWN1N4O?lfi1=/etc/passwd"
+    ],
+    "http://localhost:8080/product/1YMWWN1N4O?sqb1=waitfor": [
+      "http://localhost:8080/product/1YMWWN1N4O?sqb1=waitfor"
+    ],
+    "http://localhost:8080/product/L9ECAV7KIM?lfi1=/etc/passwd": [
+      "http://localhost:8080/product/L9ECAV7KIM?lfi1=/etc/passwd"
+    ],
+    "http://localhost:8080/product/L9ECAV7KIM?sqb1=waitfor": [
+      "http://localhost:8080/product/L9ECAV7KIM?sqb1=waitfor"
+    ],
+    "http://localhost:8080/product/2ZYFJ3GM2N?lfi1=/etc/passwd": [
+      "http://localhost:8080/product/2ZYFJ3GM2N?lfi1=/etc/passwd"
+    ],
+    "http://localhost:8080/product/2ZYFJ3GM2N?sqb1=waitfor": [
+      "http://localhost:8080/product/2ZYFJ3GM2N?sqb1=waitfor"
+    ],
+    "http://localhost:8080/product/0PUK6V6EV0?lfi1=/etc/passwd": [
+      "http://localhost:8080/product/0PUK6V6EV0?lfi1=/etc/passwd"
+    ],
+    "http://localhost:8080/product/0PUK6V6EV0?sqb1=waitfor": [
+      "http://localhost:8080/product/0PUK6V6EV0?sqb1=waitfor"
+    ],
+    "http://localhost:8080/product/LS4PSXUNUM?lfi1=/etc/passwd": [
+      "http://localhost:8080/product/LS4PSXUNUM?lfi1=/etc/passwd"
+    ],
+    "http://localhost:8080/product/LS4PSXUNUM?sqb1=waitfor": [
+      "http://localhost:8080/product/LS4PSXUNUM?sqb1=waitfor"
+    ],
+    "http://localhost:8080/product/9SIQT8TOJO?lfi1=/etc/passwd": [
+      "http://localhost:8080/product/9SIQT8TOJO?lfi1=/etc/passwd"
+    ],
+    "http://localhost:8080/product/9SIQT8TOJO?sqb1=waitfor": [
+      "http://localhost:8080/product/9SIQT8TOJO?sqb1=waitfor"
+    ],
+    "http://localhost:8080/product/6E92ZMYYFZ?lfi1=/etc/passwd": [
+      "http://localhost:8080/product/6E92ZMYYFZ?lfi1=/etc/passwd"
+    ],
+    "http://localhost:8080/product/6E92ZMYYFZ?sqb1=waitfor": [
+      "http://localhost:8080/product/6E92ZMYYFZ?sqb1=waitfor"
+    ]
+  }
+}

@@ -1,0 +1,773 @@
+{
+    "target_url": "http://localhost:8080/ui",
+    "state": "FINISHED",
+    "scan_start": "2026-06-22T23:48:43.731451+00:00",
+    "scan_end": "2026-06-22T23:49:52.012507+00:00",
+    "duration_seconds": 68.28,
+    "endpoints_found": 10,
+    "attack_vectors_sent": 4900,
+    "vulnerabilities_total": 63,
+    "severity_breakdown": {
+        "Critical": 0,
+        "High": 0,
+        "Medium": 33,
+        "Low": 30
+    },
+    "vulnerabilities": [
+        {
+            "vulnerability_type": "missing_header",
+            "severity": "Medium",
+            "url": "http://localhost:8080/ui/api/auth/login",
+            "method": "GET",
+            "parameter": "(response header)",
+            "payload": "",
+            "evidence": "CSP prevents XSS and data injection attacks",
+            "description": "The parameter '(response header)' in GET http://localhost:8080/ui/api/auth/login appears vulnerable to MISSING CONTENT-SECURITY-POLICY HEADER. CSP prevents XSS and data injection attacks"
+        },
+        {
+            "vulnerability_type": "missing_header",
+            "severity": "Medium",
+            "url": "http://localhost:8080/ui/api/auth/login",
+            "method": "GET",
+            "parameter": "(response header)",
+            "payload": "",
+            "evidence": "Without this header, the site is vulnerable to Clickjacking",
+            "description": "The parameter '(response header)' in GET http://localhost:8080/ui/api/auth/login appears vulnerable to MISSING X-FRAME-OPTIONS HEADER. Without this header, the site is vulnerable to Clickjacking"
+        },
+        {
+            "vulnerability_type": "missing_header",
+            "severity": "Low",
+            "url": "http://localhost:8080/ui/api/auth/login",
+            "method": "GET",
+            "parameter": "(response header)",
+            "payload": "",
+            "evidence": "MIME-type sniffing can be exploited for XSS",
+            "description": "The parameter '(response header)' in GET http://localhost:8080/ui/api/auth/login appears vulnerable to MISSING X-CONTENT-TYPE-OPTIONS HEADER. MIME-type sniffing can be exploited for XSS"
+        },
+        {
+            "vulnerability_type": "missing_header",
+            "severity": "Medium",
+            "url": "http://localhost:8080/ui/api/auth/login",
+            "method": "GET",
+            "parameter": "(response header)",
+            "payload": "",
+            "evidence": "HSTS prevents SSL-stripping attacks",
+            "description": "The parameter '(response header)' in GET http://localhost:8080/ui/api/auth/login appears vulnerable to MISSING STRICT-TRANSPORT-SECURITY (HSTS) HEADER. HSTS prevents SSL-stripping attacks"
+        },
+        {
+            "vulnerability_type": "missing_header",
+            "severity": "Low",
+            "url": "http://localhost:8080/ui/api/auth/login",
+            "method": "GET",
+            "parameter": "(response header)",
+            "payload": "",
+            "evidence": "Referrer leakage can expose sensitive URL paths",
+            "description": "The parameter '(response header)' in GET http://localhost:8080/ui/api/auth/login appears vulnerable to MISSING REFERRER-POLICY HEADER. Referrer leakage can expose sensitive URL paths"
+        },
+        {
+            "vulnerability_type": "missing_header",
+            "severity": "Low",
+            "url": "http://localhost:8080/ui/api/auth/login",
+            "method": "GET",
+            "parameter": "(response header)",
+            "payload": "",
+            "evidence": "Browser features (camera, geolocation) are unrestricted",
+            "description": "The parameter '(response header)' in GET http://localhost:8080/ui/api/auth/login appears vulnerable to MISSING PERMISSIONS-POLICY HEADER. Browser features (camera, geolocation) are unrestricted"
+        },
+        {
+            "vulnerability_type": "missing_header",
+            "severity": "Medium",
+            "url": "http://localhost:8080/ui/api/posts",
+            "method": "GET",
+            "parameter": "(response header)",
+            "payload": "",
+            "evidence": "CSP prevents XSS and data injection attacks",
+            "description": "The parameter '(response header)' in GET http://localhost:8080/ui/api/posts appears vulnerable to MISSING CONTENT-SECURITY-POLICY HEADER. CSP prevents XSS and data injection attacks"
+        },
+        {
+            "vulnerability_type": "missing_header",
+            "severity": "Medium",
+            "url": "http://localhost:8080/ui/api/posts",
+            "method": "GET",
+            "parameter": "(response header)",
+            "payload": "",
+            "evidence": "Without this header, the site is vulnerable to Clickjacking",
+            "description": "The parameter '(response header)' in GET http://localhost:8080/ui/api/posts appears vulnerable to MISSING X-FRAME-OPTIONS HEADER. Without this header, the site is vulnerable to Clickjacking"
+        },
+        {
+            "vulnerability_type": "missing_header",
+            "severity": "Low",
+            "url": "http://localhost:8080/ui/api/posts",
+            "method": "GET",
+            "parameter": "(response header)",
+            "payload": "",
+            "evidence": "MIME-type sniffing can be exploited for XSS",
+            "description": "The parameter '(response header)' in GET http://localhost:8080/ui/api/posts appears vulnerable to MISSING X-CONTENT-TYPE-OPTIONS HEADER. MIME-type sniffing can be exploited for XSS"
+        },
+        {
+            "vulnerability_type": "missing_header",
+            "severity": "Medium",
+            "url": "http://localhost:8080/ui/api/posts",
+            "method": "GET",
+            "parameter": "(response header)",
+            "payload": "",
+            "evidence": "HSTS prevents SSL-stripping attacks",
+            "description": "The parameter '(response header)' in GET http://localhost:8080/ui/api/posts appears vulnerable to MISSING STRICT-TRANSPORT-SECURITY (HSTS) HEADER. HSTS prevents SSL-stripping attacks"
+        },
+        {
+            "vulnerability_type": "missing_header",
+            "severity": "Low",
+            "url": "http://localhost:8080/ui/api/posts",
+            "method": "GET",
+            "parameter": "(response header)",
+            "payload": "",
+            "evidence": "Referrer leakage can expose sensitive URL paths",
+            "description": "The parameter '(response header)' in GET http://localhost:8080/ui/api/posts appears vulnerable to MISSING REFERRER-POLICY HEADER. Referrer leakage can expose sensitive URL paths"
+        },
+        {
+            "vulnerability_type": "missing_header",
+            "severity": "Low",
+            "url": "http://localhost:8080/ui/api/posts",
+            "method": "GET",
+            "parameter": "(response header)",
+            "payload": "",
+            "evidence": "Browser features (camera, geolocation) are unrestricted",
+            "description": "The parameter '(response header)' in GET http://localhost:8080/ui/api/posts appears vulnerable to MISSING PERMISSIONS-POLICY HEADER. Browser features (camera, geolocation) are unrestricted"
+        },
+        {
+            "vulnerability_type": "missing_header",
+            "severity": "Medium",
+            "url": "http://localhost:8080/ui",
+            "method": "GET",
+            "parameter": "(response header)",
+            "payload": "",
+            "evidence": "CSP prevents XSS and data injection attacks",
+            "description": "The parameter '(response header)' in GET http://localhost:8080/ui appears vulnerable to MISSING CONTENT-SECURITY-POLICY HEADER. CSP prevents XSS and data injection attacks"
+        },
+        {
+            "vulnerability_type": "missing_header",
+            "severity": "Medium",
+            "url": "http://localhost:8080/ui",
+            "method": "GET",
+            "parameter": "(response header)",
+            "payload": "",
+            "evidence": "Without this header, the site is vulnerable to Clickjacking",
+            "description": "The parameter '(response header)' in GET http://localhost:8080/ui appears vulnerable to MISSING X-FRAME-OPTIONS HEADER. Without this header, the site is vulnerable to Clickjacking"
+        },
+        {
+            "vulnerability_type": "missing_header",
+            "severity": "Low",
+            "url": "http://localhost:8080/ui",
+            "method": "GET",
+            "parameter": "(response header)",
+            "payload": "",
+            "evidence": "MIME-type sniffing can be exploited for XSS",
+            "description": "The parameter '(response header)' in GET http://localhost:8080/ui appears vulnerable to MISSING X-CONTENT-TYPE-OPTIONS HEADER. MIME-type sniffing can be exploited for XSS"
+        },
+        {
+            "vulnerability_type": "missing_header",
+            "severity": "Medium",
+            "url": "http://localhost:8080/ui",
+            "method": "GET",
+            "parameter": "(response header)",
+            "payload": "",
+            "evidence": "HSTS prevents SSL-stripping attacks",
+            "description": "The parameter '(response header)' in GET http://localhost:8080/ui appears vulnerable to MISSING STRICT-TRANSPORT-SECURITY (HSTS) HEADER. HSTS prevents SSL-stripping attacks"
+        },
+        {
+            "vulnerability_type": "missing_header",
+            "severity": "Low",
+            "url": "http://localhost:8080/ui",
+            "method": "GET",
+            "parameter": "(response header)",
+            "payload": "",
+            "evidence": "Referrer leakage can expose sensitive URL paths",
+            "description": "The parameter '(response header)' in GET http://localhost:8080/ui appears vulnerable to MISSING REFERRER-POLICY HEADER. Referrer leakage can expose sensitive URL paths"
+        },
+        {
+            "vulnerability_type": "missing_header",
+            "severity": "Low",
+            "url": "http://localhost:8080/ui",
+            "method": "GET",
+            "parameter": "(response header)",
+            "payload": "",
+            "evidence": "Browser features (camera, geolocation) are unrestricted",
+            "description": "The parameter '(response header)' in GET http://localhost:8080/ui appears vulnerable to MISSING PERMISSIONS-POLICY HEADER. Browser features (camera, geolocation) are unrestricted"
+        },
+        {
+            "vulnerability_type": "info_disclosure",
+            "severity": "Medium",
+            "url": "http://localhost:8080/ui",
+            "method": "GET",
+            "parameter": "Header: x-powered-by",
+            "payload": "",
+            "evidence": "Header value: 'Next.js'",
+            "description": "The parameter 'Header: x-powered-by' in GET http://localhost:8080/ui appears vulnerable to TECHNOLOGY STACK DISCLOSED VIA X-POWERED-BY HEADER. Header value: 'Next.js'"
+        },
+        {
+            "vulnerability_type": "missing_header",
+            "severity": "Medium",
+            "url": "http://localhost:8080/ui/api/auth/jwt-payload",
+            "method": "GET",
+            "parameter": "(response header)",
+            "payload": "",
+            "evidence": "CSP prevents XSS and data injection attacks",
+            "description": "The parameter '(response header)' in GET http://localhost:8080/ui/api/auth/jwt-payload appears vulnerable to MISSING CONTENT-SECURITY-POLICY HEADER. CSP prevents XSS and data injection attacks"
+        },
+        {
+            "vulnerability_type": "missing_header",
+            "severity": "Medium",
+            "url": "http://localhost:8080/ui/api/auth/jwt-payload",
+            "method": "GET",
+            "parameter": "(response header)",
+            "payload": "",
+            "evidence": "Without this header, the site is vulnerable to Clickjacking",
+            "description": "The parameter '(response header)' in GET http://localhost:8080/ui/api/auth/jwt-payload appears vulnerable to MISSING X-FRAME-OPTIONS HEADER. Without this header, the site is vulnerable to Clickjacking"
+        },
+        {
+            "vulnerability_type": "missing_header",
+            "severity": "Low",
+            "url": "http://localhost:8080/ui/api/auth/jwt-payload",
+            "method": "GET",
+            "parameter": "(response header)",
+            "payload": "",
+            "evidence": "MIME-type sniffing can be exploited for XSS",
+            "description": "The parameter '(response header)' in GET http://localhost:8080/ui/api/auth/jwt-payload appears vulnerable to MISSING X-CONTENT-TYPE-OPTIONS HEADER. MIME-type sniffing can be exploited for XSS"
+        },
+        {
+            "vulnerability_type": "missing_header",
+            "severity": "Medium",
+            "url": "http://localhost:8080/ui/api/auth/jwt-payload",
+            "method": "GET",
+            "parameter": "(response header)",
+            "payload": "",
+            "evidence": "HSTS prevents SSL-stripping attacks",
+            "description": "The parameter '(response header)' in GET http://localhost:8080/ui/api/auth/jwt-payload appears vulnerable to MISSING STRICT-TRANSPORT-SECURITY (HSTS) HEADER. HSTS prevents SSL-stripping attacks"
+        },
+        {
+            "vulnerability_type": "missing_header",
+            "severity": "Low",
+            "url": "http://localhost:8080/ui/api/auth/jwt-payload",
+            "method": "GET",
+            "parameter": "(response header)",
+            "payload": "",
+            "evidence": "Referrer leakage can expose sensitive URL paths",
+            "description": "The parameter '(response header)' in GET http://localhost:8080/ui/api/auth/jwt-payload appears vulnerable to MISSING REFERRER-POLICY HEADER. Referrer leakage can expose sensitive URL paths"
+        },
+        {
+            "vulnerability_type": "missing_header",
+            "severity": "Low",
+            "url": "http://localhost:8080/ui/api/auth/jwt-payload",
+            "method": "GET",
+            "parameter": "(response header)",
+            "payload": "",
+            "evidence": "Browser features (camera, geolocation) are unrestricted",
+            "description": "The parameter '(response header)' in GET http://localhost:8080/ui/api/auth/jwt-payload appears vulnerable to MISSING PERMISSIONS-POLICY HEADER. Browser features (camera, geolocation) are unrestricted"
+        },
+        {
+            "vulnerability_type": "missing_header",
+            "severity": "Medium",
+            "url": "http://localhost:8080/login",
+            "method": "GET",
+            "parameter": "(response header)",
+            "payload": "",
+            "evidence": "CSP prevents XSS and data injection attacks",
+            "description": "The parameter '(response header)' in GET http://localhost:8080/login appears vulnerable to MISSING CONTENT-SECURITY-POLICY HEADER. CSP prevents XSS and data injection attacks"
+        },
+        {
+            "vulnerability_type": "missing_header",
+            "severity": "Medium",
+            "url": "http://localhost:8080/login",
+            "method": "GET",
+            "parameter": "(response header)",
+            "payload": "",
+            "evidence": "Without this header, the site is vulnerable to Clickjacking",
+            "description": "The parameter '(response header)' in GET http://localhost:8080/login appears vulnerable to MISSING X-FRAME-OPTIONS HEADER. Without this header, the site is vulnerable to Clickjacking"
+        },
+        {
+            "vulnerability_type": "missing_header",
+            "severity": "Low",
+            "url": "http://localhost:8080/login",
+            "method": "GET",
+            "parameter": "(response header)",
+            "payload": "",
+            "evidence": "MIME-type sniffing can be exploited for XSS",
+            "description": "The parameter '(response header)' in GET http://localhost:8080/login appears vulnerable to MISSING X-CONTENT-TYPE-OPTIONS HEADER. MIME-type sniffing can be exploited for XSS"
+        },
+        {
+            "vulnerability_type": "missing_header",
+            "severity": "Medium",
+            "url": "http://localhost:8080/login",
+            "method": "GET",
+            "parameter": "(response header)",
+            "payload": "",
+            "evidence": "HSTS prevents SSL-stripping attacks",
+            "description": "The parameter '(response header)' in GET http://localhost:8080/login appears vulnerable to MISSING STRICT-TRANSPORT-SECURITY (HSTS) HEADER. HSTS prevents SSL-stripping attacks"
+        },
+        {
+            "vulnerability_type": "missing_header",
+            "severity": "Low",
+            "url": "http://localhost:8080/login",
+            "method": "GET",
+            "parameter": "(response header)",
+            "payload": "",
+            "evidence": "Referrer leakage can expose sensitive URL paths",
+            "description": "The parameter '(response header)' in GET http://localhost:8080/login appears vulnerable to MISSING REFERRER-POLICY HEADER. Referrer leakage can expose sensitive URL paths"
+        },
+        {
+            "vulnerability_type": "missing_header",
+            "severity": "Low",
+            "url": "http://localhost:8080/login",
+            "method": "GET",
+            "parameter": "(response header)",
+            "payload": "",
+            "evidence": "Browser features (camera, geolocation) are unrestricted",
+            "description": "The parameter '(response header)' in GET http://localhost:8080/login appears vulnerable to MISSING PERMISSIONS-POLICY HEADER. Browser features (camera, geolocation) are unrestricted"
+        },
+        {
+            "vulnerability_type": "missing_header",
+            "severity": "Medium",
+            "url": "http://localhost:8080/ui/api/ad",
+            "method": "GET",
+            "parameter": "(response header)",
+            "payload": "",
+            "evidence": "CSP prevents XSS and data injection attacks",
+            "description": "The parameter '(response header)' in GET http://localhost:8080/ui/api/ad appears vulnerable to MISSING CONTENT-SECURITY-POLICY HEADER. CSP prevents XSS and data injection attacks"
+        },
+        {
+            "vulnerability_type": "missing_header",
+            "severity": "Medium",
+            "url": "http://localhost:8080/ui/api/ad",
+            "method": "GET",
+            "parameter": "(response header)",
+            "payload": "",
+            "evidence": "Without this header, the site is vulnerable to Clickjacking",
+            "description": "The parameter '(response header)' in GET http://localhost:8080/ui/api/ad appears vulnerable to MISSING X-FRAME-OPTIONS HEADER. Without this header, the site is vulnerable to Clickjacking"
+        },
+        {
+            "vulnerability_type": "missing_header",
+            "severity": "Low",
+            "url": "http://localhost:8080/ui/api/ad",
+            "method": "GET",
+            "parameter": "(response header)",
+            "payload": "",
+            "evidence": "MIME-type sniffing can be exploited for XSS",
+            "description": "The parameter '(response header)' in GET http://localhost:8080/ui/api/ad appears vulnerable to MISSING X-CONTENT-TYPE-OPTIONS HEADER. MIME-type sniffing can be exploited for XSS"
+        },
+        {
+            "vulnerability_type": "missing_header",
+            "severity": "Medium",
+            "url": "http://localhost:8080/ui/api/ad",
+            "method": "GET",
+            "parameter": "(response header)",
+            "payload": "",
+            "evidence": "HSTS prevents SSL-stripping attacks",
+            "description": "The parameter '(response header)' in GET http://localhost:8080/ui/api/ad appears vulnerable to MISSING STRICT-TRANSPORT-SECURITY (HSTS) HEADER. HSTS prevents SSL-stripping attacks"
+        },
+        {
+            "vulnerability_type": "missing_header",
+            "severity": "Low",
+            "url": "http://localhost:8080/ui/api/ad",
+            "method": "GET",
+            "parameter": "(response header)",
+            "payload": "",
+            "evidence": "Referrer leakage can expose sensitive URL paths",
+            "description": "The parameter '(response header)' in GET http://localhost:8080/ui/api/ad appears vulnerable to MISSING REFERRER-POLICY HEADER. Referrer leakage can expose sensitive URL paths"
+        },
+        {
+            "vulnerability_type": "missing_header",
+            "severity": "Low",
+            "url": "http://localhost:8080/ui/api/ad",
+            "method": "GET",
+            "parameter": "(response header)",
+            "payload": "",
+            "evidence": "Browser features (camera, geolocation) are unrestricted",
+            "description": "The parameter '(response header)' in GET http://localhost:8080/ui/api/ad appears vulnerable to MISSING PERMISSIONS-POLICY HEADER. Browser features (camera, geolocation) are unrestricted"
+        },
+        {
+            "vulnerability_type": "missing_header",
+            "severity": "Medium",
+            "url": "http://localhost:8080/",
+            "method": "GET",
+            "parameter": "(response header)",
+            "payload": "",
+            "evidence": "CSP prevents XSS and data injection attacks",
+            "description": "The parameter '(response header)' in GET http://localhost:8080/ appears vulnerable to MISSING CONTENT-SECURITY-POLICY HEADER. CSP prevents XSS and data injection attacks"
+        },
+        {
+            "vulnerability_type": "missing_header",
+            "severity": "Medium",
+            "url": "http://localhost:8080/",
+            "method": "GET",
+            "parameter": "(response header)",
+            "payload": "",
+            "evidence": "Without this header, the site is vulnerable to Clickjacking",
+            "description": "The parameter '(response header)' in GET http://localhost:8080/ appears vulnerable to MISSING X-FRAME-OPTIONS HEADER. Without this header, the site is vulnerable to Clickjacking"
+        },
+        {
+            "vulnerability_type": "missing_header",
+            "severity": "Low",
+            "url": "http://localhost:8080/",
+            "method": "GET",
+            "parameter": "(response header)",
+            "payload": "",
+            "evidence": "MIME-type sniffing can be exploited for XSS",
+            "description": "The parameter '(response header)' in GET http://localhost:8080/ appears vulnerable to MISSING X-CONTENT-TYPE-OPTIONS HEADER. MIME-type sniffing can be exploited for XSS"
+        },
+        {
+            "vulnerability_type": "missing_header",
+            "severity": "Medium",
+            "url": "http://localhost:8080/",
+            "method": "GET",
+            "parameter": "(response header)",
+            "payload": "",
+            "evidence": "HSTS prevents SSL-stripping attacks",
+            "description": "The parameter '(response header)' in GET http://localhost:8080/ appears vulnerable to MISSING STRICT-TRANSPORT-SECURITY (HSTS) HEADER. HSTS prevents SSL-stripping attacks"
+        },
+        {
+            "vulnerability_type": "missing_header",
+            "severity": "Low",
+            "url": "http://localhost:8080/",
+            "method": "GET",
+            "parameter": "(response header)",
+            "payload": "",
+            "evidence": "Referrer leakage can expose sensitive URL paths",
+            "description": "The parameter '(response header)' in GET http://localhost:8080/ appears vulnerable to MISSING REFERRER-POLICY HEADER. Referrer leakage can expose sensitive URL paths"
+        },
+        {
+            "vulnerability_type": "missing_header",
+            "severity": "Low",
+            "url": "http://localhost:8080/",
+            "method": "GET",
+            "parameter": "(response header)",
+            "payload": "",
+            "evidence": "Browser features (camera, geolocation) are unrestricted",
+            "description": "The parameter '(response header)' in GET http://localhost:8080/ appears vulnerable to MISSING PERMISSIONS-POLICY HEADER. Browser features (camera, geolocation) are unrestricted"
+        },
+        {
+            "vulnerability_type": "info_disclosure",
+            "severity": "Medium",
+            "url": "http://localhost:8080/",
+            "method": "GET",
+            "parameter": "Header: x-powered-by",
+            "payload": "",
+            "evidence": "Header value: 'Next.js'",
+            "description": "The parameter 'Header: x-powered-by' in GET http://localhost:8080/ appears vulnerable to TECHNOLOGY STACK DISCLOSED VIA X-POWERED-BY HEADER. Header value: 'Next.js'"
+        },
+        {
+            "vulnerability_type": "missing_header",
+            "severity": "Medium",
+            "url": "http://localhost:8080/ui/api/auth/ad-manager",
+            "method": "GET",
+            "parameter": "(response header)",
+            "payload": "",
+            "evidence": "CSP prevents XSS and data injection attacks",
+            "description": "The parameter '(response header)' in GET http://localhost:8080/ui/api/auth/ad-manager appears vulnerable to MISSING CONTENT-SECURITY-POLICY HEADER. CSP prevents XSS and data injection attacks"
+        },
+        {
+            "vulnerability_type": "missing_header",
+            "severity": "Medium",
+            "url": "http://localhost:8080/ui/api/auth/ad-manager",
+            "method": "GET",
+            "parameter": "(response header)",
+            "payload": "",
+            "evidence": "Without this header, the site is vulnerable to Clickjacking",
+            "description": "The parameter '(response header)' in GET http://localhost:8080/ui/api/auth/ad-manager appears vulnerable to MISSING X-FRAME-OPTIONS HEADER. Without this header, the site is vulnerable to Clickjacking"
+        },
+        {
+            "vulnerability_type": "missing_header",
+            "severity": "Low",
+            "url": "http://localhost:8080/ui/api/auth/ad-manager",
+            "method": "GET",
+            "parameter": "(response header)",
+            "payload": "",
+            "evidence": "MIME-type sniffing can be exploited for XSS",
+            "description": "The parameter '(response header)' in GET http://localhost:8080/ui/api/auth/ad-manager appears vulnerable to MISSING X-CONTENT-TYPE-OPTIONS HEADER. MIME-type sniffing can be exploited for XSS"
+        },
+        {
+            "vulnerability_type": "missing_header",
+            "severity": "Medium",
+            "url": "http://localhost:8080/ui/api/auth/ad-manager",
+            "method": "GET",
+            "parameter": "(response header)",
+            "payload": "",
+            "evidence": "HSTS prevents SSL-stripping attacks",
+            "description": "The parameter '(response header)' in GET http://localhost:8080/ui/api/auth/ad-manager appears vulnerable to MISSING STRICT-TRANSPORT-SECURITY (HSTS) HEADER. HSTS prevents SSL-stripping attacks"
+        },
+        {
+            "vulnerability_type": "missing_header",
+            "severity": "Low",
+            "url": "http://localhost:8080/ui/api/auth/ad-manager",
+            "method": "GET",
+            "parameter": "(response header)",
+            "payload": "",
+            "evidence": "Referrer leakage can expose sensitive URL paths",
+            "description": "The parameter '(response header)' in GET http://localhost:8080/ui/api/auth/ad-manager appears vulnerable to MISSING REFERRER-POLICY HEADER. Referrer leakage can expose sensitive URL paths"
+        },
+        {
+            "vulnerability_type": "missing_header",
+            "severity": "Low",
+            "url": "http://localhost:8080/ui/api/auth/ad-manager",
+            "method": "GET",
+            "parameter": "(response header)",
+            "payload": "",
+            "evidence": "Browser features (camera, geolocation) are unrestricted",
+            "description": "The parameter '(response header)' in GET http://localhost:8080/ui/api/auth/ad-manager appears vulnerable to MISSING PERMISSIONS-POLICY HEADER. Browser features (camera, geolocation) are unrestricted"
+        },
+        {
+            "vulnerability_type": "missing_header",
+            "severity": "Medium",
+            "url": "http://localhost:8080/ad-service",
+            "method": "GET",
+            "parameter": "(response header)",
+            "payload": "",
+            "evidence": "CSP prevents XSS and data injection attacks",
+            "description": "The parameter '(response header)' in GET http://localhost:8080/ad-service appears vulnerable to MISSING CONTENT-SECURITY-POLICY HEADER. CSP prevents XSS and data injection attacks"
+        },
+        {
+            "vulnerability_type": "missing_header",
+            "severity": "Medium",
+            "url": "http://localhost:8080/ad-service",
+            "method": "GET",
+            "parameter": "(response header)",
+            "payload": "",
+            "evidence": "Without this header, the site is vulnerable to Clickjacking",
+            "description": "The parameter '(response header)' in GET http://localhost:8080/ad-service appears vulnerable to MISSING X-FRAME-OPTIONS HEADER. Without this header, the site is vulnerable to Clickjacking"
+        },
+        {
+            "vulnerability_type": "missing_header",
+            "severity": "Low",
+            "url": "http://localhost:8080/ad-service",
+            "method": "GET",
+            "parameter": "(response header)",
+            "payload": "",
+            "evidence": "MIME-type sniffing can be exploited for XSS",
+            "description": "The parameter '(response header)' in GET http://localhost:8080/ad-service appears vulnerable to MISSING X-CONTENT-TYPE-OPTIONS HEADER. MIME-type sniffing can be exploited for XSS"
+        },
+        {
+            "vulnerability_type": "missing_header",
+            "severity": "Medium",
+            "url": "http://localhost:8080/ad-service",
+            "method": "GET",
+            "parameter": "(response header)",
+            "payload": "",
+            "evidence": "HSTS prevents SSL-stripping attacks",
+            "description": "The parameter '(response header)' in GET http://localhost:8080/ad-service appears vulnerable to MISSING STRICT-TRANSPORT-SECURITY (HSTS) HEADER. HSTS prevents SSL-stripping attacks"
+        },
+        {
+            "vulnerability_type": "missing_header",
+            "severity": "Low",
+            "url": "http://localhost:8080/ad-service",
+            "method": "GET",
+            "parameter": "(response header)",
+            "payload": "",
+            "evidence": "Referrer leakage can expose sensitive URL paths",
+            "description": "The parameter '(response header)' in GET http://localhost:8080/ad-service appears vulnerable to MISSING REFERRER-POLICY HEADER. Referrer leakage can expose sensitive URL paths"
+        },
+        {
+            "vulnerability_type": "missing_header",
+            "severity": "Low",
+            "url": "http://localhost:8080/ad-service",
+            "method": "GET",
+            "parameter": "(response header)",
+            "payload": "",
+            "evidence": "Browser features (camera, geolocation) are unrestricted",
+            "description": "The parameter '(response header)' in GET http://localhost:8080/ad-service appears vulnerable to MISSING PERMISSIONS-POLICY HEADER. Browser features (camera, geolocation) are unrestricted"
+        },
+        {
+            "vulnerability_type": "insecure_cookie",
+            "severity": "Medium",
+            "url": "http://localhost:8080/ad-service",
+            "method": "GET",
+            "parameter": "Cookie: current_ad",
+            "payload": "",
+            "evidence": "Cookie has: missing HttpOnly flag, missing Secure flag, missing SameSite attribute",
+            "description": "The parameter 'Cookie: current_ad' in GET http://localhost:8080/ad-service appears vulnerable to INSECURE COOKIE: CURRENT_AD. Cookie has: missing HttpOnly flag, missing Secure flag, missing SameSite attribute"
+        },
+        {
+            "vulnerability_type": "missing_header",
+            "severity": "Medium",
+            "url": "http://localhost:8080/ui/api/deployment-health",
+            "method": "GET",
+            "parameter": "(response header)",
+            "payload": "",
+            "evidence": "CSP prevents XSS and data injection attacks",
+            "description": "The parameter '(response header)' in GET http://localhost:8080/ui/api/deployment-health appears vulnerable to MISSING CONTENT-SECURITY-POLICY HEADER. CSP prevents XSS and data injection attacks"
+        },
+        {
+            "vulnerability_type": "missing_header",
+            "severity": "Medium",
+            "url": "http://localhost:8080/ui/api/deployment-health",
+            "method": "GET",
+            "parameter": "(response header)",
+            "payload": "",
+            "evidence": "Without this header, the site is vulnerable to Clickjacking",
+            "description": "The parameter '(response header)' in GET http://localhost:8080/ui/api/deployment-health appears vulnerable to MISSING X-FRAME-OPTIONS HEADER. Without this header, the site is vulnerable to Clickjacking"
+        },
+        {
+            "vulnerability_type": "missing_header",
+            "severity": "Low",
+            "url": "http://localhost:8080/ui/api/deployment-health",
+            "method": "GET",
+            "parameter": "(response header)",
+            "payload": "",
+            "evidence": "MIME-type sniffing can be exploited for XSS",
+            "description": "The parameter '(response header)' in GET http://localhost:8080/ui/api/deployment-health appears vulnerable to MISSING X-CONTENT-TYPE-OPTIONS HEADER. MIME-type sniffing can be exploited for XSS"
+        },
+        {
+            "vulnerability_type": "missing_header",
+            "severity": "Medium",
+            "url": "http://localhost:8080/ui/api/deployment-health",
+            "method": "GET",
+            "parameter": "(response header)",
+            "payload": "",
+            "evidence": "HSTS prevents SSL-stripping attacks",
+            "description": "The parameter '(response header)' in GET http://localhost:8080/ui/api/deployment-health appears vulnerable to MISSING STRICT-TRANSPORT-SECURITY (HSTS) HEADER. HSTS prevents SSL-stripping attacks"
+        },
+        {
+            "vulnerability_type": "missing_header",
+            "severity": "Low",
+            "url": "http://localhost:8080/ui/api/deployment-health",
+            "method": "GET",
+            "parameter": "(response header)",
+            "payload": "",
+            "evidence": "Referrer leakage can expose sensitive URL paths",
+            "description": "The parameter '(response header)' in GET http://localhost:8080/ui/api/deployment-health appears vulnerable to MISSING REFERRER-POLICY HEADER. Referrer leakage can expose sensitive URL paths"
+        },
+        {
+            "vulnerability_type": "missing_header",
+            "severity": "Low",
+            "url": "http://localhost:8080/ui/api/deployment-health",
+            "method": "GET",
+            "parameter": "(response header)",
+            "payload": "",
+            "evidence": "Browser features (camera, geolocation) are unrestricted",
+            "description": "The parameter '(response header)' in GET http://localhost:8080/ui/api/deployment-health appears vulnerable to MISSING PERMISSIONS-POLICY HEADER. Browser features (camera, geolocation) are unrestricted"
+        }
+    ],
+    "app_map_summary": {
+        "total_endpoints": 10,
+        "nodes": {
+            "GET:http://localhost:8080/ui": {
+                "url": "http://localhost:8080/ui",
+                "method": "GET",
+                "params": {},
+                "body": null,
+                "discovered_via": "seed",
+                "content_type": "text/html; charset=utf-8",
+                "depth": 0,
+                "response_status": 200
+            },
+            "GET:http://localhost:8080/ui/api/auth/jwt-payload": {
+                "url": "http://localhost:8080/ui/api/auth/jwt-payload",
+                "method": "GET",
+                "params": {},
+                "body": null,
+                "discovered_via": "fetch",
+                "content_type": null,
+                "depth": 0,
+                "response_status": null
+            },
+            "GET:http://localhost:8080/ui/api/auth/login": {
+                "url": "http://localhost:8080/ui/api/auth/login",
+                "method": "GET",
+                "params": {},
+                "body": null,
+                "discovered_via": "fetch",
+                "content_type": null,
+                "depth": 0,
+                "response_status": null
+            },
+            "GET:http://localhost:8080/ui/api/auth/ad-manager": {
+                "url": "http://localhost:8080/ui/api/auth/ad-manager",
+                "method": "GET",
+                "params": {},
+                "body": null,
+                "discovered_via": "fetch",
+                "content_type": null,
+                "depth": 0,
+                "response_status": null
+            },
+            "GET:http://localhost:8080/ui/api/ad": {
+                "url": "http://localhost:8080/ui/api/ad",
+                "method": "GET",
+                "params": {},
+                "body": null,
+                "discovered_via": "fetch",
+                "content_type": null,
+                "depth": 0,
+                "response_status": null
+            },
+            "GET:http://localhost:8080/ui/api/posts": {
+                "url": "http://localhost:8080/ui/api/posts",
+                "method": "GET",
+                "params": {},
+                "body": null,
+                "discovered_via": "fetch",
+                "content_type": null,
+                "depth": 0,
+                "response_status": null
+            },
+            "GET:http://localhost:8080/ui/api/deployment-health": {
+                "url": "http://localhost:8080/ui/api/deployment-health",
+                "method": "GET",
+                "params": {},
+                "body": null,
+                "discovered_via": "fetch",
+                "content_type": null,
+                "depth": 0,
+                "response_status": null
+            },
+            "GET:http://localhost:8080/ad-service": {
+                "url": "http://localhost:8080/ad-service",
+                "method": "GET",
+                "params": {},
+                "body": null,
+                "discovered_via": "fetch",
+                "content_type": null,
+                "depth": 0,
+                "response_status": null
+            },
+            "GET:http://localhost:8080/": {
+                "url": "http://localhost:8080/",
+                "method": "GET",
+                "params": {},
+                "body": null,
+                "discovered_via": "fetch",
+                "content_type": null,
+                "depth": 0,
+                "response_status": null
+            },
+            "GET:http://localhost:8080/login": {
+                "url": "http://localhost:8080/login",
+                "method": "GET",
+                "params": {},
+                "body": null,
+                "discovered_via": "html_link",
+                "content_type": "",
+                "depth": 1,
+                "response_status": 404
+            }
+        },
+        "edges": {
+            "http://localhost:8080/ui": [
+                "http://localhost:8080/ui/api/deployment-health",
+                "http://localhost:8080/ui/api/ad",
+                "http://localhost:8080/ui/api/auth/ad-manager",
+                "http://localhost:8080/ad-service",
+                "http://localhost:8080/",
+                "http://localhost:8080/ui/api/auth/jwt-payload",
+                "http://localhost:8080/ui/api/posts",
+                "http://localhost:8080/ui/api/auth/login",
+                "http://localhost:8080/login",
+                "http://localhost:8080/ui"
+            ],
+            "http://localhost:8080/login": [
+                "http://localhost:8080/login"
+            ],
+            "http://localhost:8080": [
+                "http://localhost:8080/login"
+            ]
+        }
+    }
+}

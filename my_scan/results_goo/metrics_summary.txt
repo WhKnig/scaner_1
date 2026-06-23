@@ -1,0 +1,12 @@
+
+--- AVERAGE METRICS ACROSS ALL ITERATIONS ---
+Number of iterations analyzed: 1
+Average True Positives (TP): 11.0 / 35
+Average False Negatives (FN): 24.0 / 35
+Average False Positives (FP): 37.0 / 10
+Average True Negatives (TN): 7.0 / 10
+-------------------------------------------------
+Average Type I Error Rate (FPR): 370.00%
+Average Type II Error Rate (FNR): 68.57%
+Average Precision: 22.92%
+Average Recall: 31.43%

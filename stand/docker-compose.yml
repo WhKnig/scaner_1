@@ -1,9 +1,7 @@
 
 services:
   orchestrator:
-    build:
-      context: .
-      dockerfile: Dockerfile.orchestrator
+    image: stand-orchestrator-goo:latest
     container_name: unguard-orchestrator-v2
     # Запускаем от имени root, чтобы kubectl мог без проблем читать сертификаты OrbStack,
     # если права на них строгие.
@@ -14,6 +12,19 @@ services:
       # Прокидываем конфигурацию Kubernetes (OrbStack) с мака внутрь контейнера
       - ~/.kube:/root/.kube:ro
       # Прокидываем корень (папка sacner), чтобы был доступен и stand, и my_scan
+      - ..:/app
+    environment:
+      - KUBECONFIG=/root/.kube/config
+      - PYTHONUNBUFFERED=1
+
+  orchestrator-goo:
+    image: stand-orchestrator-goo:latest
+    container_name: online-boutique-orchestrator
+    user: "root"
+    network_mode: "host"
+    command: [ "python3", "/app/stand/run_experiments_goo.py", "--iterations", "1" ]
+    volumes:
+      - ~/.kube:/root/.kube:ro
       - ..:/app
     environment:
       - KUBECONFIG=/root/.kube/config

@@ -53,6 +53,21 @@ class AppMap:
         key = f"{endpoint.method}:{endpoint.url}"
         if key not in self.nodes:
             self.nodes[key] = endpoint
+        else:
+            existing = self.nodes[key]
+            existing.params.update(endpoint.params)
+            if endpoint.body and not existing.body:
+                existing.body = endpoint.body
+            elif endpoint.body and existing.body and existing.body != endpoint.body:
+                # Basic merge of URL-encoded bodies if possible
+                try:
+                    from urllib.parse import parse_qs, urlencode
+                    d1 = parse_qs(existing.body)
+                    d2 = parse_qs(endpoint.body)
+                    d1.update(d2)
+                    existing.body = urlencode(d1, doseq=True)
+                except Exception:
+                    pass
 
     def add_relation(self, parent_url: str, child_url: str) -> None:
         if parent_url not in self.edges:

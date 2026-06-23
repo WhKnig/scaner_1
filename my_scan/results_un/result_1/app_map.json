@@ -1,0 +1,125 @@
+{
+  "total_endpoints": 10,
+  "nodes": {
+    "GET:http://localhost:8080/ui": {
+      "url": "http://localhost:8080/ui",
+      "method": "GET",
+      "params": {},
+      "body": null,
+      "discovered_via": "seed",
+      "content_type": "text/html; charset=utf-8",
+      "depth": 0,
+      "response_status": 200
+    },
+    "GET:http://localhost:8080/ui/api/auth/jwt-payload": {
+      "url": "http://localhost:8080/ui/api/auth/jwt-payload",
+      "method": "GET",
+      "params": {},
+      "body": null,
+      "discovered_via": "fetch",
+      "content_type": null,
+      "depth": 0,
+      "response_status": null
+    },
+    "GET:http://localhost:8080/ui/api/auth/login": {
+      "url": "http://localhost:8080/ui/api/auth/login",
+      "method": "GET",
+      "params": {},
+      "body": null,
+      "discovered_via": "fetch",
+      "content_type": null,
+      "depth": 0,
+      "response_status": null
+    },
+    "GET:http://localhost:8080/ui/api/auth/ad-manager": {
+      "url": "http://localhost:8080/ui/api/auth/ad-manager",
+      "method": "GET",
+      "params": {},
+      "body": null,
+      "discovered_via": "fetch",
+      "content_type": null,
+      "depth": 0,
+      "response_status": null
+    },
+    "GET:http://localhost:8080/ui/api/ad": {
+      "url": "http://localhost:8080/ui/api/ad",
+      "method": "GET",
+      "params": {},
+      "body": null,
+      "discovered_via": "fetch",
+      "content_type": null,
+      "depth": 0,
+      "response_status": null
+    },
+    "GET:http://localhost:8080/ui/api/posts": {
+      "url": "http://localhost:8080/ui/api/posts",
+      "method": "GET",
+      "params": {},
+      "body": null,
+      "discovered_via": "fetch",
+      "content_type": null,
+      "depth": 0,
+      "response_status": null
+    },
+    "GET:http://localhost:8080/ui/api/deployment-health": {
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "params": {},
+      "body": null,
+      "discovered_via": "fetch",
+      "content_type": null,
+      "depth": 0,
+      "response_status": null
+    },
+    "GET:http://localhost:8080/ad-service": {
+      "url": "http://localhost:8080/ad-service",
+      "method": "GET",
+      "params": {},
+      "body": null,
+      "discovered_via": "fetch",
+      "content_type": null,
+      "depth": 0,
+      "response_status": null
+    },
+    "GET:http://localhost:8080/": {
+      "url": "http://localhost:8080/",
+      "method": "GET",
+      "params": {},
+      "body": null,
+      "discovered_via": "fetch",
+      "content_type": null,
+      "depth": 0,
+      "response_status": null
+    },
+    "GET:http://localhost:8080/login": {
+      "url": "http://localhost:8080/login",
+      "method": "GET",
+      "params": {},
+      "body": null,
+      "discovered_via": "html_link",
+      "content_type": "",
+      "depth": 1,
+      "response_status": 404
+    }
+  },
+  "edges": {
+    "http://localhost:8080/ui": [
+      "http://localhost:8080/ui/api/deployment-health",
+      "http://localhost:8080/ui/api/ad",
+      "http://localhost:8080/ui/api/auth/ad-manager",
+      "http://localhost:8080/ad-service",
+      "http://localhost:8080/",
+      "http://localhost:8080/ui/api/auth/jwt-payload",
+      "http://localhost:8080/ui/api/posts",
+      "http://localhost:8080/ui/api/auth/login",
+      "http://localhost:8080/login",
+      "http://localhost:8080/ui"
+    ],
+    "http://localhost:8080/login": [
+      "http://localhost:8080/login"
+    ],
+    "http://localhost:8080": [
+      "http://localhost:8080/login"
+    ]
+  }
+}
