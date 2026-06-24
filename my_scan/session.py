@@ -114,10 +114,9 @@ class SessionController:
                 logger.warning("Submit button not found. Sending 'Enter' key.")
                 await page.keyboard.press("Enter")
 
-            # Wait for redirection / page navigation and network requests
+          
             await page.wait_for_load_state("networkidle", timeout=10000)
             
-            # Extract cookies from browser context
             cookies = await page.context.cookies()
             self.cookies = {c["name"]: c["value"] for c in cookies}
             logger.info(f"Login completed. Extracted {len(self.cookies)} cookies.")
@@ -125,7 +124,7 @@ class SessionController:
             if jwt_token:
                 self.auth_headers["Authorization"] = jwt_token
             
-            # If no check_alive_url was provided, infer it as the post-login URL
+            
             if not self.check_alive_url:
                 self.check_alive_url = page.url
                 logger.debug(f"Inferred check_alive_url: {self.check_alive_url}")

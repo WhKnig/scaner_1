@@ -25,6 +25,9 @@ from typing import Set, List, Optional, Dict, Any
 from urllib.parse import urljoin, urlparse, parse_qs, urlencode
 
 from playwright.async_api import async_playwright, BrowserContext, Page, Request, Response
+from faker import Faker
+
+fake = Faker()
 
 from my_scan.models import AppMap, Endpoint
 
@@ -309,13 +312,19 @@ class ChromeCrawler:
                                         itype = await inp.get_attribute("type") or "text"
                                         iname = (await inp.get_attribute("name") or "").lower()
                                         if itype == "password":
-                                            await inp.fill("Scanner!1")
+                                            await inp.fill(fake.password(length=12, special_chars=True))
                                         elif any(k in iname for k in ("email",)):
-                                            await inp.fill("scanner@test.local")
+                                            await inp.fill(fake.email())
                                         elif any(k in iname for k in ("url", "link", "image", "src", "href")):
-                                            await inp.fill("http://scanner-test.local/image.jpg")
+                                            await inp.fill(fake.image_url())
+                                        elif itype == "number" or any(k in iname for k in ("age", "amount", "price", "quantity")):
+                                            await inp.fill(str(fake.random_int(min=1, max=100)))
+                                        elif any(k in iname for k in ("phone", "tel")):
+                                            await inp.fill(fake.phone_number())
+                                        elif any(k in iname for k in ("name", "first", "last", "user")):
+                                            await inp.fill(fake.user_name() if "user" in iname else fake.name())
                                         else:
-                                            await inp.fill("scanner_test_value")
+                                            await inp.fill(fake.word())
                                 except Exception:
                                     pass
 
@@ -324,7 +333,7 @@ class ChromeCrawler:
                             for txt in txts:
                                 try:
                                     if await txt.is_visible() and await txt.is_enabled():
-                                        await txt.fill("Scanner interaction test post content.")
+                                        await txt.fill(fake.paragraph(nb_sentences=3))
                                 except Exception:
                                     pass
 

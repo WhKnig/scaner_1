@@ -1,0 +1,506 @@
+[
+  {
+    "url_pattern": "/ui/api/deployment-health",
+    "method": "GET",
+    "parameter": "id",
+    "type": "sqli"
+  },
+  {
+    "url_pattern": "/ui/api/deployment-health",
+    "method": "GET",
+    "parameter": "id",
+    "type": "sqli"
+  },
+  {
+    "url_pattern": "/ui/api/deployment-health",
+    "method": "GET",
+    "parameter": "id",
+    "type": "sqli"
+  },
+  {
+    "url_pattern": "/ui/api/deployment-health",
+    "method": "GET",
+    "parameter": "username",
+    "type": "sqli"
+  },
+  {
+    "url_pattern": "/ui/api/deployment-health",
+    "method": "GET",
+    "parameter": "username",
+    "type": "sqli"
+  },
+  {
+    "url_pattern": "/ui/api/deployment-health",
+    "method": "GET",
+    "parameter": "username",
+    "type": "sqli"
+  },
+  {
+    "url_pattern": "/ui/api/deployment-health",
+    "method": "GET",
+    "parameter": "username",
+    "type": "sqli"
+  },
+  {
+    "url_pattern": "/ui/api/deployment-health",
+    "method": "GET",
+    "parameter": "password",
+    "type": "sqli"
+  },
+  {
+    "url_pattern": "/ui/api/deployment-health",
+    "method": "GET",
+    "parameter": "password",
+    "type": "sqli"
+  },
+  {
+    "url_pattern": "/ui/api/deployment-health",
+    "method": "GET",
+    "parameter": "q",
+    "type": "sqli"
+  },
+  {
+    "url_pattern": "/ui/api/deployment-health",
+    "method": "GET",
+    "parameter": "search",
+    "type": "sqli"
+  },
+  {
+    "url_pattern": "/ui/api/deployment-health",
+    "method": "GET",
+    "parameter": "search",
+    "type": "sqli"
+  },
+  {
+    "url_pattern": "/fake_vuln_sqli_0",
+    "method": "GET",
+    "parameter": "fake",
+    "type": "sqli"
+  },
+  {
+    "url_pattern": "/fake_vuln_sqli_1",
+    "method": "GET",
+    "parameter": "fake",
+    "type": "sqli"
+  },
+  {
+    "url_pattern": "/ui/api/deployment-health",
+    "method": "GET",
+    "parameter": "id",
+    "type": "xss"
+  },
+  {
+    "url_pattern": "/ui/api/deployment-health",
+    "method": "GET",
+    "parameter": "id",
+    "type": "xss"
+  },
+  {
+    "url_pattern": "/ui/api/deployment-health",
+    "method": "GET",
+    "parameter": "id",
+    "type": "xss"
+  },
+  {
+    "url_pattern": "/ui/api/deployment-health",
+    "method": "GET",
+    "parameter": "id",
+    "type": "xss"
+  },
+  {
+    "url_pattern": "/ui/api/deployment-health",
+    "method": "GET",
+    "parameter": "username",
+    "type": "xss"
+  },
+  {
+    "url_pattern": "/ui/api/deployment-health",
+    "method": "GET",
+    "parameter": "username",
+    "type": "xss"
+  },
+  {
+    "url_pattern": "/ui/api/deployment-health",
+    "method": "GET",
+    "parameter": "password",
+    "type": "xss"
+  },
+  {
+    "url_pattern": "/ui/api/deployment-health",
+    "method": "GET",
+    "parameter": "password",
+    "type": "xss"
+  },
+  {
+    "url_pattern": "/ui/api/deployment-health",
+    "method": "GET",
+    "parameter": "q",
+    "type": "xss"
+  },
+  {
+    "url_pattern": "/ui/api/deployment-health",
+    "method": "GET",
+    "parameter": "q",
+    "type": "xss"
+  },
+  {
+    "url_pattern": "/ui/api/deployment-health",
+    "method": "GET",
+    "parameter": "q",
+    "type": "xss"
+  },
+  {
+    "url_pattern": "/ui/api/deployment-health",
+    "method": "GET",
+    "parameter": "search",
+    "type": "xss"
+  },
+  {
+    "url_pattern": "/ui/api/deployment-health",
+    "method": "GET",
+    "parameter": "search",
+    "type": "xss"
+  },
+  {
+    "url_pattern": "/ui/api/deployment-health",
+    "method": "GET",
+    "parameter": "email",
+    "type": "xss"
+  },
+  {
+    "url_pattern": "/ui/api/deployment-health",
+    "method": "GET",
+    "parameter": "email",
+    "type": "xss"
+  },
+  {
+    "url_pattern": "/ui/api/deployment-health",
+    "method": "GET",
+    "parameter": "query",
+    "type": "xss"
+  },
+  {
+    "url_pattern": "/ui/api/deployment-health",
+    "method": "GET",
+    "parameter": "query",
+    "type": "xss"
+  },
+  {
+    "url_pattern": "/fake_vuln_xss_0",
+    "method": "GET",
+    "parameter": "fake",
+    "type": "xss"
+  },
+  {
+    "url_pattern": "/fake_vuln_xss_1",
+    "method": "GET",
+    "parameter": "fake",
+    "type": "xss"
+  },
+  {
+    "url_pattern": "/fake_vuln_xss_2",
+    "method": "GET",
+    "parameter": "fake",
+    "type": "xss"
+  },
+  {
+    "url_pattern": "/fake_vuln_xss_3",
+    "method": "GET",
+    "parameter": "fake",
+    "type": "xss"
+  },
+  {
+    "url_pattern": "/ui/api/deployment-health",
+    "method": "GET",
+    "parameter": "id",
+    "type": "cmdi"
+  },
+  {
+    "url_pattern": "/ui/api/deployment-health",
+    "method": "GET",
+    "parameter": "id",
+    "type": "cmdi"
+  },
+  {
+    "url_pattern": "/ui/api/deployment-health",
+    "method": "GET",
+    "parameter": "username",
+    "type": "cmdi"
+  },
+  {
+    "url_pattern": "/ui/api/deployment-health",
+    "method": "GET",
+    "parameter": "username",
+    "type": "cmdi"
+  },
+  {
+    "url_pattern": "/ui/api/deployment-health",
+    "method": "GET",
+    "parameter": "username",
+    "type": "cmdi"
+  },
+  {
+    "url_pattern": "/ui/api/deployment-health",
+    "method": "GET",
+    "parameter": "username",
+    "type": "cmdi"
+  },
+  {
+    "url_pattern": "/ui/api/deployment-health",
+    "method": "GET",
+    "parameter": "username",
+    "type": "cmdi"
+  },
+  {
+    "url_pattern": "/ui/api/deployment-health",
+    "method": "GET",
+    "parameter": "password",
+    "type": "cmdi"
+  },
+  {
+    "url_pattern": "/fake_vuln_cmdi_0",
+    "method": "GET",
+    "parameter": "fake",
+    "type": "cmdi"
+  },
+  {
+    "url_pattern": "/fake_vuln_cmdi_1",
+    "method": "GET",
+    "parameter": "fake",
+    "type": "cmdi"
+  },
+  {
+    "url_pattern": "/ui/api/deployment-health",
+    "method": "GET",
+    "parameter": "username",
+    "type": "path_traversal"
+  },
+  {
+    "url_pattern": "/ui/api/deployment-health",
+    "method": "GET",
+    "parameter": "password",
+    "type": "path_traversal"
+  },
+  {
+    "url_pattern": "/ui/api/deployment-health",
+    "method": "GET",
+    "parameter": "password",
+    "type": "path_traversal"
+  },
+  {
+    "url_pattern": "/ui/api/deployment-health",
+    "method": "GET",
+    "parameter": "q",
+    "type": "path_traversal"
+  },
+  {
+    "url_pattern": "/ui/api/deployment-health",
+    "method": "GET",
+    "parameter": "q",
+    "type": "path_traversal"
+  },
+  {
+    "url_pattern": "/ui/api/deployment-health",
+    "method": "GET",
+    "parameter": "search",
+    "type": "path_traversal"
+  },
+  {
+    "url_pattern": "/ui/api/deployment-health",
+    "method": "GET",
+    "parameter": "email",
+    "type": "path_traversal"
+  },
+  {
+    "url_pattern": "/ui/api/deployment-health",
+    "method": "GET",
+    "parameter": "userid",
+    "type": "path_traversal"
+  },
+  {
+    "url_pattern": "/ui/api/deployment-health",
+    "method": "GET",
+    "parameter": "userid",
+    "type": "path_traversal"
+  },
+  {
+    "url_pattern": "/fake_vuln_path_traversal_0",
+    "method": "GET",
+    "parameter": "fake",
+    "type": "path_traversal"
+  },
+  {
+    "url_pattern": "/fake_vuln_path_traversal_1",
+    "method": "GET",
+    "parameter": "fake",
+    "type": "path_traversal"
+  },
+  {
+    "url_pattern": "/fake_vuln_path_traversal_2",
+    "method": "GET",
+    "parameter": "fake",
+    "type": "path_traversal"
+  },
+  {
+    "url_pattern": "/ui",
+    "method": "GET",
+    "parameter": "(response header)",
+    "type": "misconfig"
+  },
+  {
+    "url_pattern": "/ui",
+    "method": "GET",
+    "parameter": "(response header)",
+    "type": "misconfig"
+  },
+  {
+    "url_pattern": "/ui",
+    "method": "GET",
+    "parameter": "(response header)",
+    "type": "misconfig"
+  },
+  {
+    "url_pattern": "/ui",
+    "method": "GET",
+    "parameter": "(response header)",
+    "type": "misconfig"
+  },
+  {
+    "url_pattern": "/ui",
+    "method": "GET",
+    "parameter": "(response header)",
+    "type": "misconfig"
+  },
+  {
+    "url_pattern": "/ui",
+    "method": "GET",
+    "parameter": "(response header)",
+    "type": "misconfig"
+  },
+  {
+    "url_pattern": "/ui",
+    "method": "GET",
+    "parameter": "Header: x-powered-by",
+    "type": "misconfig"
+  },
+  {
+    "url_pattern": "/ui/api/posts",
+    "method": "GET",
+    "parameter": "(response header)",
+    "type": "misconfig"
+  },
+  {
+    "url_pattern": "/ui/api/posts",
+    "method": "GET",
+    "parameter": "(response header)",
+    "type": "misconfig"
+  },
+  {
+    "url_pattern": "/ui/api/posts",
+    "method": "GET",
+    "parameter": "(response header)",
+    "type": "misconfig"
+  },
+  {
+    "url_pattern": "/ui/api/posts",
+    "method": "GET",
+    "parameter": "(response header)",
+    "type": "misconfig"
+  },
+  {
+    "url_pattern": "/ui/api/posts",
+    "method": "GET",
+    "parameter": "(response header)",
+    "type": "misconfig"
+  },
+  {
+    "url_pattern": "/ui/api/posts",
+    "method": "GET",
+    "parameter": "(response header)",
+    "type": "misconfig"
+  },
+  {
+    "url_pattern": "/ui/api/ad",
+    "method": "GET",
+    "parameter": "(response header)",
+    "type": "misconfig"
+  },
+  {
+    "url_pattern": "/ui/api/ad",
+    "method": "GET",
+    "parameter": "(response header)",
+    "type": "misconfig"
+  },
+  {
+    "url_pattern": "/ui/api/ad",
+    "method": "GET",
+    "parameter": "(response header)",
+    "type": "misconfig"
+  },
+  {
+    "url_pattern": "/ui/api/ad",
+    "method": "GET",
+    "parameter": "(response header)",
+    "type": "misconfig"
+  },
+  {
+    "url_pattern": "/ui/api/ad",
+    "method": "GET",
+    "parameter": "(response header)",
+    "type": "misconfig"
+  },
+  {
+    "url_pattern": "/ui/api/ad",
+    "method": "GET",
+    "parameter": "(response header)",
+    "type": "misconfig"
+  },
+  {
+    "url_pattern": "/ui/api/auth/login",
+    "method": "GET",
+    "parameter": "(response header)",
+    "type": "misconfig"
+  },
+  {
+    "url_pattern": "/ui/api/auth/login",
+    "method": "GET",
+    "parameter": "(response header)",
+    "type": "misconfig"
+  },
+  {
+    "url_pattern": "/fake_vuln_misconfig_0",
+    "method": "GET",
+    "parameter": "fake",
+    "type": "misconfig"
+  },
+  {
+    "url_pattern": "/fake_vuln_misconfig_1",
+    "method": "GET",
+    "parameter": "fake",
+    "type": "misconfig"
+  },
+  {
+    "url_pattern": "/fake_vuln_misconfig_2",
+    "method": "GET",
+    "parameter": "fake",
+    "type": "misconfig"
+  },
+  {
+    "url_pattern": "/fake_vuln_misconfig_3",
+    "method": "GET",
+    "parameter": "fake",
+    "type": "misconfig"
+  },
+  {
+    "url_pattern": "/fake_vuln_misconfig_4",
+    "method": "GET",
+    "parameter": "fake",
+    "type": "misconfig"
+  },
+  {
+    "url_pattern": "/fake_vuln_misconfig_5",
+    "method": "GET",
+    "parameter": "fake",
+    "type": "misconfig"
+  }
+]

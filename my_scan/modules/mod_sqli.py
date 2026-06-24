@@ -180,6 +180,9 @@ class SQLiModule(BaseModule):
                         break
 
             # 2. Time-based blind testing
+            baseline = entrypoint.get("_baseline_latency", 1.0)
+            dynamic_threshold = baseline + 3.0  # +3 seconds over baseline
+
             for payload in TIME_PAYLOADS:
                 ep = self._inject_param(entrypoint, param_name, payload)
                 t0   = time.monotonic()
@@ -189,7 +192,7 @@ class SQLiModule(BaseModule):
                     continue
                 resp.release()
 
-                if elapsed >= TIME_THRESHOLD_S:
+                if elapsed >= dynamic_threshold:
                     findings.append(self._make_finding(
                         vulnerability="SQL Injection (Time-based Blind)",
                         vuln_id="sqli_blind",
@@ -198,7 +201,7 @@ class SQLiModule(BaseModule):
                         method=entrypoint.get("method", "GET"),
                         parameter=param_name,
                         payload=payload,
-                        evidence=f"Response delayed {elapsed:.2f}s (threshold {TIME_THRESHOLD_S}s)",
+                        evidence=f"Response delayed {elapsed:.2f}s (baseline {baseline:.2f}s, threshold {dynamic_threshold:.2f}s)",
                     ))
                     break
 

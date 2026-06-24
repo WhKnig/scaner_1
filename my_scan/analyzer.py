@@ -79,11 +79,13 @@ class ResponseAnalyzer:
                 })
 
         # 3. Behavioral/Time-based Anomalies (Blind Injection check)
-        # E.g., if a sleep payload was sent, check if response latency is high (e.g., > 5.0 seconds)
-        if ("sleep" in payload.lower() or "benchmark" in payload.lower()) and latency > 4.5:
+        # E.g., if a sleep payload was sent, check if response latency is high (e.g., > baseline + 3.0 seconds)
+        baseline = result.get("entrypoint", {}).get("_baseline_latency", 1.0)
+        dynamic_threshold = baseline + 3.0
+        if ("sleep" in payload.lower() or "benchmark" in payload.lower()) and latency >= dynamic_threshold:
             anomalies.append({
                 "type": vuln_type,
-                "evidence": f"Time delay anomaly detected. Response latency: {latency:.2f}s (Threshold: 4.5s)",
+                "evidence": f"Time delay anomaly detected. Response latency: {latency:.2f}s (Baseline: {baseline:.2f}s, Threshold: {dynamic_threshold:.2f}s)",
                 "severity": "High"
             })
 

@@ -24,15 +24,14 @@ RUN apt-get update && apt-get install -y \
 WORKDIR /app
 
 # Copy requirements and install
-COPY requirements.txt .
+COPY my_scan/requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 RUN playwright install chromium
+RUN playwright install-deps chromium
 
 # Copy the rest of the application
-COPY my/ ./my/
+COPY my_scan/ ./my_scan/
+COPY stand/ ./stand/
 
 # Setup volume for report output
 VOLUME ["/output"]
-
-# Set default entrypoint
-ENTRYPOINT ["python", "-m", "my.scanner"]

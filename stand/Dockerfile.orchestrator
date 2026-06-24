@@ -20,7 +20,7 @@ WORKDIR /app
 
 # Копируем зависимости Python (если бы у нас был requirements.txt)
 # Install Python deps for scanner and proxy
-RUN pip3 install --no-cache-dir requests beautifulsoup4 aiohttp mitmproxy playwright
+RUN pip3 install --no-cache-dir requests beautifulsoup4 aiohttp mitmproxy playwright faker
 
 # Install playwright browser and dependencies
 RUN playwright install chromium

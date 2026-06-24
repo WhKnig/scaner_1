@@ -16,6 +16,9 @@ def mock_page():
     # Mock context cookies
     page.context.cookies.return_value = [{"name": "session", "value": "123"}]
     
+    # Mock synchronous page.on
+    page.on = MagicMock()
+    
     return page
 
 @pytest.mark.asyncio

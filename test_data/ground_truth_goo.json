@@ -1,0 +1,506 @@
+[
+  {
+    "url_pattern": "/cart",
+    "method": "POST",
+    "parameter": "cart1",
+    "type": "sqli"
+  },
+  {
+    "url_pattern": "/",
+    "method": "GET",
+    "parameter": "sqe2",
+    "type": "sqli"
+  },
+  {
+    "url_pattern": "/",
+    "method": "GET",
+    "parameter": "xss2",
+    "type": "sqli"
+  },
+  {
+    "url_pattern": "/",
+    "method": "GET",
+    "parameter": "sqe1",
+    "type": "sqli"
+  },
+  {
+    "url_pattern": "/",
+    "method": "GET",
+    "parameter": "xss1",
+    "type": "sqli"
+  },
+  {
+    "url_pattern": "/",
+    "method": "GET",
+    "parameter": "sst1",
+    "type": "sqli"
+  },
+  {
+    "url_pattern": "/",
+    "method": "GET",
+    "parameter": "crlf1",
+    "type": "sqli"
+  },
+  {
+    "url_pattern": "/",
+    "method": "GET",
+    "parameter": "sqe3",
+    "type": "sqli"
+  },
+  {
+    "url_pattern": "/",
+    "method": "GET",
+    "parameter": "xss3",
+    "type": "sqli"
+  },
+  {
+    "url_pattern": "/",
+    "method": "GET",
+    "parameter": "sst3",
+    "type": "sqli"
+  },
+  {
+    "url_pattern": "/product/1YMWWN1N4O",
+    "method": "GET",
+    "parameter": "lfi2",
+    "type": "sqli"
+  },
+  {
+    "url_pattern": "/product/1YMWWN1N4O",
+    "method": "GET",
+    "parameter": "lfi1",
+    "type": "sqli"
+  },
+  {
+    "url_pattern": "/fake_vuln_sqli_0",
+    "method": "GET",
+    "parameter": "fake",
+    "type": "sqli"
+  },
+  {
+    "url_pattern": "/fake_vuln_sqli_1",
+    "method": "GET",
+    "parameter": "fake",
+    "type": "sqli"
+  },
+  {
+    "url_pattern": "/product/1YMWWN1N4O",
+    "method": "GET",
+    "parameter": "sqb1",
+    "type": "xss"
+  },
+  {
+    "url_pattern": "/product/1YMWWN1N4O",
+    "method": "GET",
+    "parameter": "sqb1",
+    "type": "xss"
+  },
+  {
+    "url_pattern": "/product/1YMWWN1N4O",
+    "method": "GET",
+    "parameter": "sqb1",
+    "type": "xss"
+  },
+  {
+    "url_pattern": "/product/0PUK6V6EV0",
+    "method": "GET",
+    "parameter": "sqb1",
+    "type": "xss"
+  },
+  {
+    "url_pattern": "/product/0PUK6V6EV0",
+    "method": "GET",
+    "parameter": "sqb1",
+    "type": "xss"
+  },
+  {
+    "url_pattern": "/product/0PUK6V6EV0",
+    "method": "GET",
+    "parameter": "sqb1",
+    "type": "xss"
+  },
+  {
+    "url_pattern": "/cart",
+    "method": "POST",
+    "parameter": "cart1",
+    "type": "xss"
+  },
+  {
+    "url_pattern": "/cart",
+    "method": "POST",
+    "parameter": "cart1",
+    "type": "xss"
+  },
+  {
+    "url_pattern": "/cart",
+    "method": "POST",
+    "parameter": "cart1",
+    "type": "xss"
+  },
+  {
+    "url_pattern": "/cart",
+    "method": "POST",
+    "parameter": "cart1",
+    "type": "xss"
+  },
+  {
+    "url_pattern": "/product/2ZYFJ3GM2N",
+    "method": "GET",
+    "parameter": "sqb1",
+    "type": "xss"
+  },
+  {
+    "url_pattern": "/product/2ZYFJ3GM2N",
+    "method": "GET",
+    "parameter": "sqb1",
+    "type": "xss"
+  },
+  {
+    "url_pattern": "/product/2ZYFJ3GM2N",
+    "method": "GET",
+    "parameter": "sqb1",
+    "type": "xss"
+  },
+  {
+    "url_pattern": "/product/OLJCESPC7Z",
+    "method": "GET",
+    "parameter": "sqb1",
+    "type": "xss"
+  },
+  {
+    "url_pattern": "/product/OLJCESPC7Z",
+    "method": "GET",
+    "parameter": "sqb1",
+    "type": "xss"
+  },
+  {
+    "url_pattern": "/product/OLJCESPC7Z",
+    "method": "GET",
+    "parameter": "sqb1",
+    "type": "xss"
+  },
+  {
+    "url_pattern": "/product/9SIQT8TOJO",
+    "method": "GET",
+    "parameter": "sqb1",
+    "type": "xss"
+  },
+  {
+    "url_pattern": "/fake_vuln_xss_0",
+    "method": "GET",
+    "parameter": "fake",
+    "type": "xss"
+  },
+  {
+    "url_pattern": "/fake_vuln_xss_1",
+    "method": "GET",
+    "parameter": "fake",
+    "type": "xss"
+  },
+  {
+    "url_pattern": "/fake_vuln_xss_2",
+    "method": "GET",
+    "parameter": "fake",
+    "type": "xss"
+  },
+  {
+    "url_pattern": "/fake_vuln_xss_3",
+    "method": "GET",
+    "parameter": "fake",
+    "type": "xss"
+  },
+  {
+    "url_pattern": "/product/1YMWWN1N4O",
+    "method": "GET",
+    "parameter": "lfi2",
+    "type": "cmdi"
+  },
+  {
+    "url_pattern": "/product/1YMWWN1N4O",
+    "method": "GET",
+    "parameter": "lfi1",
+    "type": "cmdi"
+  },
+  {
+    "url_pattern": "/product/1YMWWN1N4O",
+    "method": "GET",
+    "parameter": "sqb1",
+    "type": "cmdi"
+  },
+  {
+    "url_pattern": "/product/0PUK6V6EV0",
+    "method": "GET",
+    "parameter": "lfi2",
+    "type": "cmdi"
+  },
+  {
+    "url_pattern": "/product/0PUK6V6EV0",
+    "method": "GET",
+    "parameter": "lfi1",
+    "type": "cmdi"
+  },
+  {
+    "url_pattern": "/product/0PUK6V6EV0",
+    "method": "GET",
+    "parameter": "sqb1",
+    "type": "cmdi"
+  },
+  {
+    "url_pattern": "/product/2ZYFJ3GM2N",
+    "method": "GET",
+    "parameter": "lfi2",
+    "type": "cmdi"
+  },
+  {
+    "url_pattern": "/product/2ZYFJ3GM2N",
+    "method": "GET",
+    "parameter": "lfi1",
+    "type": "cmdi"
+  },
+  {
+    "url_pattern": "/fake_vuln_cmdi_0",
+    "method": "GET",
+    "parameter": "fake",
+    "type": "cmdi"
+  },
+  {
+    "url_pattern": "/fake_vuln_cmdi_1",
+    "method": "GET",
+    "parameter": "fake",
+    "type": "cmdi"
+  },
+  {
+    "url_pattern": "/",
+    "method": "GET",
+    "parameter": "sqe2",
+    "type": "path_traversal"
+  },
+  {
+    "url_pattern": "/",
+    "method": "GET",
+    "parameter": "sqe2",
+    "type": "path_traversal"
+  },
+  {
+    "url_pattern": "/",
+    "method": "GET",
+    "parameter": "sqe2",
+    "type": "path_traversal"
+  },
+  {
+    "url_pattern": "/",
+    "method": "GET",
+    "parameter": "xss2",
+    "type": "path_traversal"
+  },
+  {
+    "url_pattern": "/",
+    "method": "GET",
+    "parameter": "xss2",
+    "type": "path_traversal"
+  },
+  {
+    "url_pattern": "/",
+    "method": "GET",
+    "parameter": "xss2",
+    "type": "path_traversal"
+  },
+  {
+    "url_pattern": "/",
+    "method": "GET",
+    "parameter": "xss1",
+    "type": "path_traversal"
+  },
+  {
+    "url_pattern": "/",
+    "method": "GET",
+    "parameter": "xss1",
+    "type": "path_traversal"
+  },
+  {
+    "url_pattern": "/",
+    "method": "GET",
+    "parameter": "xss1",
+    "type": "path_traversal"
+  },
+  {
+    "url_pattern": "/fake_vuln_path_traversal_0",
+    "method": "GET",
+    "parameter": "fake",
+    "type": "path_traversal"
+  },
+  {
+    "url_pattern": "/fake_vuln_path_traversal_1",
+    "method": "GET",
+    "parameter": "fake",
+    "type": "path_traversal"
+  },
+  {
+    "url_pattern": "/fake_vuln_path_traversal_2",
+    "method": "GET",
+    "parameter": "fake",
+    "type": "path_traversal"
+  },
+  {
+    "url_pattern": "/login/support",
+    "method": "POST",
+    "parameter": "(response header)",
+    "type": "misconfig"
+  },
+  {
+    "url_pattern": "/login/support",
+    "method": "POST",
+    "parameter": "(response header)",
+    "type": "misconfig"
+  },
+  {
+    "url_pattern": "/login/support",
+    "method": "POST",
+    "parameter": "(response header)",
+    "type": "misconfig"
+  },
+  {
+    "url_pattern": "/login/support",
+    "method": "POST",
+    "parameter": "(response header)",
+    "type": "misconfig"
+  },
+  {
+    "url_pattern": "/login/support",
+    "method": "POST",
+    "parameter": "(response header)",
+    "type": "misconfig"
+  },
+  {
+    "url_pattern": "/login/support",
+    "method": "POST",
+    "parameter": "(response header)",
+    "type": "misconfig"
+  },
+  {
+    "url_pattern": "/login/legacy",
+    "method": "POST",
+    "parameter": "(response header)",
+    "type": "misconfig"
+  },
+  {
+    "url_pattern": "/login/legacy",
+    "method": "POST",
+    "parameter": "(response header)",
+    "type": "misconfig"
+  },
+  {
+    "url_pattern": "/login/legacy",
+    "method": "POST",
+    "parameter": "(response header)",
+    "type": "misconfig"
+  },
+  {
+    "url_pattern": "/login/legacy",
+    "method": "POST",
+    "parameter": "(response header)",
+    "type": "misconfig"
+  },
+  {
+    "url_pattern": "/login/legacy",
+    "method": "POST",
+    "parameter": "(response header)",
+    "type": "misconfig"
+  },
+  {
+    "url_pattern": "/login/legacy",
+    "method": "POST",
+    "parameter": "(response header)",
+    "type": "misconfig"
+  },
+  {
+    "url_pattern": "/login/standard",
+    "method": "POST",
+    "parameter": "(response header)",
+    "type": "misconfig"
+  },
+  {
+    "url_pattern": "/login/standard",
+    "method": "POST",
+    "parameter": "(response header)",
+    "type": "misconfig"
+  },
+  {
+    "url_pattern": "/login/standard",
+    "method": "POST",
+    "parameter": "(response header)",
+    "type": "misconfig"
+  },
+  {
+    "url_pattern": "/login/standard",
+    "method": "POST",
+    "parameter": "(response header)",
+    "type": "misconfig"
+  },
+  {
+    "url_pattern": "/login/standard",
+    "method": "POST",
+    "parameter": "(response header)",
+    "type": "misconfig"
+  },
+  {
+    "url_pattern": "/login/standard",
+    "method": "POST",
+    "parameter": "(response header)",
+    "type": "misconfig"
+  },
+  {
+    "url_pattern": "/product/1YMWWN1N4O",
+    "method": "GET",
+    "parameter": "sqb1",
+    "type": "misconfig"
+  },
+  {
+    "url_pattern": "/product/1YMWWN1N4O",
+    "method": "GET",
+    "parameter": "(response header)",
+    "type": "misconfig"
+  },
+  {
+    "url_pattern": "/product/1YMWWN1N4O",
+    "method": "GET",
+    "parameter": "(response header)",
+    "type": "misconfig"
+  },
+  {
+    "url_pattern": "/fake_vuln_misconfig_0",
+    "method": "GET",
+    "parameter": "fake",
+    "type": "misconfig"
+  },
+  {
+    "url_pattern": "/fake_vuln_misconfig_1",
+    "method": "GET",
+    "parameter": "fake",
+    "type": "misconfig"
+  },
+  {
+    "url_pattern": "/fake_vuln_misconfig_2",
+    "method": "GET",
+    "parameter": "fake",
+    "type": "misconfig"
+  },
+  {
+    "url_pattern": "/fake_vuln_misconfig_3",
+    "method": "GET",
+    "parameter": "fake",
+    "type": "misconfig"
+  },
+  {
+    "url_pattern": "/fake_vuln_misconfig_4",
+    "method": "GET",
+    "parameter": "fake",
+    "type": "misconfig"
+  },
+  {
+    "url_pattern": "/fake_vuln_misconfig_5",
+    "method": "GET",
+    "parameter": "fake",
+    "type": "misconfig"
+  }
+]

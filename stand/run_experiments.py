@@ -181,8 +181,8 @@ def main():
 
             # 3. Mitmdump (Proxy)
             dump_path = os.path.join(iter_dir, "traffic.mitm")
-            mitm_cmd = f"mitmdump -w {dump_path} -p {PROXY_PORT}"
-            mitm_proc = subprocess.Popen(mitm_cmd, shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+            mitm_cmd = f"mitmdump -w {dump_path} -p {PROXY_PORT} > /app/mitm_un.log 2>&1"
+            mitm_proc = subprocess.Popen(mitm_cmd, shell=True)
             time.sleep(3)
             
             # 4. Registration

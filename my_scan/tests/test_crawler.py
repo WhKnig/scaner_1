@@ -95,6 +95,11 @@ async def test_crawl_page(base_url):
             
     mock_page.on = MagicMock(side_effect=on_side_effect)
     
+    mock_locator = MagicMock()
+    mock_locator.element_handles = AsyncMock(return_value=[])
+    mock_page.locator = MagicMock(return_value=mock_locator)
+
+    
     mock_page.eval_on_selector_all.side_effect = [
         ["/about"],  # links
         [{"action": "/submit", "method": "POST", "inputs": [{"name": "q", "value": "1"}]}] # forms
@@ -138,6 +143,11 @@ async def test_crawl_page_with_xhr(base_url):
             request_handler = handler
             
     mock_page.on = MagicMock(side_effect=on_side_effect)
+
+    mock_locator = MagicMock()
+    mock_locator.element_handles = AsyncMock(return_value=[])
+    mock_page.locator = MagicMock(return_value=mock_locator)
+
     
     async def mock_goto(*args, **kwargs):
         if request_handler:

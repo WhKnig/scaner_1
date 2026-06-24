@@ -11,6 +11,16 @@
       "depth": 0,
       "response_status": 200
     },
+    "GET:http://localhost:8080/ui/api/auth/ad-manager": {
+      "url": "http://localhost:8080/ui/api/auth/ad-manager",
+      "method": "GET",
+      "params": {},
+      "body": null,
+      "discovered_via": "fetch",
+      "content_type": null,
+      "depth": 0,
+      "response_status": null
+    },
     "GET:http://localhost:8080/ui/api/auth/jwt-payload": {
       "url": "http://localhost:8080/ui/api/auth/jwt-payload",
       "method": "GET",
@@ -31,8 +41,8 @@
       "depth": 0,
       "response_status": null
     },
-    "GET:http://localhost:8080/ui/api/auth/ad-manager": {
-      "url": "http://localhost:8080/ui/api/auth/ad-manager",
+    "GET:http://localhost:8080/ui/api/ad": {
+      "url": "http://localhost:8080/ui/api/ad",
       "method": "GET",
       "params": {},
       "body": null,
@@ -41,8 +51,8 @@
       "depth": 0,
       "response_status": null
     },
-    "GET:http://localhost:8080/ui/api/ad": {
-      "url": "http://localhost:8080/ui/api/ad",
+    "GET:http://localhost:8080/ad-service": {
+      "url": "http://localhost:8080/ad-service",
       "method": "GET",
       "params": {},
       "body": null,
@@ -63,16 +73,6 @@
     },
     "GET:http://localhost:8080/ui/api/deployment-health": {
       "url": "http://localhost:8080/ui/api/deployment-health",
-      "method": "GET",
-      "params": {},
-      "body": null,
-      "discovered_via": "fetch",
-      "content_type": null,
-      "depth": 0,
-      "response_status": null
-    },
-    "GET:http://localhost:8080/ad-service": {
-      "url": "http://localhost:8080/ad-service",
       "method": "GET",
       "params": {},
       "body": null,
@@ -104,16 +104,16 @@
   },
   "edges": {
     "http://localhost:8080/ui": [
-      "http://localhost:8080/ui/api/deployment-health",
+      "http://localhost:8080/ui/api/auth/jwt-payload",
+      "http://localhost:8080/ui/api/auth/login",
+      "http://localhost:8080/ui",
+      "http://localhost:8080/login",
+      "http://localhost:8080/",
       "http://localhost:8080/ui/api/ad",
       "http://localhost:8080/ui/api/auth/ad-manager",
-      "http://localhost:8080/ad-service",
-      "http://localhost:8080/",
-      "http://localhost:8080/ui/api/auth/jwt-payload",
+      "http://localhost:8080/ui/api/deployment-health",
       "http://localhost:8080/ui/api/posts",
-      "http://localhost:8080/ui/api/auth/login",
-      "http://localhost:8080/login",
-      "http://localhost:8080/ui"
+      "http://localhost:8080/ad-service"
     ],
     "http://localhost:8080/login": [
       "http://localhost:8080/login"

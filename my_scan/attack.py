@@ -125,9 +125,35 @@ class ModuleRunner:
     
             if self.proxy:
                 http_session._default_proxy = self.proxy
+            # 1. Measure baseline latency for all endpoints
+            async def measure_baseline(ep: Dict[str, Any]) -> float:
+                t0 = _time.monotonic()
+                try:
+                    async with http_session.request(
+                        method=ep.get("method", "GET"),
+                        url=ep["url"],
+                        params=ep.get("params"),
+                        data=ep.get("body"),
+                        timeout=5
+                    ) as resp:
+                        await resp.read()
+                except Exception:
+                    pass
+                return max(0.1, _time.monotonic() - t0)
+
+            baselines = {}
+            for key, endpoint in app_map.nodes.items():
+                ep_dict = self._endpoint_to_entrypoint(endpoint)
+                baselines[key] = asyncio.ensure_future(measure_baseline(ep_dict))
+            
+            if baselines:
+                await asyncio.wait(baselines.values())
+
+            # 2. Run modules with baseline injected
             tasks = []
             for key, endpoint in app_map.nodes.items():
                 entrypoint = self._endpoint_to_entrypoint(endpoint)
+                entrypoint["_baseline_latency"] = baselines[key].result() if baselines[key].done() else 1.0
                 for ModuleClass in ALL_MODULES:
                     tasks.append(
                         self._run_module(sem, http_session, ModuleClass, entrypoint, endpoint)
@@ -456,7 +482,7 @@ class RequestSender:
         )
 
         async with self.semaphore:
-            ts = datetime.datetime.utcnow().isoformat() + "Z"
+            ts = datetime.datetime.now(datetime.timezone.utc).isoformat() + "Z"
             t0 = _time.monotonic()
 
             try:

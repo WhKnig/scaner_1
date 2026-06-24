@@ -1,773 +1,2224 @@
 {
-    "target_url": "http://localhost:8080/ui",
-    "state": "FINISHED",
-    "scan_start": "2026-06-22T23:48:43.731451+00:00",
-    "scan_end": "2026-06-22T23:49:52.012507+00:00",
-    "duration_seconds": 68.28,
-    "endpoints_found": 10,
-    "attack_vectors_sent": 4900,
-    "vulnerabilities_total": 63,
-    "severity_breakdown": {
-        "Critical": 0,
-        "High": 0,
-        "Medium": 33,
-        "Low": 30
+  "vulnerabilities": [
+    {
+      "vulnerability_type": "missing_header",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui",
+      "method": "GET",
+      "parameter": "(response header)",
+      "payload": "",
+      "evidence": "CSP prevents XSS and data injection attacks",
+      "description": "The parameter '(response header)' in GET http://localhost:8080/ui appears vulnerable to MISSING CONTENT-SECURITY-POLICY HEADER. CSP prevents XSS and data injection attacks"
     },
-    "vulnerabilities": [
-        {
-            "vulnerability_type": "missing_header",
-            "severity": "Medium",
-            "url": "http://localhost:8080/ui/api/auth/login",
-            "method": "GET",
-            "parameter": "(response header)",
-            "payload": "",
-            "evidence": "CSP prevents XSS and data injection attacks",
-            "description": "The parameter '(response header)' in GET http://localhost:8080/ui/api/auth/login appears vulnerable to MISSING CONTENT-SECURITY-POLICY HEADER. CSP prevents XSS and data injection attacks"
-        },
-        {
-            "vulnerability_type": "missing_header",
-            "severity": "Medium",
-            "url": "http://localhost:8080/ui/api/auth/login",
-            "method": "GET",
-            "parameter": "(response header)",
-            "payload": "",
-            "evidence": "Without this header, the site is vulnerable to Clickjacking",
-            "description": "The parameter '(response header)' in GET http://localhost:8080/ui/api/auth/login appears vulnerable to MISSING X-FRAME-OPTIONS HEADER. Without this header, the site is vulnerable to Clickjacking"
-        },
-        {
-            "vulnerability_type": "missing_header",
-            "severity": "Low",
-            "url": "http://localhost:8080/ui/api/auth/login",
-            "method": "GET",
-            "parameter": "(response header)",
-            "payload": "",
-            "evidence": "MIME-type sniffing can be exploited for XSS",
-            "description": "The parameter '(response header)' in GET http://localhost:8080/ui/api/auth/login appears vulnerable to MISSING X-CONTENT-TYPE-OPTIONS HEADER. MIME-type sniffing can be exploited for XSS"
-        },
-        {
-            "vulnerability_type": "missing_header",
-            "severity": "Medium",
-            "url": "http://localhost:8080/ui/api/auth/login",
-            "method": "GET",
-            "parameter": "(response header)",
-            "payload": "",
-            "evidence": "HSTS prevents SSL-stripping attacks",
-            "description": "The parameter '(response header)' in GET http://localhost:8080/ui/api/auth/login appears vulnerable to MISSING STRICT-TRANSPORT-SECURITY (HSTS) HEADER. HSTS prevents SSL-stripping attacks"
-        },
-        {
-            "vulnerability_type": "missing_header",
-            "severity": "Low",
-            "url": "http://localhost:8080/ui/api/auth/login",
-            "method": "GET",
-            "parameter": "(response header)",
-            "payload": "",
-            "evidence": "Referrer leakage can expose sensitive URL paths",
-            "description": "The parameter '(response header)' in GET http://localhost:8080/ui/api/auth/login appears vulnerable to MISSING REFERRER-POLICY HEADER. Referrer leakage can expose sensitive URL paths"
-        },
-        {
-            "vulnerability_type": "missing_header",
-            "severity": "Low",
-            "url": "http://localhost:8080/ui/api/auth/login",
-            "method": "GET",
-            "parameter": "(response header)",
-            "payload": "",
-            "evidence": "Browser features (camera, geolocation) are unrestricted",
-            "description": "The parameter '(response header)' in GET http://localhost:8080/ui/api/auth/login appears vulnerable to MISSING PERMISSIONS-POLICY HEADER. Browser features (camera, geolocation) are unrestricted"
-        },
-        {
-            "vulnerability_type": "missing_header",
-            "severity": "Medium",
-            "url": "http://localhost:8080/ui/api/posts",
-            "method": "GET",
-            "parameter": "(response header)",
-            "payload": "",
-            "evidence": "CSP prevents XSS and data injection attacks",
-            "description": "The parameter '(response header)' in GET http://localhost:8080/ui/api/posts appears vulnerable to MISSING CONTENT-SECURITY-POLICY HEADER. CSP prevents XSS and data injection attacks"
-        },
-        {
-            "vulnerability_type": "missing_header",
-            "severity": "Medium",
-            "url": "http://localhost:8080/ui/api/posts",
-            "method": "GET",
-            "parameter": "(response header)",
-            "payload": "",
-            "evidence": "Without this header, the site is vulnerable to Clickjacking",
-            "description": "The parameter '(response header)' in GET http://localhost:8080/ui/api/posts appears vulnerable to MISSING X-FRAME-OPTIONS HEADER. Without this header, the site is vulnerable to Clickjacking"
-        },
-        {
-            "vulnerability_type": "missing_header",
-            "severity": "Low",
-            "url": "http://localhost:8080/ui/api/posts",
-            "method": "GET",
-            "parameter": "(response header)",
-            "payload": "",
-            "evidence": "MIME-type sniffing can be exploited for XSS",
-            "description": "The parameter '(response header)' in GET http://localhost:8080/ui/api/posts appears vulnerable to MISSING X-CONTENT-TYPE-OPTIONS HEADER. MIME-type sniffing can be exploited for XSS"
-        },
-        {
-            "vulnerability_type": "missing_header",
-            "severity": "Medium",
-            "url": "http://localhost:8080/ui/api/posts",
-            "method": "GET",
-            "parameter": "(response header)",
-            "payload": "",
-            "evidence": "HSTS prevents SSL-stripping attacks",
-            "description": "The parameter '(response header)' in GET http://localhost:8080/ui/api/posts appears vulnerable to MISSING STRICT-TRANSPORT-SECURITY (HSTS) HEADER. HSTS prevents SSL-stripping attacks"
-        },
-        {
-            "vulnerability_type": "missing_header",
-            "severity": "Low",
-            "url": "http://localhost:8080/ui/api/posts",
-            "method": "GET",
-            "parameter": "(response header)",
-            "payload": "",
-            "evidence": "Referrer leakage can expose sensitive URL paths",
-            "description": "The parameter '(response header)' in GET http://localhost:8080/ui/api/posts appears vulnerable to MISSING REFERRER-POLICY HEADER. Referrer leakage can expose sensitive URL paths"
-        },
-        {
-            "vulnerability_type": "missing_header",
-            "severity": "Low",
-            "url": "http://localhost:8080/ui/api/posts",
-            "method": "GET",
-            "parameter": "(response header)",
-            "payload": "",
-            "evidence": "Browser features (camera, geolocation) are unrestricted",
-            "description": "The parameter '(response header)' in GET http://localhost:8080/ui/api/posts appears vulnerable to MISSING PERMISSIONS-POLICY HEADER. Browser features (camera, geolocation) are unrestricted"
-        },
-        {
-            "vulnerability_type": "missing_header",
-            "severity": "Medium",
-            "url": "http://localhost:8080/ui",
-            "method": "GET",
-            "parameter": "(response header)",
-            "payload": "",
-            "evidence": "CSP prevents XSS and data injection attacks",
-            "description": "The parameter '(response header)' in GET http://localhost:8080/ui appears vulnerable to MISSING CONTENT-SECURITY-POLICY HEADER. CSP prevents XSS and data injection attacks"
-        },
-        {
-            "vulnerability_type": "missing_header",
-            "severity": "Medium",
-            "url": "http://localhost:8080/ui",
-            "method": "GET",
-            "parameter": "(response header)",
-            "payload": "",
-            "evidence": "Without this header, the site is vulnerable to Clickjacking",
-            "description": "The parameter '(response header)' in GET http://localhost:8080/ui appears vulnerable to MISSING X-FRAME-OPTIONS HEADER. Without this header, the site is vulnerable to Clickjacking"
-        },
-        {
-            "vulnerability_type": "missing_header",
-            "severity": "Low",
-            "url": "http://localhost:8080/ui",
-            "method": "GET",
-            "parameter": "(response header)",
-            "payload": "",
-            "evidence": "MIME-type sniffing can be exploited for XSS",
-            "description": "The parameter '(response header)' in GET http://localhost:8080/ui appears vulnerable to MISSING X-CONTENT-TYPE-OPTIONS HEADER. MIME-type sniffing can be exploited for XSS"
-        },
-        {
-            "vulnerability_type": "missing_header",
-            "severity": "Medium",
-            "url": "http://localhost:8080/ui",
-            "method": "GET",
-            "parameter": "(response header)",
-            "payload": "",
-            "evidence": "HSTS prevents SSL-stripping attacks",
-            "description": "The parameter '(response header)' in GET http://localhost:8080/ui appears vulnerable to MISSING STRICT-TRANSPORT-SECURITY (HSTS) HEADER. HSTS prevents SSL-stripping attacks"
-        },
-        {
-            "vulnerability_type": "missing_header",
-            "severity": "Low",
-            "url": "http://localhost:8080/ui",
-            "method": "GET",
-            "parameter": "(response header)",
-            "payload": "",
-            "evidence": "Referrer leakage can expose sensitive URL paths",
-            "description": "The parameter '(response header)' in GET http://localhost:8080/ui appears vulnerable to MISSING REFERRER-POLICY HEADER. Referrer leakage can expose sensitive URL paths"
-        },
-        {
-            "vulnerability_type": "missing_header",
-            "severity": "Low",
-            "url": "http://localhost:8080/ui",
-            "method": "GET",
-            "parameter": "(response header)",
-            "payload": "",
-            "evidence": "Browser features (camera, geolocation) are unrestricted",
-            "description": "The parameter '(response header)' in GET http://localhost:8080/ui appears vulnerable to MISSING PERMISSIONS-POLICY HEADER. Browser features (camera, geolocation) are unrestricted"
-        },
-        {
-            "vulnerability_type": "info_disclosure",
-            "severity": "Medium",
-            "url": "http://localhost:8080/ui",
-            "method": "GET",
-            "parameter": "Header: x-powered-by",
-            "payload": "",
-            "evidence": "Header value: 'Next.js'",
-            "description": "The parameter 'Header: x-powered-by' in GET http://localhost:8080/ui appears vulnerable to TECHNOLOGY STACK DISCLOSED VIA X-POWERED-BY HEADER. Header value: 'Next.js'"
-        },
-        {
-            "vulnerability_type": "missing_header",
-            "severity": "Medium",
-            "url": "http://localhost:8080/ui/api/auth/jwt-payload",
-            "method": "GET",
-            "parameter": "(response header)",
-            "payload": "",
-            "evidence": "CSP prevents XSS and data injection attacks",
-            "description": "The parameter '(response header)' in GET http://localhost:8080/ui/api/auth/jwt-payload appears vulnerable to MISSING CONTENT-SECURITY-POLICY HEADER. CSP prevents XSS and data injection attacks"
-        },
-        {
-            "vulnerability_type": "missing_header",
-            "severity": "Medium",
-            "url": "http://localhost:8080/ui/api/auth/jwt-payload",
-            "method": "GET",
-            "parameter": "(response header)",
-            "payload": "",
-            "evidence": "Without this header, the site is vulnerable to Clickjacking",
-            "description": "The parameter '(response header)' in GET http://localhost:8080/ui/api/auth/jwt-payload appears vulnerable to MISSING X-FRAME-OPTIONS HEADER. Without this header, the site is vulnerable to Clickjacking"
-        },
-        {
-            "vulnerability_type": "missing_header",
-            "severity": "Low",
-            "url": "http://localhost:8080/ui/api/auth/jwt-payload",
-            "method": "GET",
-            "parameter": "(response header)",
-            "payload": "",
-            "evidence": "MIME-type sniffing can be exploited for XSS",
-            "description": "The parameter '(response header)' in GET http://localhost:8080/ui/api/auth/jwt-payload appears vulnerable to MISSING X-CONTENT-TYPE-OPTIONS HEADER. MIME-type sniffing can be exploited for XSS"
-        },
-        {
-            "vulnerability_type": "missing_header",
-            "severity": "Medium",
-            "url": "http://localhost:8080/ui/api/auth/jwt-payload",
-            "method": "GET",
-            "parameter": "(response header)",
-            "payload": "",
-            "evidence": "HSTS prevents SSL-stripping attacks",
-            "description": "The parameter '(response header)' in GET http://localhost:8080/ui/api/auth/jwt-payload appears vulnerable to MISSING STRICT-TRANSPORT-SECURITY (HSTS) HEADER. HSTS prevents SSL-stripping attacks"
-        },
-        {
-            "vulnerability_type": "missing_header",
-            "severity": "Low",
-            "url": "http://localhost:8080/ui/api/auth/jwt-payload",
-            "method": "GET",
-            "parameter": "(response header)",
-            "payload": "",
-            "evidence": "Referrer leakage can expose sensitive URL paths",
-            "description": "The parameter '(response header)' in GET http://localhost:8080/ui/api/auth/jwt-payload appears vulnerable to MISSING REFERRER-POLICY HEADER. Referrer leakage can expose sensitive URL paths"
-        },
-        {
-            "vulnerability_type": "missing_header",
-            "severity": "Low",
-            "url": "http://localhost:8080/ui/api/auth/jwt-payload",
-            "method": "GET",
-            "parameter": "(response header)",
-            "payload": "",
-            "evidence": "Browser features (camera, geolocation) are unrestricted",
-            "description": "The parameter '(response header)' in GET http://localhost:8080/ui/api/auth/jwt-payload appears vulnerable to MISSING PERMISSIONS-POLICY HEADER. Browser features (camera, geolocation) are unrestricted"
-        },
-        {
-            "vulnerability_type": "missing_header",
-            "severity": "Medium",
-            "url": "http://localhost:8080/login",
-            "method": "GET",
-            "parameter": "(response header)",
-            "payload": "",
-            "evidence": "CSP prevents XSS and data injection attacks",
-            "description": "The parameter '(response header)' in GET http://localhost:8080/login appears vulnerable to MISSING CONTENT-SECURITY-POLICY HEADER. CSP prevents XSS and data injection attacks"
-        },
-        {
-            "vulnerability_type": "missing_header",
-            "severity": "Medium",
-            "url": "http://localhost:8080/login",
-            "method": "GET",
-            "parameter": "(response header)",
-            "payload": "",
-            "evidence": "Without this header, the site is vulnerable to Clickjacking",
-            "description": "The parameter '(response header)' in GET http://localhost:8080/login appears vulnerable to MISSING X-FRAME-OPTIONS HEADER. Without this header, the site is vulnerable to Clickjacking"
-        },
-        {
-            "vulnerability_type": "missing_header",
-            "severity": "Low",
-            "url": "http://localhost:8080/login",
-            "method": "GET",
-            "parameter": "(response header)",
-            "payload": "",
-            "evidence": "MIME-type sniffing can be exploited for XSS",
-            "description": "The parameter '(response header)' in GET http://localhost:8080/login appears vulnerable to MISSING X-CONTENT-TYPE-OPTIONS HEADER. MIME-type sniffing can be exploited for XSS"
-        },
-        {
-            "vulnerability_type": "missing_header",
-            "severity": "Medium",
-            "url": "http://localhost:8080/login",
-            "method": "GET",
-            "parameter": "(response header)",
-            "payload": "",
-            "evidence": "HSTS prevents SSL-stripping attacks",
-            "description": "The parameter '(response header)' in GET http://localhost:8080/login appears vulnerable to MISSING STRICT-TRANSPORT-SECURITY (HSTS) HEADER. HSTS prevents SSL-stripping attacks"
-        },
-        {
-            "vulnerability_type": "missing_header",
-            "severity": "Low",
-            "url": "http://localhost:8080/login",
-            "method": "GET",
-            "parameter": "(response header)",
-            "payload": "",
-            "evidence": "Referrer leakage can expose sensitive URL paths",
-            "description": "The parameter '(response header)' in GET http://localhost:8080/login appears vulnerable to MISSING REFERRER-POLICY HEADER. Referrer leakage can expose sensitive URL paths"
-        },
-        {
-            "vulnerability_type": "missing_header",
-            "severity": "Low",
-            "url": "http://localhost:8080/login",
-            "method": "GET",
-            "parameter": "(response header)",
-            "payload": "",
-            "evidence": "Browser features (camera, geolocation) are unrestricted",
-            "description": "The parameter '(response header)' in GET http://localhost:8080/login appears vulnerable to MISSING PERMISSIONS-POLICY HEADER. Browser features (camera, geolocation) are unrestricted"
-        },
-        {
-            "vulnerability_type": "missing_header",
-            "severity": "Medium",
-            "url": "http://localhost:8080/ui/api/ad",
-            "method": "GET",
-            "parameter": "(response header)",
-            "payload": "",
-            "evidence": "CSP prevents XSS and data injection attacks",
-            "description": "The parameter '(response header)' in GET http://localhost:8080/ui/api/ad appears vulnerable to MISSING CONTENT-SECURITY-POLICY HEADER. CSP prevents XSS and data injection attacks"
-        },
-        {
-            "vulnerability_type": "missing_header",
-            "severity": "Medium",
-            "url": "http://localhost:8080/ui/api/ad",
-            "method": "GET",
-            "parameter": "(response header)",
-            "payload": "",
-            "evidence": "Without this header, the site is vulnerable to Clickjacking",
-            "description": "The parameter '(response header)' in GET http://localhost:8080/ui/api/ad appears vulnerable to MISSING X-FRAME-OPTIONS HEADER. Without this header, the site is vulnerable to Clickjacking"
-        },
-        {
-            "vulnerability_type": "missing_header",
-            "severity": "Low",
-            "url": "http://localhost:8080/ui/api/ad",
-            "method": "GET",
-            "parameter": "(response header)",
-            "payload": "",
-            "evidence": "MIME-type sniffing can be exploited for XSS",
-            "description": "The parameter '(response header)' in GET http://localhost:8080/ui/api/ad appears vulnerable to MISSING X-CONTENT-TYPE-OPTIONS HEADER. MIME-type sniffing can be exploited for XSS"
-        },
-        {
-            "vulnerability_type": "missing_header",
-            "severity": "Medium",
-            "url": "http://localhost:8080/ui/api/ad",
-            "method": "GET",
-            "parameter": "(response header)",
-            "payload": "",
-            "evidence": "HSTS prevents SSL-stripping attacks",
-            "description": "The parameter '(response header)' in GET http://localhost:8080/ui/api/ad appears vulnerable to MISSING STRICT-TRANSPORT-SECURITY (HSTS) HEADER. HSTS prevents SSL-stripping attacks"
-        },
-        {
-            "vulnerability_type": "missing_header",
-            "severity": "Low",
-            "url": "http://localhost:8080/ui/api/ad",
-            "method": "GET",
-            "parameter": "(response header)",
-            "payload": "",
-            "evidence": "Referrer leakage can expose sensitive URL paths",
-            "description": "The parameter '(response header)' in GET http://localhost:8080/ui/api/ad appears vulnerable to MISSING REFERRER-POLICY HEADER. Referrer leakage can expose sensitive URL paths"
-        },
-        {
-            "vulnerability_type": "missing_header",
-            "severity": "Low",
-            "url": "http://localhost:8080/ui/api/ad",
-            "method": "GET",
-            "parameter": "(response header)",
-            "payload": "",
-            "evidence": "Browser features (camera, geolocation) are unrestricted",
-            "description": "The parameter '(response header)' in GET http://localhost:8080/ui/api/ad appears vulnerable to MISSING PERMISSIONS-POLICY HEADER. Browser features (camera, geolocation) are unrestricted"
-        },
-        {
-            "vulnerability_type": "missing_header",
-            "severity": "Medium",
-            "url": "http://localhost:8080/",
-            "method": "GET",
-            "parameter": "(response header)",
-            "payload": "",
-            "evidence": "CSP prevents XSS and data injection attacks",
-            "description": "The parameter '(response header)' in GET http://localhost:8080/ appears vulnerable to MISSING CONTENT-SECURITY-POLICY HEADER. CSP prevents XSS and data injection attacks"
-        },
-        {
-            "vulnerability_type": "missing_header",
-            "severity": "Medium",
-            "url": "http://localhost:8080/",
-            "method": "GET",
-            "parameter": "(response header)",
-            "payload": "",
-            "evidence": "Without this header, the site is vulnerable to Clickjacking",
-            "description": "The parameter '(response header)' in GET http://localhost:8080/ appears vulnerable to MISSING X-FRAME-OPTIONS HEADER. Without this header, the site is vulnerable to Clickjacking"
-        },
-        {
-            "vulnerability_type": "missing_header",
-            "severity": "Low",
-            "url": "http://localhost:8080/",
-            "method": "GET",
-            "parameter": "(response header)",
-            "payload": "",
-            "evidence": "MIME-type sniffing can be exploited for XSS",
-            "description": "The parameter '(response header)' in GET http://localhost:8080/ appears vulnerable to MISSING X-CONTENT-TYPE-OPTIONS HEADER. MIME-type sniffing can be exploited for XSS"
-        },
-        {
-            "vulnerability_type": "missing_header",
-            "severity": "Medium",
-            "url": "http://localhost:8080/",
-            "method": "GET",
-            "parameter": "(response header)",
-            "payload": "",
-            "evidence": "HSTS prevents SSL-stripping attacks",
-            "description": "The parameter '(response header)' in GET http://localhost:8080/ appears vulnerable to MISSING STRICT-TRANSPORT-SECURITY (HSTS) HEADER. HSTS prevents SSL-stripping attacks"
-        },
-        {
-            "vulnerability_type": "missing_header",
-            "severity": "Low",
-            "url": "http://localhost:8080/",
-            "method": "GET",
-            "parameter": "(response header)",
-            "payload": "",
-            "evidence": "Referrer leakage can expose sensitive URL paths",
-            "description": "The parameter '(response header)' in GET http://localhost:8080/ appears vulnerable to MISSING REFERRER-POLICY HEADER. Referrer leakage can expose sensitive URL paths"
-        },
-        {
-            "vulnerability_type": "missing_header",
-            "severity": "Low",
-            "url": "http://localhost:8080/",
-            "method": "GET",
-            "parameter": "(response header)",
-            "payload": "",
-            "evidence": "Browser features (camera, geolocation) are unrestricted",
-            "description": "The parameter '(response header)' in GET http://localhost:8080/ appears vulnerable to MISSING PERMISSIONS-POLICY HEADER. Browser features (camera, geolocation) are unrestricted"
-        },
-        {
-            "vulnerability_type": "info_disclosure",
-            "severity": "Medium",
-            "url": "http://localhost:8080/",
-            "method": "GET",
-            "parameter": "Header: x-powered-by",
-            "payload": "",
-            "evidence": "Header value: 'Next.js'",
-            "description": "The parameter 'Header: x-powered-by' in GET http://localhost:8080/ appears vulnerable to TECHNOLOGY STACK DISCLOSED VIA X-POWERED-BY HEADER. Header value: 'Next.js'"
-        },
-        {
-            "vulnerability_type": "missing_header",
-            "severity": "Medium",
-            "url": "http://localhost:8080/ui/api/auth/ad-manager",
-            "method": "GET",
-            "parameter": "(response header)",
-            "payload": "",
-            "evidence": "CSP prevents XSS and data injection attacks",
-            "description": "The parameter '(response header)' in GET http://localhost:8080/ui/api/auth/ad-manager appears vulnerable to MISSING CONTENT-SECURITY-POLICY HEADER. CSP prevents XSS and data injection attacks"
-        },
-        {
-            "vulnerability_type": "missing_header",
-            "severity": "Medium",
-            "url": "http://localhost:8080/ui/api/auth/ad-manager",
-            "method": "GET",
-            "parameter": "(response header)",
-            "payload": "",
-            "evidence": "Without this header, the site is vulnerable to Clickjacking",
-            "description": "The parameter '(response header)' in GET http://localhost:8080/ui/api/auth/ad-manager appears vulnerable to MISSING X-FRAME-OPTIONS HEADER. Without this header, the site is vulnerable to Clickjacking"
-        },
-        {
-            "vulnerability_type": "missing_header",
-            "severity": "Low",
-            "url": "http://localhost:8080/ui/api/auth/ad-manager",
-            "method": "GET",
-            "parameter": "(response header)",
-            "payload": "",
-            "evidence": "MIME-type sniffing can be exploited for XSS",
-            "description": "The parameter '(response header)' in GET http://localhost:8080/ui/api/auth/ad-manager appears vulnerable to MISSING X-CONTENT-TYPE-OPTIONS HEADER. MIME-type sniffing can be exploited for XSS"
-        },
-        {
-            "vulnerability_type": "missing_header",
-            "severity": "Medium",
-            "url": "http://localhost:8080/ui/api/auth/ad-manager",
-            "method": "GET",
-            "parameter": "(response header)",
-            "payload": "",
-            "evidence": "HSTS prevents SSL-stripping attacks",
-            "description": "The parameter '(response header)' in GET http://localhost:8080/ui/api/auth/ad-manager appears vulnerable to MISSING STRICT-TRANSPORT-SECURITY (HSTS) HEADER. HSTS prevents SSL-stripping attacks"
-        },
-        {
-            "vulnerability_type": "missing_header",
-            "severity": "Low",
-            "url": "http://localhost:8080/ui/api/auth/ad-manager",
-            "method": "GET",
-            "parameter": "(response header)",
-            "payload": "",
-            "evidence": "Referrer leakage can expose sensitive URL paths",
-            "description": "The parameter '(response header)' in GET http://localhost:8080/ui/api/auth/ad-manager appears vulnerable to MISSING REFERRER-POLICY HEADER. Referrer leakage can expose sensitive URL paths"
-        },
-        {
-            "vulnerability_type": "missing_header",
-            "severity": "Low",
-            "url": "http://localhost:8080/ui/api/auth/ad-manager",
-            "method": "GET",
-            "parameter": "(response header)",
-            "payload": "",
-            "evidence": "Browser features (camera, geolocation) are unrestricted",
-            "description": "The parameter '(response header)' in GET http://localhost:8080/ui/api/auth/ad-manager appears vulnerable to MISSING PERMISSIONS-POLICY HEADER. Browser features (camera, geolocation) are unrestricted"
-        },
-        {
-            "vulnerability_type": "missing_header",
-            "severity": "Medium",
-            "url": "http://localhost:8080/ad-service",
-            "method": "GET",
-            "parameter": "(response header)",
-            "payload": "",
-            "evidence": "CSP prevents XSS and data injection attacks",
-            "description": "The parameter '(response header)' in GET http://localhost:8080/ad-service appears vulnerable to MISSING CONTENT-SECURITY-POLICY HEADER. CSP prevents XSS and data injection attacks"
-        },
-        {
-            "vulnerability_type": "missing_header",
-            "severity": "Medium",
-            "url": "http://localhost:8080/ad-service",
-            "method": "GET",
-            "parameter": "(response header)",
-            "payload": "",
-            "evidence": "Without this header, the site is vulnerable to Clickjacking",
-            "description": "The parameter '(response header)' in GET http://localhost:8080/ad-service appears vulnerable to MISSING X-FRAME-OPTIONS HEADER. Without this header, the site is vulnerable to Clickjacking"
-        },
-        {
-            "vulnerability_type": "missing_header",
-            "severity": "Low",
-            "url": "http://localhost:8080/ad-service",
-            "method": "GET",
-            "parameter": "(response header)",
-            "payload": "",
-            "evidence": "MIME-type sniffing can be exploited for XSS",
-            "description": "The parameter '(response header)' in GET http://localhost:8080/ad-service appears vulnerable to MISSING X-CONTENT-TYPE-OPTIONS HEADER. MIME-type sniffing can be exploited for XSS"
-        },
-        {
-            "vulnerability_type": "missing_header",
-            "severity": "Medium",
-            "url": "http://localhost:8080/ad-service",
-            "method": "GET",
-            "parameter": "(response header)",
-            "payload": "",
-            "evidence": "HSTS prevents SSL-stripping attacks",
-            "description": "The parameter '(response header)' in GET http://localhost:8080/ad-service appears vulnerable to MISSING STRICT-TRANSPORT-SECURITY (HSTS) HEADER. HSTS prevents SSL-stripping attacks"
-        },
-        {
-            "vulnerability_type": "missing_header",
-            "severity": "Low",
-            "url": "http://localhost:8080/ad-service",
-            "method": "GET",
-            "parameter": "(response header)",
-            "payload": "",
-            "evidence": "Referrer leakage can expose sensitive URL paths",
-            "description": "The parameter '(response header)' in GET http://localhost:8080/ad-service appears vulnerable to MISSING REFERRER-POLICY HEADER. Referrer leakage can expose sensitive URL paths"
-        },
-        {
-            "vulnerability_type": "missing_header",
-            "severity": "Low",
-            "url": "http://localhost:8080/ad-service",
-            "method": "GET",
-            "parameter": "(response header)",
-            "payload": "",
-            "evidence": "Browser features (camera, geolocation) are unrestricted",
-            "description": "The parameter '(response header)' in GET http://localhost:8080/ad-service appears vulnerable to MISSING PERMISSIONS-POLICY HEADER. Browser features (camera, geolocation) are unrestricted"
-        },
-        {
-            "vulnerability_type": "insecure_cookie",
-            "severity": "Medium",
-            "url": "http://localhost:8080/ad-service",
-            "method": "GET",
-            "parameter": "Cookie: current_ad",
-            "payload": "",
-            "evidence": "Cookie has: missing HttpOnly flag, missing Secure flag, missing SameSite attribute",
-            "description": "The parameter 'Cookie: current_ad' in GET http://localhost:8080/ad-service appears vulnerable to INSECURE COOKIE: CURRENT_AD. Cookie has: missing HttpOnly flag, missing Secure flag, missing SameSite attribute"
-        },
-        {
-            "vulnerability_type": "missing_header",
-            "severity": "Medium",
-            "url": "http://localhost:8080/ui/api/deployment-health",
-            "method": "GET",
-            "parameter": "(response header)",
-            "payload": "",
-            "evidence": "CSP prevents XSS and data injection attacks",
-            "description": "The parameter '(response header)' in GET http://localhost:8080/ui/api/deployment-health appears vulnerable to MISSING CONTENT-SECURITY-POLICY HEADER. CSP prevents XSS and data injection attacks"
-        },
-        {
-            "vulnerability_type": "missing_header",
-            "severity": "Medium",
-            "url": "http://localhost:8080/ui/api/deployment-health",
-            "method": "GET",
-            "parameter": "(response header)",
-            "payload": "",
-            "evidence": "Without this header, the site is vulnerable to Clickjacking",
-            "description": "The parameter '(response header)' in GET http://localhost:8080/ui/api/deployment-health appears vulnerable to MISSING X-FRAME-OPTIONS HEADER. Without this header, the site is vulnerable to Clickjacking"
-        },
-        {
-            "vulnerability_type": "missing_header",
-            "severity": "Low",
-            "url": "http://localhost:8080/ui/api/deployment-health",
-            "method": "GET",
-            "parameter": "(response header)",
-            "payload": "",
-            "evidence": "MIME-type sniffing can be exploited for XSS",
-            "description": "The parameter '(response header)' in GET http://localhost:8080/ui/api/deployment-health appears vulnerable to MISSING X-CONTENT-TYPE-OPTIONS HEADER. MIME-type sniffing can be exploited for XSS"
-        },
-        {
-            "vulnerability_type": "missing_header",
-            "severity": "Medium",
-            "url": "http://localhost:8080/ui/api/deployment-health",
-            "method": "GET",
-            "parameter": "(response header)",
-            "payload": "",
-            "evidence": "HSTS prevents SSL-stripping attacks",
-            "description": "The parameter '(response header)' in GET http://localhost:8080/ui/api/deployment-health appears vulnerable to MISSING STRICT-TRANSPORT-SECURITY (HSTS) HEADER. HSTS prevents SSL-stripping attacks"
-        },
-        {
-            "vulnerability_type": "missing_header",
-            "severity": "Low",
-            "url": "http://localhost:8080/ui/api/deployment-health",
-            "method": "GET",
-            "parameter": "(response header)",
-            "payload": "",
-            "evidence": "Referrer leakage can expose sensitive URL paths",
-            "description": "The parameter '(response header)' in GET http://localhost:8080/ui/api/deployment-health appears vulnerable to MISSING REFERRER-POLICY HEADER. Referrer leakage can expose sensitive URL paths"
-        },
-        {
-            "vulnerability_type": "missing_header",
-            "severity": "Low",
-            "url": "http://localhost:8080/ui/api/deployment-health",
-            "method": "GET",
-            "parameter": "(response header)",
-            "payload": "",
-            "evidence": "Browser features (camera, geolocation) are unrestricted",
-            "description": "The parameter '(response header)' in GET http://localhost:8080/ui/api/deployment-health appears vulnerable to MISSING PERMISSIONS-POLICY HEADER. Browser features (camera, geolocation) are unrestricted"
-        }
-    ],
-    "app_map_summary": {
-        "total_endpoints": 10,
-        "nodes": {
-            "GET:http://localhost:8080/ui": {
-                "url": "http://localhost:8080/ui",
-                "method": "GET",
-                "params": {},
-                "body": null,
-                "discovered_via": "seed",
-                "content_type": "text/html; charset=utf-8",
-                "depth": 0,
-                "response_status": 200
-            },
-            "GET:http://localhost:8080/ui/api/auth/jwt-payload": {
-                "url": "http://localhost:8080/ui/api/auth/jwt-payload",
-                "method": "GET",
-                "params": {},
-                "body": null,
-                "discovered_via": "fetch",
-                "content_type": null,
-                "depth": 0,
-                "response_status": null
-            },
-            "GET:http://localhost:8080/ui/api/auth/login": {
-                "url": "http://localhost:8080/ui/api/auth/login",
-                "method": "GET",
-                "params": {},
-                "body": null,
-                "discovered_via": "fetch",
-                "content_type": null,
-                "depth": 0,
-                "response_status": null
-            },
-            "GET:http://localhost:8080/ui/api/auth/ad-manager": {
-                "url": "http://localhost:8080/ui/api/auth/ad-manager",
-                "method": "GET",
-                "params": {},
-                "body": null,
-                "discovered_via": "fetch",
-                "content_type": null,
-                "depth": 0,
-                "response_status": null
-            },
-            "GET:http://localhost:8080/ui/api/ad": {
-                "url": "http://localhost:8080/ui/api/ad",
-                "method": "GET",
-                "params": {},
-                "body": null,
-                "discovered_via": "fetch",
-                "content_type": null,
-                "depth": 0,
-                "response_status": null
-            },
-            "GET:http://localhost:8080/ui/api/posts": {
-                "url": "http://localhost:8080/ui/api/posts",
-                "method": "GET",
-                "params": {},
-                "body": null,
-                "discovered_via": "fetch",
-                "content_type": null,
-                "depth": 0,
-                "response_status": null
-            },
-            "GET:http://localhost:8080/ui/api/deployment-health": {
-                "url": "http://localhost:8080/ui/api/deployment-health",
-                "method": "GET",
-                "params": {},
-                "body": null,
-                "discovered_via": "fetch",
-                "content_type": null,
-                "depth": 0,
-                "response_status": null
-            },
-            "GET:http://localhost:8080/ad-service": {
-                "url": "http://localhost:8080/ad-service",
-                "method": "GET",
-                "params": {},
-                "body": null,
-                "discovered_via": "fetch",
-                "content_type": null,
-                "depth": 0,
-                "response_status": null
-            },
-            "GET:http://localhost:8080/": {
-                "url": "http://localhost:8080/",
-                "method": "GET",
-                "params": {},
-                "body": null,
-                "discovered_via": "fetch",
-                "content_type": null,
-                "depth": 0,
-                "response_status": null
-            },
-            "GET:http://localhost:8080/login": {
-                "url": "http://localhost:8080/login",
-                "method": "GET",
-                "params": {},
-                "body": null,
-                "discovered_via": "html_link",
-                "content_type": "",
-                "depth": 1,
-                "response_status": 404
-            }
-        },
-        "edges": {
-            "http://localhost:8080/ui": [
-                "http://localhost:8080/ui/api/deployment-health",
-                "http://localhost:8080/ui/api/ad",
-                "http://localhost:8080/ui/api/auth/ad-manager",
-                "http://localhost:8080/ad-service",
-                "http://localhost:8080/",
-                "http://localhost:8080/ui/api/auth/jwt-payload",
-                "http://localhost:8080/ui/api/posts",
-                "http://localhost:8080/ui/api/auth/login",
-                "http://localhost:8080/login",
-                "http://localhost:8080/ui"
-            ],
-            "http://localhost:8080/login": [
-                "http://localhost:8080/login"
-            ],
-            "http://localhost:8080": [
-                "http://localhost:8080/login"
-            ]
-        }
+    {
+      "vulnerability_type": "missing_header",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui",
+      "method": "GET",
+      "parameter": "(response header)",
+      "payload": "",
+      "evidence": "Without this header, the site is vulnerable to Clickjacking",
+      "description": "The parameter '(response header)' in GET http://localhost:8080/ui appears vulnerable to MISSING X-FRAME-OPTIONS HEADER. Without this header, the site is vulnerable to Clickjacking"
+    },
+    {
+      "vulnerability_type": "missing_header",
+      "severity": "Low",
+      "url": "http://localhost:8080/ui",
+      "method": "GET",
+      "parameter": "(response header)",
+      "payload": "",
+      "evidence": "MIME-type sniffing can be exploited for XSS",
+      "description": "The parameter '(response header)' in GET http://localhost:8080/ui appears vulnerable to MISSING X-CONTENT-TYPE-OPTIONS HEADER. MIME-type sniffing can be exploited for XSS"
+    },
+    {
+      "vulnerability_type": "missing_header",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui",
+      "method": "GET",
+      "parameter": "(response header)",
+      "payload": "",
+      "evidence": "HSTS prevents SSL-stripping attacks",
+      "description": "The parameter '(response header)' in GET http://localhost:8080/ui appears vulnerable to MISSING STRICT-TRANSPORT-SECURITY (HSTS) HEADER. HSTS prevents SSL-stripping attacks"
+    },
+    {
+      "vulnerability_type": "missing_header",
+      "severity": "Low",
+      "url": "http://localhost:8080/ui",
+      "method": "GET",
+      "parameter": "(response header)",
+      "payload": "",
+      "evidence": "Referrer leakage can expose sensitive URL paths",
+      "description": "The parameter '(response header)' in GET http://localhost:8080/ui appears vulnerable to MISSING REFERRER-POLICY HEADER. Referrer leakage can expose sensitive URL paths"
+    },
+    {
+      "vulnerability_type": "missing_header",
+      "severity": "Low",
+      "url": "http://localhost:8080/ui",
+      "method": "GET",
+      "parameter": "(response header)",
+      "payload": "",
+      "evidence": "Browser features (camera, geolocation) are unrestricted",
+      "description": "The parameter '(response header)' in GET http://localhost:8080/ui appears vulnerable to MISSING PERMISSIONS-POLICY HEADER. Browser features (camera, geolocation) are unrestricted"
+    },
+    {
+      "vulnerability_type": "info_disclosure",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui",
+      "method": "GET",
+      "parameter": "Header: x-powered-by",
+      "payload": "",
+      "evidence": "Header value: 'Next.js'",
+      "description": "The parameter 'Header: x-powered-by' in GET http://localhost:8080/ui appears vulnerable to TECHNOLOGY STACK DISCLOSED VIA X-POWERED-BY HEADER. Header value: 'Next.js'"
+    },
+    {
+      "vulnerability_type": "missing_header",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/posts",
+      "method": "GET",
+      "parameter": "(response header)",
+      "payload": "",
+      "evidence": "CSP prevents XSS and data injection attacks",
+      "description": "The parameter '(response header)' in GET http://localhost:8080/ui/api/posts appears vulnerable to MISSING CONTENT-SECURITY-POLICY HEADER. CSP prevents XSS and data injection attacks"
+    },
+    {
+      "vulnerability_type": "missing_header",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/posts",
+      "method": "GET",
+      "parameter": "(response header)",
+      "payload": "",
+      "evidence": "Without this header, the site is vulnerable to Clickjacking",
+      "description": "The parameter '(response header)' in GET http://localhost:8080/ui/api/posts appears vulnerable to MISSING X-FRAME-OPTIONS HEADER. Without this header, the site is vulnerable to Clickjacking"
+    },
+    {
+      "vulnerability_type": "missing_header",
+      "severity": "Low",
+      "url": "http://localhost:8080/ui/api/posts",
+      "method": "GET",
+      "parameter": "(response header)",
+      "payload": "",
+      "evidence": "MIME-type sniffing can be exploited for XSS",
+      "description": "The parameter '(response header)' in GET http://localhost:8080/ui/api/posts appears vulnerable to MISSING X-CONTENT-TYPE-OPTIONS HEADER. MIME-type sniffing can be exploited for XSS"
+    },
+    {
+      "vulnerability_type": "missing_header",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/posts",
+      "method": "GET",
+      "parameter": "(response header)",
+      "payload": "",
+      "evidence": "HSTS prevents SSL-stripping attacks",
+      "description": "The parameter '(response header)' in GET http://localhost:8080/ui/api/posts appears vulnerable to MISSING STRICT-TRANSPORT-SECURITY (HSTS) HEADER. HSTS prevents SSL-stripping attacks"
+    },
+    {
+      "vulnerability_type": "missing_header",
+      "severity": "Low",
+      "url": "http://localhost:8080/ui/api/posts",
+      "method": "GET",
+      "parameter": "(response header)",
+      "payload": "",
+      "evidence": "Referrer leakage can expose sensitive URL paths",
+      "description": "The parameter '(response header)' in GET http://localhost:8080/ui/api/posts appears vulnerable to MISSING REFERRER-POLICY HEADER. Referrer leakage can expose sensitive URL paths"
+    },
+    {
+      "vulnerability_type": "missing_header",
+      "severity": "Low",
+      "url": "http://localhost:8080/ui/api/posts",
+      "method": "GET",
+      "parameter": "(response header)",
+      "payload": "",
+      "evidence": "Browser features (camera, geolocation) are unrestricted",
+      "description": "The parameter '(response header)' in GET http://localhost:8080/ui/api/posts appears vulnerable to MISSING PERMISSIONS-POLICY HEADER. Browser features (camera, geolocation) are unrestricted"
+    },
+    {
+      "vulnerability_type": "missing_header",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/ad",
+      "method": "GET",
+      "parameter": "(response header)",
+      "payload": "",
+      "evidence": "CSP prevents XSS and data injection attacks",
+      "description": "The parameter '(response header)' in GET http://localhost:8080/ui/api/ad appears vulnerable to MISSING CONTENT-SECURITY-POLICY HEADER. CSP prevents XSS and data injection attacks"
+    },
+    {
+      "vulnerability_type": "missing_header",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/ad",
+      "method": "GET",
+      "parameter": "(response header)",
+      "payload": "",
+      "evidence": "Without this header, the site is vulnerable to Clickjacking",
+      "description": "The parameter '(response header)' in GET http://localhost:8080/ui/api/ad appears vulnerable to MISSING X-FRAME-OPTIONS HEADER. Without this header, the site is vulnerable to Clickjacking"
+    },
+    {
+      "vulnerability_type": "missing_header",
+      "severity": "Low",
+      "url": "http://localhost:8080/ui/api/ad",
+      "method": "GET",
+      "parameter": "(response header)",
+      "payload": "",
+      "evidence": "MIME-type sniffing can be exploited for XSS",
+      "description": "The parameter '(response header)' in GET http://localhost:8080/ui/api/ad appears vulnerable to MISSING X-CONTENT-TYPE-OPTIONS HEADER. MIME-type sniffing can be exploited for XSS"
+    },
+    {
+      "vulnerability_type": "missing_header",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/ad",
+      "method": "GET",
+      "parameter": "(response header)",
+      "payload": "",
+      "evidence": "HSTS prevents SSL-stripping attacks",
+      "description": "The parameter '(response header)' in GET http://localhost:8080/ui/api/ad appears vulnerable to MISSING STRICT-TRANSPORT-SECURITY (HSTS) HEADER. HSTS prevents SSL-stripping attacks"
+    },
+    {
+      "vulnerability_type": "missing_header",
+      "severity": "Low",
+      "url": "http://localhost:8080/ui/api/ad",
+      "method": "GET",
+      "parameter": "(response header)",
+      "payload": "",
+      "evidence": "Referrer leakage can expose sensitive URL paths",
+      "description": "The parameter '(response header)' in GET http://localhost:8080/ui/api/ad appears vulnerable to MISSING REFERRER-POLICY HEADER. Referrer leakage can expose sensitive URL paths"
+    },
+    {
+      "vulnerability_type": "missing_header",
+      "severity": "Low",
+      "url": "http://localhost:8080/ui/api/ad",
+      "method": "GET",
+      "parameter": "(response header)",
+      "payload": "",
+      "evidence": "Browser features (camera, geolocation) are unrestricted",
+      "description": "The parameter '(response header)' in GET http://localhost:8080/ui/api/ad appears vulnerable to MISSING PERMISSIONS-POLICY HEADER. Browser features (camera, geolocation) are unrestricted"
+    },
+    {
+      "vulnerability_type": "missing_header",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/auth/login",
+      "method": "GET",
+      "parameter": "(response header)",
+      "payload": "",
+      "evidence": "CSP prevents XSS and data injection attacks",
+      "description": "The parameter '(response header)' in GET http://localhost:8080/ui/api/auth/login appears vulnerable to MISSING CONTENT-SECURITY-POLICY HEADER. CSP prevents XSS and data injection attacks"
+    },
+    {
+      "vulnerability_type": "missing_header",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/auth/login",
+      "method": "GET",
+      "parameter": "(response header)",
+      "payload": "",
+      "evidence": "Without this header, the site is vulnerable to Clickjacking",
+      "description": "The parameter '(response header)' in GET http://localhost:8080/ui/api/auth/login appears vulnerable to MISSING X-FRAME-OPTIONS HEADER. Without this header, the site is vulnerable to Clickjacking"
+    },
+    {
+      "vulnerability_type": "missing_header",
+      "severity": "Low",
+      "url": "http://localhost:8080/ui/api/auth/login",
+      "method": "GET",
+      "parameter": "(response header)",
+      "payload": "",
+      "evidence": "MIME-type sniffing can be exploited for XSS",
+      "description": "The parameter '(response header)' in GET http://localhost:8080/ui/api/auth/login appears vulnerable to MISSING X-CONTENT-TYPE-OPTIONS HEADER. MIME-type sniffing can be exploited for XSS"
+    },
+    {
+      "vulnerability_type": "missing_header",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/auth/login",
+      "method": "GET",
+      "parameter": "(response header)",
+      "payload": "",
+      "evidence": "HSTS prevents SSL-stripping attacks",
+      "description": "The parameter '(response header)' in GET http://localhost:8080/ui/api/auth/login appears vulnerable to MISSING STRICT-TRANSPORT-SECURITY (HSTS) HEADER. HSTS prevents SSL-stripping attacks"
+    },
+    {
+      "vulnerability_type": "missing_header",
+      "severity": "Low",
+      "url": "http://localhost:8080/ui/api/auth/login",
+      "method": "GET",
+      "parameter": "(response header)",
+      "payload": "",
+      "evidence": "Referrer leakage can expose sensitive URL paths",
+      "description": "The parameter '(response header)' in GET http://localhost:8080/ui/api/auth/login appears vulnerable to MISSING REFERRER-POLICY HEADER. Referrer leakage can expose sensitive URL paths"
+    },
+    {
+      "vulnerability_type": "missing_header",
+      "severity": "Low",
+      "url": "http://localhost:8080/ui/api/auth/login",
+      "method": "GET",
+      "parameter": "(response header)",
+      "payload": "",
+      "evidence": "Browser features (camera, geolocation) are unrestricted",
+      "description": "The parameter '(response header)' in GET http://localhost:8080/ui/api/auth/login appears vulnerable to MISSING PERMISSIONS-POLICY HEADER. Browser features (camera, geolocation) are unrestricted"
+    },
+    {
+      "vulnerability_type": "missing_header",
+      "severity": "Medium",
+      "url": "http://localhost:8080/",
+      "method": "GET",
+      "parameter": "(response header)",
+      "payload": "",
+      "evidence": "CSP prevents XSS and data injection attacks",
+      "description": "The parameter '(response header)' in GET http://localhost:8080/ appears vulnerable to MISSING CONTENT-SECURITY-POLICY HEADER. CSP prevents XSS and data injection attacks"
+    },
+    {
+      "vulnerability_type": "missing_header",
+      "severity": "Medium",
+      "url": "http://localhost:8080/",
+      "method": "GET",
+      "parameter": "(response header)",
+      "payload": "",
+      "evidence": "Without this header, the site is vulnerable to Clickjacking",
+      "description": "The parameter '(response header)' in GET http://localhost:8080/ appears vulnerable to MISSING X-FRAME-OPTIONS HEADER. Without this header, the site is vulnerable to Clickjacking"
+    },
+    {
+      "vulnerability_type": "missing_header",
+      "severity": "Low",
+      "url": "http://localhost:8080/",
+      "method": "GET",
+      "parameter": "(response header)",
+      "payload": "",
+      "evidence": "MIME-type sniffing can be exploited for XSS",
+      "description": "The parameter '(response header)' in GET http://localhost:8080/ appears vulnerable to MISSING X-CONTENT-TYPE-OPTIONS HEADER. MIME-type sniffing can be exploited for XSS"
+    },
+    {
+      "vulnerability_type": "missing_header",
+      "severity": "Medium",
+      "url": "http://localhost:8080/",
+      "method": "GET",
+      "parameter": "(response header)",
+      "payload": "",
+      "evidence": "HSTS prevents SSL-stripping attacks",
+      "description": "The parameter '(response header)' in GET http://localhost:8080/ appears vulnerable to MISSING STRICT-TRANSPORT-SECURITY (HSTS) HEADER. HSTS prevents SSL-stripping attacks"
+    },
+    {
+      "vulnerability_type": "missing_header",
+      "severity": "Low",
+      "url": "http://localhost:8080/",
+      "method": "GET",
+      "parameter": "(response header)",
+      "payload": "",
+      "evidence": "Referrer leakage can expose sensitive URL paths",
+      "description": "The parameter '(response header)' in GET http://localhost:8080/ appears vulnerable to MISSING REFERRER-POLICY HEADER. Referrer leakage can expose sensitive URL paths"
+    },
+    {
+      "vulnerability_type": "missing_header",
+      "severity": "Low",
+      "url": "http://localhost:8080/",
+      "method": "GET",
+      "parameter": "(response header)",
+      "payload": "",
+      "evidence": "Browser features (camera, geolocation) are unrestricted",
+      "description": "The parameter '(response header)' in GET http://localhost:8080/ appears vulnerable to MISSING PERMISSIONS-POLICY HEADER. Browser features (camera, geolocation) are unrestricted"
+    },
+    {
+      "vulnerability_type": "info_disclosure",
+      "severity": "Medium",
+      "url": "http://localhost:8080/",
+      "method": "GET",
+      "parameter": "Header: x-powered-by",
+      "payload": "",
+      "evidence": "Header value: 'Next.js'",
+      "description": "The parameter 'Header: x-powered-by' in GET http://localhost:8080/ appears vulnerable to TECHNOLOGY STACK DISCLOSED VIA X-POWERED-BY HEADER. Header value: 'Next.js'"
+    },
+    {
+      "vulnerability_type": "missing_header",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ad-service",
+      "method": "GET",
+      "parameter": "(response header)",
+      "payload": "",
+      "evidence": "CSP prevents XSS and data injection attacks",
+      "description": "The parameter '(response header)' in GET http://localhost:8080/ad-service appears vulnerable to MISSING CONTENT-SECURITY-POLICY HEADER. CSP prevents XSS and data injection attacks"
+    },
+    {
+      "vulnerability_type": "missing_header",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ad-service",
+      "method": "GET",
+      "parameter": "(response header)",
+      "payload": "",
+      "evidence": "Without this header, the site is vulnerable to Clickjacking",
+      "description": "The parameter '(response header)' in GET http://localhost:8080/ad-service appears vulnerable to MISSING X-FRAME-OPTIONS HEADER. Without this header, the site is vulnerable to Clickjacking"
+    },
+    {
+      "vulnerability_type": "missing_header",
+      "severity": "Low",
+      "url": "http://localhost:8080/ad-service",
+      "method": "GET",
+      "parameter": "(response header)",
+      "payload": "",
+      "evidence": "MIME-type sniffing can be exploited for XSS",
+      "description": "The parameter '(response header)' in GET http://localhost:8080/ad-service appears vulnerable to MISSING X-CONTENT-TYPE-OPTIONS HEADER. MIME-type sniffing can be exploited for XSS"
+    },
+    {
+      "vulnerability_type": "missing_header",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ad-service",
+      "method": "GET",
+      "parameter": "(response header)",
+      "payload": "",
+      "evidence": "HSTS prevents SSL-stripping attacks",
+      "description": "The parameter '(response header)' in GET http://localhost:8080/ad-service appears vulnerable to MISSING STRICT-TRANSPORT-SECURITY (HSTS) HEADER. HSTS prevents SSL-stripping attacks"
+    },
+    {
+      "vulnerability_type": "missing_header",
+      "severity": "Low",
+      "url": "http://localhost:8080/ad-service",
+      "method": "GET",
+      "parameter": "(response header)",
+      "payload": "",
+      "evidence": "Referrer leakage can expose sensitive URL paths",
+      "description": "The parameter '(response header)' in GET http://localhost:8080/ad-service appears vulnerable to MISSING REFERRER-POLICY HEADER. Referrer leakage can expose sensitive URL paths"
+    },
+    {
+      "vulnerability_type": "missing_header",
+      "severity": "Low",
+      "url": "http://localhost:8080/ad-service",
+      "method": "GET",
+      "parameter": "(response header)",
+      "payload": "",
+      "evidence": "Browser features (camera, geolocation) are unrestricted",
+      "description": "The parameter '(response header)' in GET http://localhost:8080/ad-service appears vulnerable to MISSING PERMISSIONS-POLICY HEADER. Browser features (camera, geolocation) are unrestricted"
+    },
+    {
+      "vulnerability_type": "insecure_cookie",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ad-service",
+      "method": "GET",
+      "parameter": "Cookie: current_ad",
+      "payload": "",
+      "evidence": "Cookie has: missing HttpOnly flag, missing Secure flag, missing SameSite attribute",
+      "description": "The parameter 'Cookie: current_ad' in GET http://localhost:8080/ad-service appears vulnerable to INSECURE COOKIE: CURRENT_AD. Cookie has: missing HttpOnly flag, missing Secure flag, missing SameSite attribute"
+    },
+    {
+      "vulnerability_type": "missing_header",
+      "severity": "Medium",
+      "url": "http://localhost:8080/login",
+      "method": "GET",
+      "parameter": "(response header)",
+      "payload": "",
+      "evidence": "CSP prevents XSS and data injection attacks",
+      "description": "The parameter '(response header)' in GET http://localhost:8080/login appears vulnerable to MISSING CONTENT-SECURITY-POLICY HEADER. CSP prevents XSS and data injection attacks"
+    },
+    {
+      "vulnerability_type": "missing_header",
+      "severity": "Medium",
+      "url": "http://localhost:8080/login",
+      "method": "GET",
+      "parameter": "(response header)",
+      "payload": "",
+      "evidence": "Without this header, the site is vulnerable to Clickjacking",
+      "description": "The parameter '(response header)' in GET http://localhost:8080/login appears vulnerable to MISSING X-FRAME-OPTIONS HEADER. Without this header, the site is vulnerable to Clickjacking"
+    },
+    {
+      "vulnerability_type": "missing_header",
+      "severity": "Low",
+      "url": "http://localhost:8080/login",
+      "method": "GET",
+      "parameter": "(response header)",
+      "payload": "",
+      "evidence": "MIME-type sniffing can be exploited for XSS",
+      "description": "The parameter '(response header)' in GET http://localhost:8080/login appears vulnerable to MISSING X-CONTENT-TYPE-OPTIONS HEADER. MIME-type sniffing can be exploited for XSS"
+    },
+    {
+      "vulnerability_type": "missing_header",
+      "severity": "Medium",
+      "url": "http://localhost:8080/login",
+      "method": "GET",
+      "parameter": "(response header)",
+      "payload": "",
+      "evidence": "HSTS prevents SSL-stripping attacks",
+      "description": "The parameter '(response header)' in GET http://localhost:8080/login appears vulnerable to MISSING STRICT-TRANSPORT-SECURITY (HSTS) HEADER. HSTS prevents SSL-stripping attacks"
+    },
+    {
+      "vulnerability_type": "missing_header",
+      "severity": "Low",
+      "url": "http://localhost:8080/login",
+      "method": "GET",
+      "parameter": "(response header)",
+      "payload": "",
+      "evidence": "Referrer leakage can expose sensitive URL paths",
+      "description": "The parameter '(response header)' in GET http://localhost:8080/login appears vulnerable to MISSING REFERRER-POLICY HEADER. Referrer leakage can expose sensitive URL paths"
+    },
+    {
+      "vulnerability_type": "missing_header",
+      "severity": "Low",
+      "url": "http://localhost:8080/login",
+      "method": "GET",
+      "parameter": "(response header)",
+      "payload": "",
+      "evidence": "Browser features (camera, geolocation) are unrestricted",
+      "description": "The parameter '(response header)' in GET http://localhost:8080/login appears vulnerable to MISSING PERMISSIONS-POLICY HEADER. Browser features (camera, geolocation) are unrestricted"
+    },
+    {
+      "vulnerability_type": "missing_header",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/auth/ad-manager",
+      "method": "GET",
+      "parameter": "(response header)",
+      "payload": "",
+      "evidence": "CSP prevents XSS and data injection attacks",
+      "description": "The parameter '(response header)' in GET http://localhost:8080/ui/api/auth/ad-manager appears vulnerable to MISSING CONTENT-SECURITY-POLICY HEADER. CSP prevents XSS and data injection attacks"
+    },
+    {
+      "vulnerability_type": "missing_header",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/auth/ad-manager",
+      "method": "GET",
+      "parameter": "(response header)",
+      "payload": "",
+      "evidence": "Without this header, the site is vulnerable to Clickjacking",
+      "description": "The parameter '(response header)' in GET http://localhost:8080/ui/api/auth/ad-manager appears vulnerable to MISSING X-FRAME-OPTIONS HEADER. Without this header, the site is vulnerable to Clickjacking"
+    },
+    {
+      "vulnerability_type": "missing_header",
+      "severity": "Low",
+      "url": "http://localhost:8080/ui/api/auth/ad-manager",
+      "method": "GET",
+      "parameter": "(response header)",
+      "payload": "",
+      "evidence": "MIME-type sniffing can be exploited for XSS",
+      "description": "The parameter '(response header)' in GET http://localhost:8080/ui/api/auth/ad-manager appears vulnerable to MISSING X-CONTENT-TYPE-OPTIONS HEADER. MIME-type sniffing can be exploited for XSS"
+    },
+    {
+      "vulnerability_type": "missing_header",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/auth/ad-manager",
+      "method": "GET",
+      "parameter": "(response header)",
+      "payload": "",
+      "evidence": "HSTS prevents SSL-stripping attacks",
+      "description": "The parameter '(response header)' in GET http://localhost:8080/ui/api/auth/ad-manager appears vulnerable to MISSING STRICT-TRANSPORT-SECURITY (HSTS) HEADER. HSTS prevents SSL-stripping attacks"
+    },
+    {
+      "vulnerability_type": "missing_header",
+      "severity": "Low",
+      "url": "http://localhost:8080/ui/api/auth/ad-manager",
+      "method": "GET",
+      "parameter": "(response header)",
+      "payload": "",
+      "evidence": "Referrer leakage can expose sensitive URL paths",
+      "description": "The parameter '(response header)' in GET http://localhost:8080/ui/api/auth/ad-manager appears vulnerable to MISSING REFERRER-POLICY HEADER. Referrer leakage can expose sensitive URL paths"
+    },
+    {
+      "vulnerability_type": "missing_header",
+      "severity": "Low",
+      "url": "http://localhost:8080/ui/api/auth/ad-manager",
+      "method": "GET",
+      "parameter": "(response header)",
+      "payload": "",
+      "evidence": "Browser features (camera, geolocation) are unrestricted",
+      "description": "The parameter '(response header)' in GET http://localhost:8080/ui/api/auth/ad-manager appears vulnerable to MISSING PERMISSIONS-POLICY HEADER. Browser features (camera, geolocation) are unrestricted"
+    },
+    {
+      "vulnerability_type": "missing_header",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/auth/jwt-payload",
+      "method": "GET",
+      "parameter": "(response header)",
+      "payload": "",
+      "evidence": "CSP prevents XSS and data injection attacks",
+      "description": "The parameter '(response header)' in GET http://localhost:8080/ui/api/auth/jwt-payload appears vulnerable to MISSING CONTENT-SECURITY-POLICY HEADER. CSP prevents XSS and data injection attacks"
+    },
+    {
+      "vulnerability_type": "missing_header",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/auth/jwt-payload",
+      "method": "GET",
+      "parameter": "(response header)",
+      "payload": "",
+      "evidence": "Without this header, the site is vulnerable to Clickjacking",
+      "description": "The parameter '(response header)' in GET http://localhost:8080/ui/api/auth/jwt-payload appears vulnerable to MISSING X-FRAME-OPTIONS HEADER. Without this header, the site is vulnerable to Clickjacking"
+    },
+    {
+      "vulnerability_type": "missing_header",
+      "severity": "Low",
+      "url": "http://localhost:8080/ui/api/auth/jwt-payload",
+      "method": "GET",
+      "parameter": "(response header)",
+      "payload": "",
+      "evidence": "MIME-type sniffing can be exploited for XSS",
+      "description": "The parameter '(response header)' in GET http://localhost:8080/ui/api/auth/jwt-payload appears vulnerable to MISSING X-CONTENT-TYPE-OPTIONS HEADER. MIME-type sniffing can be exploited for XSS"
+    },
+    {
+      "vulnerability_type": "missing_header",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/auth/jwt-payload",
+      "method": "GET",
+      "parameter": "(response header)",
+      "payload": "",
+      "evidence": "HSTS prevents SSL-stripping attacks",
+      "description": "The parameter '(response header)' in GET http://localhost:8080/ui/api/auth/jwt-payload appears vulnerable to MISSING STRICT-TRANSPORT-SECURITY (HSTS) HEADER. HSTS prevents SSL-stripping attacks"
+    },
+    {
+      "vulnerability_type": "missing_header",
+      "severity": "Low",
+      "url": "http://localhost:8080/ui/api/auth/jwt-payload",
+      "method": "GET",
+      "parameter": "(response header)",
+      "payload": "",
+      "evidence": "Referrer leakage can expose sensitive URL paths",
+      "description": "The parameter '(response header)' in GET http://localhost:8080/ui/api/auth/jwt-payload appears vulnerable to MISSING REFERRER-POLICY HEADER. Referrer leakage can expose sensitive URL paths"
+    },
+    {
+      "vulnerability_type": "missing_header",
+      "severity": "Low",
+      "url": "http://localhost:8080/ui/api/auth/jwt-payload",
+      "method": "GET",
+      "parameter": "(response header)",
+      "payload": "",
+      "evidence": "Browser features (camera, geolocation) are unrestricted",
+      "description": "The parameter '(response header)' in GET http://localhost:8080/ui/api/auth/jwt-payload appears vulnerable to MISSING PERMISSIONS-POLICY HEADER. Browser features (camera, geolocation) are unrestricted"
+    },
+    {
+      "vulnerability_type": "missing_header",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "(response header)",
+      "payload": "",
+      "evidence": "CSP prevents XSS and data injection attacks",
+      "description": "The parameter '(response header)' in GET http://localhost:8080/ui/api/deployment-health appears vulnerable to MISSING CONTENT-SECURITY-POLICY HEADER. CSP prevents XSS and data injection attacks"
+    },
+    {
+      "vulnerability_type": "missing_header",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "(response header)",
+      "payload": "",
+      "evidence": "Without this header, the site is vulnerable to Clickjacking",
+      "description": "The parameter '(response header)' in GET http://localhost:8080/ui/api/deployment-health appears vulnerable to MISSING X-FRAME-OPTIONS HEADER. Without this header, the site is vulnerable to Clickjacking"
+    },
+    {
+      "vulnerability_type": "missing_header",
+      "severity": "Low",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "(response header)",
+      "payload": "",
+      "evidence": "MIME-type sniffing can be exploited for XSS",
+      "description": "The parameter '(response header)' in GET http://localhost:8080/ui/api/deployment-health appears vulnerable to MISSING X-CONTENT-TYPE-OPTIONS HEADER. MIME-type sniffing can be exploited for XSS"
+    },
+    {
+      "vulnerability_type": "missing_header",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "(response header)",
+      "payload": "",
+      "evidence": "HSTS prevents SSL-stripping attacks",
+      "description": "The parameter '(response header)' in GET http://localhost:8080/ui/api/deployment-health appears vulnerable to MISSING STRICT-TRANSPORT-SECURITY (HSTS) HEADER. HSTS prevents SSL-stripping attacks"
+    },
+    {
+      "vulnerability_type": "missing_header",
+      "severity": "Low",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "(response header)",
+      "payload": "",
+      "evidence": "Referrer leakage can expose sensitive URL paths",
+      "description": "The parameter '(response header)' in GET http://localhost:8080/ui/api/deployment-health appears vulnerable to MISSING REFERRER-POLICY HEADER. Referrer leakage can expose sensitive URL paths"
+    },
+    {
+      "vulnerability_type": "missing_header",
+      "severity": "Low",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "(response header)",
+      "payload": "",
+      "evidence": "Browser features (camera, geolocation) are unrestricted",
+      "description": "The parameter '(response header)' in GET http://localhost:8080/ui/api/deployment-health appears vulnerable to MISSING PERMISSIONS-POLICY HEADER. Browser features (camera, geolocation) are unrestricted"
+    },
+    {
+      "vulnerability_type": "potential_sqli",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "id",
+      "payload": "'",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'id' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_SQLI attacks."
+    },
+    {
+      "vulnerability_type": "potential_sqli",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "id",
+      "payload": "''",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'id' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_SQLI attacks."
+    },
+    {
+      "vulnerability_type": "sqli",
+      "severity": "High",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "id",
+      "payload": "1' AND SLEEP(5)--",
+      "evidence": "Time delay anomaly detected. Response latency: 5.18s (Baseline: 1.00s, Threshold: 4.00s)",
+      "description": "The parameter 'id' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to SQLI attacks."
+    },
+    {
+      "vulnerability_type": "potential_xss",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "id",
+      "payload": "<script>alert(1)</script>",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'id' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_XSS attacks."
+    },
+    {
+      "vulnerability_type": "potential_xss",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "id",
+      "payload": "';alert(1)//",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'id' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_XSS attacks."
+    },
+    {
+      "vulnerability_type": "potential_xss",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "id",
+      "payload": "<img src=x onerror=alert(1)>",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'id' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_XSS attacks."
+    },
+    {
+      "vulnerability_type": "potential_xss",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "id",
+      "payload": "javascript:alert(1)",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'id' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_XSS attacks."
+    },
+    {
+      "vulnerability_type": "potential_cmdi",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "id",
+      "payload": "; id",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'id' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_CMDI attacks."
+    },
+    {
+      "vulnerability_type": "potential_cmdi",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "id",
+      "payload": "| id",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'id' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_CMDI attacks."
+    },
+    {
+      "vulnerability_type": "potential_ssrf",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "id",
+      "payload": "http://127.0.0.1/",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'id' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_SSRF attacks."
+    },
+    {
+      "vulnerability_type": "potential_ssrf",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "id",
+      "payload": "http://169.254.169.254/latest/meta-data/",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'id' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_SSRF attacks."
+    },
+    {
+      "vulnerability_type": "potential_open_redirect",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "id",
+      "payload": "//evil.example.com/",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'id' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_OPEN_REDIRECT attacks."
+    },
+    {
+      "vulnerability_type": "potential_open_redirect",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "id",
+      "payload": "https://evil.example.com/",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'id' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_OPEN_REDIRECT attacks."
+    },
+    {
+      "vulnerability_type": "potential_crlf",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "id",
+      "payload": "value\r\nX-Injected: yes",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'id' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_CRLF attacks."
+    },
+    {
+      "vulnerability_type": "potential_sqli",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "username",
+      "payload": "1' OR '1'='1",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'username' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_SQLI attacks."
+    },
+    {
+      "vulnerability_type": "potential_sqli",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "username",
+      "payload": "1' AND 1=2 --",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'username' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_SQLI attacks."
+    },
+    {
+      "vulnerability_type": "potential_sqli",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "username",
+      "payload": "1; DROP TABLE users--",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'username' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_SQLI attacks."
+    },
+    {
+      "vulnerability_type": "potential_sqli",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "username",
+      "payload": "' UNION SELECT NULL,NULL--",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'username' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_SQLI attacks."
+    },
+    {
+      "vulnerability_type": "potential_xss",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "username",
+      "payload": "';alert(1)//",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'username' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_XSS attacks."
+    },
+    {
+      "vulnerability_type": "potential_xss",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "username",
+      "payload": "<img src=x onerror=alert(1)>",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'username' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_XSS attacks."
+    },
+    {
+      "vulnerability_type": "potential_cmdi",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "username",
+      "payload": "; id",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'username' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_CMDI attacks."
+    },
+    {
+      "vulnerability_type": "potential_cmdi",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "username",
+      "payload": "`id`",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'username' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_CMDI attacks."
+    },
+    {
+      "vulnerability_type": "potential_cmdi",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "username",
+      "payload": "$(id)",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'username' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_CMDI attacks."
+    },
+    {
+      "vulnerability_type": "potential_cmdi",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "username",
+      "payload": "; cat /etc/passwd",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'username' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_CMDI attacks."
+    },
+    {
+      "vulnerability_type": "potential_cmdi",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "username",
+      "payload": "| whoami",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'username' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_CMDI attacks."
+    },
+    {
+      "vulnerability_type": "potential_path_traversal",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "username",
+      "payload": "..%2F..%2F..%2Fetc%2Fpasswd",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'username' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_PATH_TRAVERSAL attacks."
+    },
+    {
+      "vulnerability_type": "potential_ssrf",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "username",
+      "payload": "http://127.0.0.1/",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'username' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_SSRF attacks."
+    },
+    {
+      "vulnerability_type": "potential_ssti",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "username",
+      "payload": "{{7*7}}",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'username' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_SSTI attacks."
+    },
+    {
+      "vulnerability_type": "potential_ssti",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "username",
+      "payload": "${7*7}",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'username' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_SSTI attacks."
+    },
+    {
+      "vulnerability_type": "potential_crlf",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "username",
+      "payload": "value\r\nX-Injected: yes",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'username' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_CRLF attacks."
+    },
+    {
+      "vulnerability_type": "potential_sqli",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "password",
+      "payload": "1' OR '1'='1",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'password' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_SQLI attacks."
+    },
+    {
+      "vulnerability_type": "potential_sqli",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "password",
+      "payload": "' UNION SELECT NULL,NULL--",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'password' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_SQLI attacks."
+    },
+    {
+      "vulnerability_type": "potential_xss",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "password",
+      "payload": "<script>alert(1)</script>",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'password' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_XSS attacks."
+    },
+    {
+      "vulnerability_type": "potential_xss",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "password",
+      "payload": "<img src=x onerror=alert(1)>",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'password' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_XSS attacks."
+    },
+    {
+      "vulnerability_type": "potential_cmdi",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "password",
+      "payload": "; id",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'password' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_CMDI attacks."
+    },
+    {
+      "vulnerability_type": "potential_cmdi",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "password",
+      "payload": "$(id)",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'password' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_CMDI attacks."
+    },
+    {
+      "vulnerability_type": "potential_path_traversal",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "password",
+      "payload": "../../../../etc/passwd",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'password' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_PATH_TRAVERSAL attacks."
+    },
+    {
+      "vulnerability_type": "potential_path_traversal",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "password",
+      "payload": "..%2F..%2F..%2Fetc%2Fpasswd",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'password' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_PATH_TRAVERSAL attacks."
+    },
+    {
+      "vulnerability_type": "potential_ssrf",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "password",
+      "payload": "http://127.0.0.1/",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'password' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_SSRF attacks."
+    },
+    {
+      "vulnerability_type": "potential_ssrf",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "password",
+      "payload": "http://169.254.169.254/latest/meta-data/",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'password' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_SSRF attacks."
+    },
+    {
+      "vulnerability_type": "potential_crlf",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "password",
+      "payload": "value\r\nX-Injected: yes",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'password' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_CRLF attacks."
+    },
+    {
+      "vulnerability_type": "potential_sqli",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "q",
+      "payload": "''",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'q' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_SQLI attacks."
+    },
+    {
+      "vulnerability_type": "potential_xss",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "q",
+      "payload": "';alert(1)//",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'q' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_XSS attacks."
+    },
+    {
+      "vulnerability_type": "potential_xss",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "q",
+      "payload": "<svg/onload=alert(1)>",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'q' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_XSS attacks."
+    },
+    {
+      "vulnerability_type": "potential_xss",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "q",
+      "payload": "javascript:alert(1)",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'q' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_XSS attacks."
+    },
+    {
+      "vulnerability_type": "potential_cmdi",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "q",
+      "payload": "| id",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'q' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_CMDI attacks."
+    },
+    {
+      "vulnerability_type": "potential_path_traversal",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "q",
+      "payload": "../../../../etc/passwd",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'q' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_PATH_TRAVERSAL attacks."
+    },
+    {
+      "vulnerability_type": "potential_path_traversal",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "q",
+      "payload": "..%2F..%2F..%2Fetc%2Fpasswd",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'q' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_PATH_TRAVERSAL attacks."
+    },
+    {
+      "vulnerability_type": "potential_open_redirect",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "q",
+      "payload": "//evil.example.com/",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'q' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_OPEN_REDIRECT attacks."
+    },
+    {
+      "vulnerability_type": "potential_ssti",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "q",
+      "payload": "{{7*7}}",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'q' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_SSTI attacks."
+    },
+    {
+      "vulnerability_type": "potential_ssti",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "q",
+      "payload": "${7*7}",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'q' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_SSTI attacks."
+    },
+    {
+      "vulnerability_type": "potential_crlf",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "q",
+      "payload": "value\r\nX-Injected: yes",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'q' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_CRLF attacks."
+    },
+    {
+      "vulnerability_type": "potential_crlf",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "q",
+      "payload": "value%0d%0aX-Injected:%20yes",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'q' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_CRLF attacks."
+    },
+    {
+      "vulnerability_type": "potential_sqli",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "search",
+      "payload": "''",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'search' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_SQLI attacks."
+    },
+    {
+      "vulnerability_type": "potential_sqli",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "search",
+      "payload": "1' AND 1=2 --",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'search' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_SQLI attacks."
+    },
+    {
+      "vulnerability_type": "potential_xss",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "search",
+      "payload": "';alert(1)//",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'search' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_XSS attacks."
+    },
+    {
+      "vulnerability_type": "potential_xss",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "search",
+      "payload": "<img src=x onerror=alert(1)>",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'search' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_XSS attacks."
+    },
+    {
+      "vulnerability_type": "potential_cmdi",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "search",
+      "payload": "$(id)",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'search' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_CMDI attacks."
+    },
+    {
+      "vulnerability_type": "potential_path_traversal",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "search",
+      "payload": "../../../../etc/passwd",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'search' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_PATH_TRAVERSAL attacks."
+    },
+    {
+      "vulnerability_type": "potential_ssrf",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "search",
+      "payload": "http://127.0.0.1/",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'search' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_SSRF attacks."
+    },
+    {
+      "vulnerability_type": "potential_ssti",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "search",
+      "payload": "{{7*7}}",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'search' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_SSTI attacks."
+    },
+    {
+      "vulnerability_type": "potential_ssti",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "search",
+      "payload": "<%=7*7%>",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'search' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_SSTI attacks."
+    },
+    {
+      "vulnerability_type": "potential_sqli",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "email",
+      "payload": "1' OR '1'='1",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'email' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_SQLI attacks."
+    },
+    {
+      "vulnerability_type": "potential_sqli",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "email",
+      "payload": "1; DROP TABLE users--",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'email' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_SQLI attacks."
+    },
+    {
+      "vulnerability_type": "potential_xss",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "email",
+      "payload": "<script>alert(1)</script>",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'email' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_XSS attacks."
+    },
+    {
+      "vulnerability_type": "potential_xss",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "email",
+      "payload": "\"><script>alert(1)</script>",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'email' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_XSS attacks."
+    },
+    {
+      "vulnerability_type": "potential_cmdi",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "email",
+      "payload": "`id`",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'email' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_CMDI attacks."
+    },
+    {
+      "vulnerability_type": "potential_cmdi",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "email",
+      "payload": "; cat /etc/passwd",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'email' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_CMDI attacks."
+    },
+    {
+      "vulnerability_type": "potential_path_traversal",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "email",
+      "payload": "../../../../etc/passwd",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'email' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_PATH_TRAVERSAL attacks."
+    },
+    {
+      "vulnerability_type": "potential_ssrf",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "email",
+      "payload": "http://localhost:8080/",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'email' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_SSRF attacks."
+    },
+    {
+      "vulnerability_type": "potential_open_redirect",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "email",
+      "payload": "//evil.example.com/",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'email' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_OPEN_REDIRECT attacks."
+    },
+    {
+      "vulnerability_type": "potential_ssti",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "email",
+      "payload": "${7*7}",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'email' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_SSTI attacks."
+    },
+    {
+      "vulnerability_type": "potential_sqli",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "userid",
+      "payload": "1' AND SLEEP(5)--",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'userid' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_SQLI attacks."
+    },
+    {
+      "vulnerability_type": "potential_path_traversal",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "userid",
+      "payload": "..%2F..%2F..%2Fetc%2Fpasswd",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'userid' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_PATH_TRAVERSAL attacks."
+    },
+    {
+      "vulnerability_type": "potential_path_traversal",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "userid",
+      "payload": "....//....//etc/passwd",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'userid' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_PATH_TRAVERSAL attacks."
+    },
+    {
+      "vulnerability_type": "potential_sqli",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "query",
+      "payload": "'",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'query' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_SQLI attacks."
+    },
+    {
+      "vulnerability_type": "potential_xss",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "query",
+      "payload": "<script>alert(1)</script>",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'query' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_XSS attacks."
+    },
+    {
+      "vulnerability_type": "potential_xss",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "query",
+      "payload": "\"><script>alert(1)</script>",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'query' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_XSS attacks."
+    },
+    {
+      "vulnerability_type": "potential_xss",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "query",
+      "payload": "javascript:alert(1)",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'query' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_XSS attacks."
+    },
+    {
+      "vulnerability_type": "potential_cmdi",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "query",
+      "payload": "$(id)",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'query' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_CMDI attacks."
+    },
+    {
+      "vulnerability_type": "potential_cmdi",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "query",
+      "payload": "| whoami",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'query' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_CMDI attacks."
+    },
+    {
+      "vulnerability_type": "potential_path_traversal",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "query",
+      "payload": "....//....//etc/passwd",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'query' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_PATH_TRAVERSAL attacks."
+    },
+    {
+      "vulnerability_type": "potential_ssti",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "query",
+      "payload": "${7*7}",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'query' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_SSTI attacks."
+    },
+    {
+      "vulnerability_type": "potential_xss",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "url",
+      "payload": "<svg/onload=alert(1)>",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'url' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_XSS attacks."
+    },
+    {
+      "vulnerability_type": "potential_cmdi",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "url",
+      "payload": "| id",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'url' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_CMDI attacks."
+    },
+    {
+      "vulnerability_type": "potential_cmdi",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "url",
+      "payload": "`id`",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'url' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_CMDI attacks."
+    },
+    {
+      "vulnerability_type": "potential_cmdi",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "url",
+      "payload": "; cat /etc/passwd",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'url' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_CMDI attacks."
+    },
+    {
+      "vulnerability_type": "potential_ssrf",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "url",
+      "payload": "http://169.254.169.254/latest/meta-data/",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'url' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_SSRF attacks."
+    },
+    {
+      "vulnerability_type": "potential_ssrf",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "url",
+      "payload": "http://localhost:8080/",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'url' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_SSRF attacks."
+    },
+    {
+      "vulnerability_type": "potential_ssti",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "url",
+      "payload": "{{7*7}}",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'url' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_SSTI attacks."
+    },
+    {
+      "vulnerability_type": "potential_sqli",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "redirect",
+      "payload": "1' AND 1=2 --",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'redirect' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_SQLI attacks."
+    },
+    {
+      "vulnerability_type": "potential_xss",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "redirect",
+      "payload": "';alert(1)//",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'redirect' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_XSS attacks."
+    },
+    {
+      "vulnerability_type": "potential_xss",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "redirect",
+      "payload": "<svg/onload=alert(1)>",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'redirect' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_XSS attacks."
+    },
+    {
+      "vulnerability_type": "potential_xss",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "redirect",
+      "payload": "javascript:alert(1)",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'redirect' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_XSS attacks."
+    },
+    {
+      "vulnerability_type": "potential_cmdi",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "redirect",
+      "payload": "| id",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'redirect' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_CMDI attacks."
+    },
+    {
+      "vulnerability_type": "potential_cmdi",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "redirect",
+      "payload": "`id`",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'redirect' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_CMDI attacks."
+    },
+    {
+      "vulnerability_type": "potential_path_traversal",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "redirect",
+      "payload": "..%2F..%2F..%2Fetc%2Fpasswd",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'redirect' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_PATH_TRAVERSAL attacks."
+    },
+    {
+      "vulnerability_type": "potential_path_traversal",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "redirect",
+      "payload": "....//....//etc/passwd",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'redirect' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_PATH_TRAVERSAL attacks."
+    },
+    {
+      "vulnerability_type": "potential_ssrf",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "redirect",
+      "payload": "http://127.0.0.1/",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'redirect' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_SSRF attacks."
+    },
+    {
+      "vulnerability_type": "potential_open_redirect",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "redirect",
+      "payload": "//evil.example.com/",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'redirect' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_OPEN_REDIRECT attacks."
+    },
+    {
+      "vulnerability_type": "potential_open_redirect",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "redirect",
+      "payload": "https://evil.example.com/",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'redirect' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_OPEN_REDIRECT attacks."
+    },
+    {
+      "vulnerability_type": "potential_sqli",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "file",
+      "payload": "''",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'file' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_SQLI attacks."
+    },
+    {
+      "vulnerability_type": "potential_sqli",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "file",
+      "payload": "1' AND 1=2 --",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'file' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_SQLI attacks."
+    },
+    {
+      "vulnerability_type": "potential_sqli",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "file",
+      "payload": "1; DROP TABLE users--",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'file' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_SQLI attacks."
+    },
+    {
+      "vulnerability_type": "potential_xss",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "file",
+      "payload": "<script>alert(1)</script>",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'file' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_XSS attacks."
+    },
+    {
+      "vulnerability_type": "potential_xss",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "file",
+      "payload": "<img src=x onerror=alert(1)>",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'file' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_XSS attacks."
+    },
+    {
+      "vulnerability_type": "potential_xss",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "file",
+      "payload": "<svg/onload=alert(1)>",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'file' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_XSS attacks."
+    },
+    {
+      "vulnerability_type": "potential_cmdi",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "file",
+      "payload": "`id`",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'file' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_CMDI attacks."
+    },
+    {
+      "vulnerability_type": "potential_cmdi",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "file",
+      "payload": "; cat /etc/passwd",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'file' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_CMDI attacks."
+    },
+    {
+      "vulnerability_type": "potential_path_traversal",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "file",
+      "payload": "..%2F..%2F..%2Fetc%2Fpasswd",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'file' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_PATH_TRAVERSAL attacks."
+    },
+    {
+      "vulnerability_type": "potential_open_redirect",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "file",
+      "payload": "//evil.example.com/",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'file' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_OPEN_REDIRECT attacks."
+    },
+    {
+      "vulnerability_type": "potential_open_redirect",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "file",
+      "payload": "https://evil.example.com/",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'file' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_OPEN_REDIRECT attacks."
+    },
+    {
+      "vulnerability_type": "potential_ssti",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "file",
+      "payload": "{{7*7}}",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'file' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_SSTI attacks."
+    },
+    {
+      "vulnerability_type": "potential_ssti",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "file",
+      "payload": "${7*7}",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'file' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_SSTI attacks."
+    },
+    {
+      "vulnerability_type": "potential_ssti",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "file",
+      "payload": "<%=7*7%>",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'file' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_SSTI attacks."
+    },
+    {
+      "vulnerability_type": "potential_sqli",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "path",
+      "payload": "1; DROP TABLE users--",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'path' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_SQLI attacks."
+    },
+    {
+      "vulnerability_type": "potential_sqli",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "path",
+      "payload": "' UNION SELECT NULL,NULL--",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'path' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_SQLI attacks."
+    },
+    {
+      "vulnerability_type": "sqli",
+      "severity": "High",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "path",
+      "payload": "1' AND SLEEP(5)--",
+      "evidence": "Time delay anomaly detected. Response latency: 7.23s (Baseline: 1.00s, Threshold: 4.00s)",
+      "description": "The parameter 'path' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to SQLI attacks."
+    },
+    {
+      "vulnerability_type": "potential_xss",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "path",
+      "payload": "';alert(1)//",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'path' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_XSS attacks."
+    },
+    {
+      "vulnerability_type": "potential_xss",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "path",
+      "payload": "<svg/onload=alert(1)>",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'path' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_XSS attacks."
+    },
+    {
+      "vulnerability_type": "potential_xss",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "path",
+      "payload": "javascript:alert(1)",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'path' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_XSS attacks."
+    },
+    {
+      "vulnerability_type": "potential_cmdi",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "path",
+      "payload": "$(id)",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'path' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_CMDI attacks."
+    },
+    {
+      "vulnerability_type": "potential_cmdi",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "path",
+      "payload": "| whoami",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'path' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_CMDI attacks."
+    },
+    {
+      "vulnerability_type": "potential_path_traversal",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "path",
+      "payload": "../../../../etc/passwd",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'path' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_PATH_TRAVERSAL attacks."
+    },
+    {
+      "vulnerability_type": "potential_ssrf",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "path",
+      "payload": "http://127.0.0.1/",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'path' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_SSRF attacks."
+    },
+    {
+      "vulnerability_type": "potential_ssrf",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "path",
+      "payload": "http://localhost:8080/",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'path' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_SSRF attacks."
+    },
+    {
+      "vulnerability_type": "potential_open_redirect",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "path",
+      "payload": "https://evil.example.com/",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'path' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_OPEN_REDIRECT attacks."
+    },
+    {
+      "vulnerability_type": "potential_ssti",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "path",
+      "payload": "{{7*7}}",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'path' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_SSTI attacks."
+    },
+    {
+      "vulnerability_type": "potential_sqli",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "cmd",
+      "payload": "'",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'cmd' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_SQLI attacks."
+    },
+    {
+      "vulnerability_type": "potential_sqli",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "cmd",
+      "payload": "1' OR '1'='1",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'cmd' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_SQLI attacks."
+    },
+    {
+      "vulnerability_type": "potential_sqli",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "cmd",
+      "payload": "1' AND 1=2 --",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'cmd' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_SQLI attacks."
+    },
+    {
+      "vulnerability_type": "potential_xss",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "cmd",
+      "payload": "\"><script>alert(1)</script>",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'cmd' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_XSS attacks."
+    },
+    {
+      "vulnerability_type": "potential_xss",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "cmd",
+      "payload": "';alert(1)//",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'cmd' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_XSS attacks."
+    },
+    {
+      "vulnerability_type": "potential_xss",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "cmd",
+      "payload": "<img src=x onerror=alert(1)>",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'cmd' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_XSS attacks."
+    },
+    {
+      "vulnerability_type": "potential_ssrf",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "cmd",
+      "payload": "http://localhost:8080/",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'cmd' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_SSRF attacks."
+    },
+    {
+      "vulnerability_type": "potential_open_redirect",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "cmd",
+      "payload": "//evil.example.com/",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'cmd' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_OPEN_REDIRECT attacks."
+    },
+    {
+      "vulnerability_type": "potential_open_redirect",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "cmd",
+      "payload": "https://evil.example.com/",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'cmd' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_OPEN_REDIRECT attacks."
+    },
+    {
+      "vulnerability_type": "potential_ssti",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "cmd",
+      "payload": "${7*7}",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'cmd' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_SSTI attacks."
+    },
+    {
+      "vulnerability_type": "potential_sqli",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "exec",
+      "payload": "1' OR '1'='1",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'exec' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_SQLI attacks."
+    },
+    {
+      "vulnerability_type": "potential_sqli",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "exec",
+      "payload": "1; DROP TABLE users--",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'exec' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_SQLI attacks."
+    },
+    {
+      "vulnerability_type": "potential_sqli",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "exec",
+      "payload": "' UNION SELECT NULL,NULL--",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'exec' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_SQLI attacks."
+    },
+    {
+      "vulnerability_type": "potential_xss",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "exec",
+      "payload": "<script>alert(1)</script>",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'exec' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_XSS attacks."
+    },
+    {
+      "vulnerability_type": "potential_xss",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "exec",
+      "payload": "\"><script>alert(1)</script>",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'exec' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_XSS attacks."
+    },
+    {
+      "vulnerability_type": "potential_xss",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "exec",
+      "payload": "';alert(1)//",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'exec' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_XSS attacks."
+    },
+    {
+      "vulnerability_type": "potential_cmdi",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "exec",
+      "payload": "`id`",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'exec' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_CMDI attacks."
+    },
+    {
+      "vulnerability_type": "potential_cmdi",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "exec",
+      "payload": "; cat /etc/passwd",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'exec' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_CMDI attacks."
+    },
+    {
+      "vulnerability_type": "potential_path_traversal",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "exec",
+      "payload": "../../../../etc/passwd",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'exec' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_PATH_TRAVERSAL attacks."
+    },
+    {
+      "vulnerability_type": "potential_open_redirect",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "exec",
+      "payload": "//evil.example.com/",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'exec' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_OPEN_REDIRECT attacks."
+    },
+    {
+      "vulnerability_type": "potential_ssti",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "exec",
+      "payload": "${7*7}",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'exec' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_SSTI attacks."
+    },
+    {
+      "vulnerability_type": "potential_ssti",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "exec",
+      "payload": "<%=7*7%>",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'exec' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_SSTI attacks."
+    },
+    {
+      "vulnerability_type": "potential_sqli",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "input",
+      "payload": "1; DROP TABLE users--",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'input' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_SQLI attacks."
+    },
+    {
+      "vulnerability_type": "potential_sqli",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "input",
+      "payload": "1' AND SLEEP(5)--",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'input' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_SQLI attacks."
+    },
+    {
+      "vulnerability_type": "potential_cmdi",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "input",
+      "payload": "| id",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'input' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_CMDI attacks."
+    },
+    {
+      "vulnerability_type": "potential_cmdi",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "input",
+      "payload": "$(id)",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'input' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_CMDI attacks."
+    },
+    {
+      "vulnerability_type": "potential_ssrf",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "input",
+      "payload": "http://localhost:8080/",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'input' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_SSRF attacks."
+    },
+    {
+      "vulnerability_type": "potential_open_redirect",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "input",
+      "payload": "//evil.example.com/",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'input' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_OPEN_REDIRECT attacks."
+    },
+    {
+      "vulnerability_type": "potential_ssti",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "input",
+      "payload": "{{7*7}}",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'input' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_SSTI attacks."
+    },
+    {
+      "vulnerability_type": "potential_ssti",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "input",
+      "payload": "<%=7*7%>",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'input' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_SSTI attacks."
+    },
+    {
+      "vulnerability_type": "potential_crlf",
+      "severity": "Medium",
+      "url": "http://localhost:8080/ui/api/deployment-health",
+      "method": "GET",
+      "parameter": "input",
+      "payload": "value%0d%0aX-Injected:%20yes",
+      "evidence": "Server returned HTTP 500 Internal Server Error under active payloads.",
+      "description": "The parameter 'input' in GET request to http://localhost:8080/ui/api/deployment-health appears vulnerable to POTENTIAL_CRLF attacks."
     }
+  ]
 }
